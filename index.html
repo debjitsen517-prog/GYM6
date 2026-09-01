@@ -1,746 +1,1482 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Happy Birthday Deepika 🤍💐</title>  <style>  
-*{  
-  margin:0;  
-  padding:0;  
-  box-sizing:border-box;  
-}  
-  
-html,body{  
-  width:100%;  
-  min-height:100%;  
-}  
-  
-body{  
-  font-family:Arial,sans-serif;  
-  color:#54264f;  
-  overflow-x:hidden;  
-  
-  background:  
-    radial-gradient(circle at 10% 10%,#ffd5eb 0%,transparent 35%),  
-    radial-gradient(circle at 90% 20%,#d8c5ff 0%,transparent 40%),  
-    linear-gradient(135deg,#f8d7ef,#dfd1ff,#f7d7ed);  
-}  
-  
-/* HEARTS */  
-  
-#heartContainer{  
-  position:fixed;  
-  inset:0;  
-  pointer-events:none;  
-  overflow:hidden;  
-  z-index:100;  
-}  
-  
-.heart{  
-  position:absolute;  
-  bottom:-50px;  
-  opacity:0;  
-  animation:heartUp linear forwards;  
-}  
-  
-@keyframes heartUp{  
-  0%{  
-    transform:translateY(0) scale(.6) rotate(0deg);  
-    opacity:0;  
-  }  
-  
-  10%{  
-    opacity:.9;  
-  }  
-  
-  50%{  
-    opacity:.8;  
-  }  
-  
-  100%{  
-    transform:translateY(-115vh) scale(1.25) rotate(25deg);  
-    opacity:0;  
-  }  
-}  
-  
-/* PAGES */  
-  
-.page{  
-  width:100%;  
-  min-height:100vh;  
-  
-  display:none;  
-  justify-content:center;  
-  align-items:center;  
-  
-  padding:20px;  
-  position:relative;  
-  z-index:2;  
-}  
-  
-.page.active{  
-  display:flex;  
-}  
-  
-/* CARD */  
-  
-.card{  
-  width:100%;  
-  max-width:520px;  
-  
-  padding:32px 24px;  
-  
-  border-radius:30px;  
-  
-  background:rgba(255,255,255,.88);  
-  
-  backdrop-filter:blur(14px);  
-  
-  border:1px solid rgba(255,255,255,.7);  
-  
-  box-shadow:0 20px 60px rgba(92,35,120,.25);  
-  
-  text-align:center;  
-}  
-  
-/* BUTTON */  
-  
-.main-btn{  
-  border:none;  
-  
-  padding:14px 32px;  
-  margin-top:22px;  
-  
-  border-radius:30px;  
-  
-  font-size:17px;  
-  font-weight:bold;  
-  
-  color:white;  
-  
-  background:  
-    linear-gradient(135deg,#d84f9a,#8b55d4);  
-  
-  box-shadow:0 8px 25px rgba(139,70,170,.30);  
-  
-  cursor:pointer;  
-}  
-  
-.main-btn:active{  
-  transform:scale(.96);  
-}  
-  
-/* LOGIN */  
-  
-.login-box h1{  
-  font-size:29px;  
-  margin-bottom:12px;  
-  
-  background:  
-    linear-gradient(90deg,#c94d91,#8255c7);  
-  
-  -webkit-background-clip:text;  
-  -webkit-text-fill-color:transparent;  
-}  
-  
-.login-subtitle{  
-  font-size:15px;  
-  color:#76566f;  
-  margin-bottom:25px;  
-}  
-  
-.password{  
-  width:100%;  
-  
-  padding:15px;  
-  
-  border-radius:16px;  
-  
-  border:2px solid #e6c9e5;  
-  
-  outline:none;  
-  
-  background:#fffaff;  
-  
-  font-size:16px;  
-  
-  text-align:center;  
-}  
-  
-.password:focus{  
-  border-color:#b25bc1;  
-}  
-  
-.error{  
-  min-height:22px;  
-  
-  margin-top:12px;  
-  
-  color:#c33e70;  
-  
-  font-size:14px;  
-  
-  font-weight:bold;  
-}  
-  
-/* MESSAGE */  
-  
-.message-card{  
-  max-width:600px;  
-  max-height:90vh;  
-  overflow-y:auto;  
-}  
-  
-.message-card h2{  
-  font-size:27px;  
-  margin-bottom:20px;  
-  color:#994d9c;  
-}  
-  
-.message{  
-  text-align:left;  
-  
-  font-size:16px;  
-  line-height:1.75;  
-  
-  color:#563c55;  
-}  
-  
-.message strong{  
-  color:#c34f89;  
-}  
-  
-/* VIDEO */  
-  
-.video-page{  
-  flex-direction:column;  
-  padding:20px;  
-  overflow-y:auto;  
-}  
-  
-.video-card{  
-  max-width:650px;  
-  padding:25px 20px;  
-}  
-  
-.video-caption{  
-  font-size:19px;  
-  line-height:1.5;  
-  
-  font-weight:bold;  
-  
-  color:#63375f;  
-  
-  margin-bottom:18px;  
-}  
-  
-.video-container{  
-  width:100%;  
-  
-  display:flex;  
-  justify-content:center;  
-  align-items:center;  
-}  
-  
-.video-container video{  
-  width:100%;  
-  max-width:320px;  
-  
-  height:auto;  
-  max-height:500px;  
-  
-  object-fit:contain;  
-  
-  display:block;  
-  
-  background:#000;  
-  
-  border-radius:20px;  
-  
-  box-shadow:  
-    0 12px 35px rgba(50,20,60,.30);  
-}  
-  
-.video-hint{  
-  margin-top:14px;  
-  
-  font-size:14px;  
-  
-  color:#80617c;  
-}  
-  
-/* LAST PAGE */  
-  
-.last-page{  
-  overflow:hidden;  
-}  
-  
-.last-card{  
-  max-width:500px;  
-  position:relative;  
-  z-index:5;  
-}  
-  
-.last-card h1{  
-  font-size:30px;  
-  line-height:1.45;  
-  
-  margin-bottom:25px;  
-  
-  background:  
-    linear-gradient(90deg,#c74e92,#8056c9);  
-  
-  -webkit-background-clip:text;  
-  -webkit-text-fill-color:transparent;  
-}  
-  
-.last-card p{  
-  font-size:20px;  
-  line-height:1.8;  
-  
-  margin:8px 0;  
-  
-  color:#5d3b59;  
-}  
-  
-.bye{  
-  font-size:27px !important;  
-  color:#c14d91 !important;  
-  font-weight:bold;  
-}  
-  
-/* MOBILE */  
-  
-@media(max-width:600px){  
-  
-  .page{  
-    padding:14px;  
-  }  
-  
-  .card{  
-    padding:28px 18px;  
-    border-radius:26px;  
-  }  
-  
-  .login-box h1{  
-    font-size:26px;  
-  }  
-  
-  .message-card h2{  
-    font-size:24px;  
-  }  
-  
-  .message{  
-    font-size:15px;  
-    line-height:1.7;  
-  }  
-  
-  .video-card{  
-    padding:20px 12px;  
-  }  
-  
-  .video-caption{  
-    font-size:17px;  
-  }  
-  
-  .video-container video{  
-    max-width:280px;  
-    max-height:450px;  
-  }  
-  
-  .last-card h1{  
-    font-size:26px;  
-  }  
-  
-  .last-card p{  
-    font-size:18px;  
-  }  
-}  
-</style>  </head>  <body>  <!-- FLOATING HEARTS -->  <div id="heartContainer"></div>  <!-- BACKGROUND MUSIC -->  <audio  
-id="backgroundMusic"  
-preload="auto"  
-loop>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Deepika 💗</title>
 
-<source  
-src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788244715/Haareya_Piano_Instrumental___Karaoke_With_Lyrics___Arijit_Singh___Notes___Hindi_Song_Keyboard_256k__1.mp3"  
-type="audio/mpeg">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-</audio>  <!-- =========================  
-     PAGE 1 — LOGIN  
-========================= -->  <section id="page1" class="page active">    <div class="card login-box">  <div style="font-size:42px;margin-bottom:10px;">  
-  💐  
-</div>  
+html{
+    scroll-behavior:smooth;
+}
 
-<h1>  
-  Happy Birthday Deepika 🤍💐  
-</h1>  
+body{
+    min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+    color:#583c5d;
 
-<p class="login-subtitle">  
-  A little surprise from your best friend 🫠🤍  
-</p>  
+    background:
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.65),transparent 28%),
+    radial-gradient(circle at 90% 80%,rgba(255,255,255,.35),transparent 30%),
+    linear-gradient(135deg,#ffd8eb,#e8d9ff,#f8dced);
+}
 
-<input  
-  id="password"  
-  class="password"  
-  type="password"  
-  placeholder="Enter His Password 🔑"  
-  autocomplete="off">  
+/* ================= FLOATING HEARTS ================= */
 
-<button  
-  class="main-btn"  
-  onclick="login()">  
-  Enter 💗  
-</button>  
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
 
-<div id="error" class="error"></div>
+.heart{
+    position:absolute;
+    font-size:24px;
+    opacity:.65;
+    animation:heartFloat 7s ease-in-out infinite;
+}
 
-  </div>  </section>  <!-- =========================  
-     PAGE 2 — MESSAGE  
-========================= -->  <section id="page2" class="page">    <div class="card message-card">  <div style="font-size:38px;margin-bottom:10px;">  
-  🌷  
-</div>  
+.heart:nth-child(1){left:5%;top:18%;animation-delay:0s}
+.heart:nth-child(2){left:17%;top:70%;animation-delay:1s}
+.heart:nth-child(3){left:31%;top:12%;animation-delay:2s}
+.heart:nth-child(4){left:48%;top:82%;animation-delay:3s}
+.heart:nth-child(5){left:65%;top:15%;animation-delay:1.5s}
+.heart:nth-child(6){left:78%;top:68%;animation-delay:4s}
+.heart:nth-child(7){left:91%;top:25%;animation-delay:2.5s}
+.heart:nth-child(8){left:55%;top:35%;animation-delay:5s}
 
-<h2>  
-  Hey best friend... 🤍  
-</h2>  
+@keyframes heartFloat{
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+    50%{
+        transform:translateY(-25px) rotate(10deg);
+    }
+}
 
-<div class="message">  
+/* ================= COMMON PAGE ================= */
 
-  Dear best friend... there's no point in writing a long,  
-  elaborate message, right?  
+.page{
+    min-height:100vh;
+    width:100%;
+    position:relative;
+    z-index:2;
+}
 
-  <br><br>  
+.hidden{
+    display:none !important;
+}
 
-  But listen this—our friendship might not be exactly the same  
-  as it used to be, but that doesn't mean you've become my  
-  ex or ex-best friend...  
+.fadeIn{
+    animation:fadeIn .7s ease;
+}
 
-  <br><br>  
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-  Because best friends never become exes.  
-  I still consider you my first and last best friend,  
-  and I always will 🤍...  
+/* ================= PAGE 1 LOGIN ================= */
 
-  <br><br>  
+#loginPage{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
 
-  Anyway, take care and keep moving forward in life...  
-  and choose your circle of friends wisely...  
+.login-card{
+    width:min(92%,520px);
+    padding:45px 28px;
 
-  <br><br>  
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
 
-  Have a fantastic time celebrating your  
-  <strong>19th birthday!</strong>  
+    border-radius:40px;
 
-  💐🎂🤍  
+    text-align:center;
 
-</div>  
+    box-shadow:
+    0 25px 65px rgba(120,65,135,.18);
+}
 
-<button  
-  class="main-btn"  
-  onclick="goToVideo()">  
+.lock{
+    font-size:58px;
+    margin-bottom:28px;
+    animation:lockFloat 2s ease-in-out infinite;
+}
 
-  Continue 👉🏻  
+@keyframes lockFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
 
-</button>
+.password{
+    width:100%;
+    padding:18px 20px;
 
-  </div>  </section>  <!-- =========================  
-     PAGE 3 — VIDEO  
-========================= -->  <section id="page3" class="page video-page">    <div class="card video-card">  <div class="video-caption">  
+    border:3px solid #e5c9e5;
+    border-radius:25px;
 
-  ".I didn't have any pics of you, so here's a short video of you with my three fav pics🫠.."  
+    background:#fffaff;
 
-</div>  
+    outline:none;
 
-<div class="video-container">  
+    text-align:center;
+    font-size:19px;
 
-  <video  
-    id="birthdayVideo"  
-    controls  
-    playsinline  
-    preload="auto">  
+    color:#633e65;
+}
 
-    <source  
-      src="https://res.cloudinary.com/s4rjpsff/video/upload/InShot_20260901_133144430.mp4"  
-      type="video/mp4">  
+.password:focus{
+    border-color:#bd4daf;
+    box-shadow:0 0 18px rgba(189,77,175,.2);
+}
 
-    Your browser does not support video playback.  
+.enter-btn{
+    margin-top:24px;
 
-  </video>  
+    padding:17px 58px;
 
-</div>  
+    border:0;
+    border-radius:50px;
 
-<p class="video-hint">  
-  Tap ▶ to watch 🤍  
-</p>  
+    color:#fff;
 
-<button  
-  class="main-btn"  
-  onclick="goToLastPage()">  
+    font-size:21px;
+    font-weight:bold;
 
-  Continue 👉🏻  
+    background:linear-gradient(135deg,#d944a5,#8d4ed8);
 
-</button>
+    box-shadow:0 12px 30px rgba(145,65,165,.25);
 
-  </div>  </section>  <!-- =========================  
-     PAGE 4 — LAST  
-========================= -->  <section id="page4" class="page last-page">    <div class="card last-card">  <div style="font-size:45px;margin-bottom:12px;">  
-  🥰💗  
-</div>  
+    cursor:pointer;
 
-<h1>  
-  Thanks yaar,, for watching this 🥰🤍  
-</h1>  
+    transition:.2s;
+}
 
-<p>  
-  Gift ta Due roilo btw 🫠😁  
-</p>  
+.enter-btn:active{
+    transform:scale(.95);
+}
 
-<p class="bye">  
-  Byee🥰👋🏻  
-</p>
+.error{
+    min-height:22px;
+    margin-top:13px;
+    color:#d53e6d;
+    font-size:15px;
+}
 
-  </div>  </section>  <script>  
-  
-/* =========================  
-   PASSWORD  
-========================= */  
-  
-const PASSWORD = "Deepika89";  
-  
-  
-/* =========================  
-   ELEMENTS  
-========================= */  
-  
-const music =  
-  document.getElementById("backgroundMusic");  
-  
-const video =  
-  document.getElementById("birthdayVideo");  
-  
-const passwordInput =  
-  document.getElementById("password");  
-  
-const error =  
-  document.getElementById("error");  
-  
-  
-/* =========================  
-   PAGE SWITCH  
-========================= */  
-  
-function showPage(id){  
-  
-  document  
-    .querySelectorAll(".page")  
-    .forEach(function(page){  
-  
-      page.classList.remove("active");  
-  
-    });  
-  
-  document  
-    .getElementById(id)  
-    .classList.add("active");  
-}  
-  
-  
-/* =========================  
-   LOGIN  
-========================= */  
-  
-function login(){  
-  
-  const entered =  
-    passwordInput.value.trim();  
-  
-  if(entered === PASSWORD){  
-  
-    error.innerText = "";  
-  
-    music.volume = 0.40;  
-  
-    /*  
-      Login button press-এর পরে  
-      music play করার চেষ্টা।  
-    */  
-  
-    music.play().catch(function(){});  
-  
-    showPage("page2");  
-  
-  }  
-  
-  else{  
-  
-    error.innerText =  
-      "Please contact your frnd who sent you this link...";  
-  
-  }  
-}  
-  
-  
-/* =========================  
-   ENTER KEY  
-========================= */  
-  
-passwordInput.addEventListener(  
-  "keydown",  
-  function(event){  
-  
-    if(event.key === "Enter"){  
-      login();  
-    }  
-  
-  }  
-);  
-  
-  
-/* =========================  
-   PAGE 2 → VIDEO  
-========================= */  
-  
-function goToVideo(){  
-  
-  showPage("page3");  
-  
-}  
-  
-  
-/* =========================  
-   VIDEO MUSIC CONTROL  
-========================= */  
-  
-/*  
-  Video শুরু হলে  
-  background music বন্ধ।  
-*/  
-  
-video.addEventListener(  
-  "play",  
-  function(){  
-  
-    music.pause();  
-  
-  }  
-);  
-  
-  
-/*  
-  Video pause হলেও  
-  background music চালু হবে না।  
-*/  
-  
-video.addEventListener(  
-  "pause",  
-  function(){  
-  
-    music.pause();  
-  
-  }  
-);  
-  
-  
-/*  
-  Video পুরোপুরি শেষ হলে  
-  background music আবার শুরু।  
-*/  
-  
-video.addEventListener(  
-  "ended",  
-  function(){  
-  
-    music.play().catch(function(){});  
-  
-  }  
-);  
-  
-  
-/* =========================  
-   VIDEO → LAST PAGE  
-========================= */  
-  
-function goToLastPage(){  
-  
-  video.pause();  
-  
-  showPage("page4");  
-  
-  music.play().catch(function(){});  
-  
-}  
-  
-  
-/* =========================  
-   HEART ANIMATION  
-========================= */  
-  
-function createHeart(){  
-  
-  const container =  
-    document.getElementById("heartContainer");  
-  
-  const heart =  
-    document.createElement("div");  
-  
-  heart.className = "heart";  
-  
-  const hearts = [  
-    "💗",  
-    "💕",  
-    "💖",  
-    "💓",  
-    "💞",  
-    "💘"  
-  ];  
-  
-  heart.innerText =  
-    hearts[  
-      Math.floor(  
-        Math.random() * hearts.length  
-      )  
-    ];  
-  
-  heart.style.left =  
-    Math.random() * 100 + "vw";  
-  
-  heart.style.fontSize =  
-    (18 + Math.random()*18) + "px";  
-  
-  heart.style.animationDuration =  
-    (4 + Math.random()*4) + "s";  
-  
-  container.appendChild(heart);  
-  
-  setTimeout(function(){  
-  
-    heart.remove();  
-  
-  },8500);  
-}  
-  
-  
-/*  
-  Website open হওয়ার  
-  সঙ্গে সঙ্গেই hearts শুরু।  
-*/  
-  
-setInterval(  
-  createHeart,  
-  450  
-);  
-  
-  
-/*  
-  শুরুতেই কয়েকটা heart।  
-*/  
-  
-for(let i = 0; i < 6; i++){  
-  
-  setTimeout(  
-    createHeart,  
-    i * 300  
-  );  
-  
-}  
-  
-</script>  </body>  
+/* ================= COUNTDOWN ================= */
+
+#countdownPage{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    background:
+    radial-gradient(circle at center,#fff1fa,#e3d7ff);
+}
+
+.cake{
+    position:relative;
+    width:210px;
+    height:180px;
+    margin-bottom:20px;
+    animation:cakeIn .8s ease;
+}
+
+@keyframes cakeIn{
+    from{
+        transform:scale(.3);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.cake-body{
+    position:absolute;
+
+    left:15px;
+    top:85px;
+
+    width:180px;
+    height:75px;
+
+    background:linear-gradient(#ff83bd,#dc4d9d);
+
+    border-radius:0 0 25px 25px;
+}
+
+.cake-top{
+    position:absolute;
+
+    left:15px;
+    top:65px;
+
+    width:180px;
+    height:48px;
+
+    background:#ff9dca;
+
+    border-radius:50%;
+
+    z-index:2;
+}
+
+.cream{
+    position:absolute;
+
+    left:25px;
+    top:82px;
+
+    width:160px;
+    height:25px;
+
+    background:#fff7fc;
+
+    border-radius:50%;
+
+    z-index:3;
+}
+
+.candle{
+    position:absolute;
+
+    left:96px;
+    top:10px;
+
+    width:18px;
+    height:65px;
+
+    border-radius:6px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #fff 0 8px,
+        #e68ac0 8px 16px
+    );
+
+    z-index:5;
+}
+
+.flame{
+    position:absolute;
+
+    left:94px;
+    top:-22px;
+
+    width:22px;
+    height:30px;
+
+    background:linear-gradient(#fff36a,#ff8700);
+
+    border-radius:50% 50% 50% 50%;
+
+    transform:rotate(45deg);
+
+    animation:flame .45s infinite alternate;
+
+    z-index:6;
+}
+
+@keyframes flame{
+    from{
+        transform:rotate(42deg) scale(.9);
+    }
+    to{
+        transform:rotate(48deg) scale(1.1);
+    }
+}
+
+.count-number{
+    font-size:100px;
+    font-weight:900;
+    color:#a344a2;
+
+    animation:numberPop .8s ease;
+}
+
+@keyframes numberPop{
+    0%{
+        transform:scale(1.6);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* ================= BIRTHDAY REVEAL ================= */
+
+#birthdayReveal{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(circle at center,#fff0fa,#e4d8ff);
+
+    z-index:50;
+
+    text-align:center;
+}
+
+.reveal-card{
+    width:min(92%,650px);
+
+    padding:45px 22px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.92);
+
+    box-shadow:
+    0 25px 70px rgba(120,65,135,.2);
+
+    animation:revealIn .8s ease;
+}
+
+@keyframes revealIn{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.reveal-cake{
+    font-size:75px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.reveal-title{
+    margin-top:18px;
+
+    font-size:clamp(38px,9vw,68px);
+
+    font-weight:900;
+
+    color:#a5409e;
+}
+
+.reveal-subtitle{
+    margin-top:14px;
+    font-size:20px;
+}
+
+.reveal-btn{
+    margin-top:28px;
+
+    border:0;
+    border-radius:50px;
+
+    padding:16px 45px;
+
+    background:linear-gradient(135deg,#d944a5,#8d4ed8);
+
+    color:#fff;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* ================= CONTENT PAGES ================= */
+
+.content-page{
+    padding:45px 15px 55px;
+}
+
+.content-card{
+    width:min(92%,700px);
+
+    margin:auto;
+
+    padding:40px 32px;
+
+    background:rgba(255,255,255,.92);
+
+    border-radius:38px;
+
+    box-shadow:
+    0 22px 60px rgba(115,65,130,.16);
+}
+
+/* ================= PAGE 2 MESSAGE ================= */
+
+.message-title{
+    text-align:center;
+
+    color:#a3429c;
+
+    font-size:38px;
+
+    margin-bottom:32px;
+}
+
+.message-card p{
+    font-size:19px;
+    line-height:1.8;
+
+    margin-bottom:24px;
+}
+
+.highlight{
+    color:#ae428f;
+    font-weight:bold;
+}
+
+.next-btn{
+    display:block;
+
+    margin:32px auto 0;
+
+    border:0;
+    border-radius:50px;
+
+    padding:16px 45px;
+
+    background:linear-gradient(135deg,#d944a5,#8d4ed8);
+
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* ================= PAGE 3 VIDEO ================= */
+
+.video-title{
+    text-align:center;
+
+    color:#a3429c;
+
+    font-size:31px;
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+.video-description{
+    text-align:center;
+
+    font-size:18px;
+    line-height:1.6;
+
+    margin-bottom:24px;
+}
+
+.video-wrapper{
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:#000;
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.2);
+}
+
+.video-wrapper video{
+    width:100%;
+    display:block;
+
+    background:#000;
+
+    max-height:650px;
+}
+
+.video-note{
+    text-align:center;
+
+    margin-top:13px;
+
+    color:#80657d;
+
+    font-size:16px;
+}
+
+/* ================= PAGE 4 BYE ================= */
+
+.bye-page{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+.bye-card{
+    width:min(92%,650px);
+
+    padding:55px 25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.92);
+
+    border-radius:40px;
+
+    box-shadow:
+    0 25px 65px rgba(115,65,130,.18);
+}
+
+.bye-emoji{
+    font-size:75px;
+}
+
+.bye-card h1{
+    margin-top:18px;
+
+    color:#a3429c;
+
+    font-size:42px;
+    line-height:1.25;
+}
+
+.bye-card p{
+    margin-top:18px;
+
+    font-size:20px;
+    line-height:1.6;
+}
+
+.bye{
+    margin-top:25px;
+
+    color:#a3429c;
+
+    font-size:34px;
+    font-weight:bold;
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+    position:fixed;
+
+    top:-30px;
+
+    z-index:200;
+
+    pointer-events:none;
+
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .login-card{
+        padding:40px 20px;
+        border-radius:32px;
+    }
+
+    .content-card{
+        padding:35px 22px;
+        border-radius:30px;
+    }
+
+    .message-title{
+        font-size:31px;
+    }
+
+    .message-card p{
+        font-size:18px;
+        line-height:1.75;
+    }
+
+    .cake{
+        transform:scale(.85);
+    }
+
+    .count-number{
+        font-size:85px;
+    }
+
+    .reveal-title{
+        font-size:43px;
+    }
+
+    .bye-card h1{
+        font-size:34px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= FLOATING HEARTS ================= -->
+
+<div class="hearts">
+
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+    <div class="heart">💖</div>
+    <div class="heart">💘</div>
+    <div class="heart">💞</div>
+    <div class="heart">💓</div>
+    <div class="heart">💝</div>
+    <div class="heart">💗</div>
+
+</div>
+
+
+<!-- =================================================
+     PAGE 1
+     LOGIN
+================================================= -->
+
+<section
+    id="loginPage"
+    class="page"
+>
+
+    <div class="login-card">
+
+        <div class="lock">
+            🔐
+        </div>
+
+        <input
+            id="passwordInput"
+            class="password"
+            type="password"
+            placeholder="Enter Password 🔑"
+            autocomplete="off"
+        >
+
+        <button
+            class="enter-btn"
+            onclick="login()"
+        >
+            Enter ❤️
+        </button>
+
+        <div
+            id="error"
+            class="error"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     COUNTDOWN
+================================================= -->
+
+<section
+    id="countdownPage"
+    class="page hidden"
+>
+
+    <div class="cake">
+
+        <div class="flame"></div>
+
+        <div class="candle"></div>
+
+        <div class="cake-top"></div>
+
+        <div class="cream"></div>
+
+        <div class="cake-body"></div>
+
+    </div>
+
+    <div
+        id="countNumber"
+        class="count-number"
+    >
+        9
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     BIRTHDAY REVEAL
+================================================= -->
+
+<section
+    id="birthdayReveal"
+    class="hidden"
+>
+
+    <div class="reveal-card">
+
+        <div class="reveal-cake">
+            🎂
+        </div>
+
+        <div class="reveal-title">
+            Happy Birthday<br>
+            Deepika 🥹💗
+        </div>
+
+        <div class="reveal-subtitle">
+            💐 A little surprise just for you 💐
+        </div>
+
+        <button
+            class="reveal-btn"
+            onclick="openMessage()"
+        >
+            Continue 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 2
+     MESSAGE ONLY
+================================================= -->
+
+<section
+    id="messagePage"
+    class="page content-page hidden"
+>
+
+    <div class="content-card message-card">
+
+        <h1 class="message-title">
+            Hey best friend... 🤍
+        </h1>
+
+
+        <p>
+            Dear best friend... there's no point in writing
+            a long, elaborate message, right? 😌
+        </p>
+
+
+        <p>
+            But listen this—our friendship might not be
+            exactly the same as it used to be, but that
+            doesn't mean you've become my ex or ex-best friend... 🥹
+        </p>
+
+
+        <p>
+            Because
+            <span class="highlight">
+                best friends never become exes.
+            </span>
+
+            I still consider you my first and last best friend,
+            and I always will 🤍...
+        </p>
+
+
+        <p>
+            Anyway, take care and keep moving forward in life...
+            and choose your circle of friends wisely... 💕
+        </p>
+
+
+        <p>
+            Have a fantastic time celebrating your
+            <span class="highlight">
+                19th birthday!
+            </span>
+
+            🎂💐🤍
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="openVideo()"
+        >
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 3
+     VIDEO ONLY
+================================================= -->
+
+<section
+    id="videoPage"
+    class="page content-page hidden"
+>
+
+    <div class="content-card">
+
+        <div class="video-title">
+            A little memory for you 💗
+        </div>
+
+
+        <div class="video-description">
+
+            I didn't have any pics of you,
+            so here's a short video of you with
+            my three fav pics 🥹💕
+
+        </div>
+
+
+        <div class="video-wrapper">
+
+            <video
+                id="birthdayVideo"
+                controls
+                playsinline
+                preload="metadata"
+            >
+
+                <source
+                    src="https://res.cloudinary.com/s4rjpsff/video/upload/f_auto,q_auto/InShot_20260901_133144430.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support video playback.
+
+            </video>
+
+        </div>
+
+
+        <div class="video-note">
+            ▶️ Tap to watch 🤍
+        </div>
+
+
+        <button
+            class="next-btn"
+            onclick="openBye()"
+        >
+            Continue 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 4
+     BYE ONLY
+================================================= -->
+
+<section
+    id="byePage"
+    class="page bye-page hidden"
+>
+
+    <div class="bye-card">
+
+        <div class="bye-emoji">
+            🥰💗
+        </div>
+
+        <h1>
+            Thanks yaar,<br>
+            for watching this 💕
+        </h1>
+
+        <p>
+            Gift ta Due roilo btw 🤭😁
+        </p>
+
+        <div class="bye">
+            Byee 🫂👋
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     BACKGROUND MUSIC
+================================================= -->
+
+<audio
+    id="bgMusic"
+    preload="auto"
+    loop
+>
+
+    <source
+        src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788244715/Haareya_Piano_Instrumental___Karaoke_With_Lyrics___Arijit_Singh___Notes___Hindi_Song_Keyboard_256k__1.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<script>
+
+/* =================================================
+   ELEMENTS
+================================================= */
+
+const PASSWORD = "DEEPIKA89";
+
+const loginPage =
+    document.getElementById("loginPage");
+
+const countdownPage =
+    document.getElementById("countdownPage");
+
+const birthdayReveal =
+    document.getElementById("birthdayReveal");
+
+const messagePage =
+    document.getElementById("messagePage");
+
+const videoPage =
+    document.getElementById("videoPage");
+
+const byePage =
+    document.getElementById("byePage");
+
+const passwordInput =
+    document.getElementById("passwordInput");
+
+const error =
+    document.getElementById("error");
+
+const countNumber =
+    document.getElementById("countNumber");
+
+const bgMusic =
+    document.getElementById("bgMusic");
+
+const birthdayVideo =
+    document.getElementById("birthdayVideo");
+
+
+/* =================================================
+   LOGIN
+================================================= */
+
+function login(){
+
+    const password =
+        passwordInput.value.trim();
+
+    if(password !== PASSWORD){
+
+        error.textContent =
+            "Wrong password 😝 Try again!";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+        return;
+    }
+
+
+    error.textContent = "";
+
+
+    /*
+       IMPORTANT:
+
+       We call play() during the user's
+       button click so the browser knows
+       the user interacted with the page.
+
+       Immediately pause it.
+       Therefore NO MUSIC during countdown.
+    */
+
+    bgMusic.volume = 0.55;
+
+    bgMusic.play()
+        .then(function(){
+
+            bgMusic.pause();
+
+            bgMusic.currentTime = 0;
+
+        })
+        .catch(function(){
+
+            /*
+               Some mobile browsers may still
+               block this. We retry after countdown.
+            */
+
+        });
+
+
+    loginPage.classList.add("hidden");
+
+    countdownPage.classList.remove("hidden");
+
+    startCountdown();
+
+}
+
+
+/* =================================================
+   ENTER KEY
+================================================= */
+
+passwordInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            login();
+
+        }
+
+    }
+);
+
+
+/* =================================================
+   COUNTDOWN 9 → 1
+================================================= */
+
+function startCountdown(){
+
+    let number = 9;
+
+    countNumber.textContent = number;
+
+    playTick();
+
+
+    const timer =
+        setInterval(function(){
+
+            number--;
+
+            if(number >= 1){
+
+                countNumber.textContent =
+                    number;
+
+                countNumber.style.animation =
+                    "none";
+
+                void countNumber.offsetWidth;
+
+                countNumber.style.animation =
+                    "numberPop .8s ease";
+
+                playTick();
+
+            }
+            else{
+
+                clearInterval(timer);
+
+                countdownFinished();
+
+            }
+
+        },1000);
+
+}
+
+
+/* =================================================
+   TICK SOUND
+================================================= */
+
+let audioContext = null;
+
+function playTick(){
+
+    try{
+
+        if(!audioContext){
+
+            audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+
+        }
+
+        if(audioContext.state === "suspended"){
+
+            audioContext.resume();
+
+        }
+
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+
+        oscillator.type = "sine";
+
+        oscillator.frequency.setValueAtTime(
+            850,
+            audioContext.currentTime
+        );
+
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            audioContext.currentTime
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.20,
+            audioContext.currentTime + 0.01
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioContext.currentTime + 0.12
+        );
+
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime + 0.13
+        );
+
+
+    }catch(e){
+
+        console.log(
+            "Tick sound unavailable"
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   COUNTDOWN FINISH
+================================================= */
+
+function countdownFinished(){
+
+    /*
+       Make absolutely sure
+       background music is still silent.
+    */
+
+    bgMusic.pause();
+
+
+    countdownPage.style.transition =
+        "opacity .6s ease, transform .6s ease";
+
+    countdownPage.style.opacity = "0";
+
+    countdownPage.style.transform =
+        "scale(1.08)";
+
+
+    setTimeout(function(){
+
+        countdownPage.classList.add("hidden");
+
+
+        birthdayReveal.classList.remove(
+            "hidden"
+        );
+
+
+        /*
+           Birthday reveal appears.
+        */
+
+        createConfetti();
+
+
+        /*
+           Start music at the exact moment
+           birthday reveal appears.
+        */
+
+        startMusic();
+
+    },600);
+
+}
+
+
+/* =================================================
+   START MUSIC
+================================================= */
+
+function startMusic(){
+
+    bgMusic.volume = 0.55;
+
+    bgMusic.play()
+        .catch(function(){
+
+            /*
+               If browser blocks playback,
+               it will retry on the next user
+               interaction.
+            */
+
+            console.log(
+                "Waiting for browser permission."
+            );
+
+        });
+
+}
+
+
+/* =================================================
+   BIRTHDAY → MESSAGE
+================================================= */
+
+function openMessage(){
+
+    birthdayReveal.classList.add("hidden");
+
+    messagePage.classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =================================================
+   MESSAGE → VIDEO
+================================================= */
+
+function openVideo(){
+
+    messagePage.classList.add("hidden");
+
+    videoPage.classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =================================================
+   VIDEO → BYE
+================================================= */
+
+function openBye(){
+
+    /*
+       Stop video if user presses Continue
+       before video ends.
+    */
+
+    birthdayVideo.pause();
+
+    videoPage.classList.add("hidden");
+
+    byePage.classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =================================================
+   VIDEO START
+   → MUSIC OFF
+================================================= */
+
+birthdayVideo.addEventListener(
+    "play",
+    function(){
+
+        bgMusic.pause();
+
+    }
+);
+
+
+/* =================================================
+   VIDEO END
+   → MUSIC CONTINUES
+================================================= */
+
+birthdayVideo.addEventListener(
+    "ended",
+    function(){
+
+        startMusic();
+
+    }
+);
+
+
+/* =================================================
+   IF USER RETURNS TO WEBSITE
+================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(document.hidden){
+
+            bgMusic.pause();
+
+        }
+
+    }
+);
+
+
+/* =================================================
+   CONFETTI
+================================================= */
+
+function createConfetti(){
+
+    const items = [
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💝",
+        "✨",
+        "🌸",
+        "🎉"
+    ];
+
+
+    for(let i=0;i<45;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className =
+            "confetti";
+
+        piece.textContent =
+            items[
+                Math.floor(
+                    Math.random()*items.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random()*100 + "vw";
+
+
+        piece.style.fontSize =
+            (14 + Math.random()*18) + "px";
+
+
+        piece.style.animationDuration =
+            (3 + Math.random()*4) + "s";
+
+
+        piece.style.animationDelay =
+            Math.random()*1.2 + "s";
+
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },8000);
+
+    }
+
+}
+
+</script>
+
+</body>
 </html>
