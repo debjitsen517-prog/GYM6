@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Deepika 💗</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -45,25 +47,66 @@ body{
     animation:heartFloat 7s ease-in-out infinite;
 }
 
-.heart:nth-child(1){left:5%;top:18%;animation-delay:0s}
-.heart:nth-child(2){left:17%;top:70%;animation-delay:1s}
-.heart:nth-child(3){left:31%;top:12%;animation-delay:2s}
-.heart:nth-child(4){left:48%;top:82%;animation-delay:3s}
-.heart:nth-child(5){left:65%;top:15%;animation-delay:1.5s}
-.heart:nth-child(6){left:78%;top:68%;animation-delay:4s}
-.heart:nth-child(7){left:91%;top:25%;animation-delay:2.5s}
-.heart:nth-child(8){left:55%;top:35%;animation-delay:5s}
+.heart:nth-child(1){
+    left:5%;
+    top:18%;
+    animation-delay:0s;
+}
+
+.heart:nth-child(2){
+    left:17%;
+    top:70%;
+    animation-delay:1s;
+}
+
+.heart:nth-child(3){
+    left:31%;
+    top:12%;
+    animation-delay:2s;
+}
+
+.heart:nth-child(4){
+    left:48%;
+    top:82%;
+    animation-delay:3s;
+}
+
+.heart:nth-child(5){
+    left:65%;
+    top:15%;
+    animation-delay:1.5s;
+}
+
+.heart:nth-child(6){
+    left:78%;
+    top:68%;
+    animation-delay:4s;
+}
+
+.heart:nth-child(7){
+    left:91%;
+    top:25%;
+    animation-delay:2.5s;
+}
+
+.heart:nth-child(8){
+    left:55%;
+    top:35%;
+    animation-delay:5s;
+}
 
 @keyframes heartFloat{
+
     0%,100%{
         transform:translateY(0) rotate(0);
     }
+
     50%{
         transform:translateY(-25px) rotate(10deg);
     }
 }
 
-/* ================= COMMON PAGE ================= */
+/* ================= COMMON ================= */
 
 .page{
     min-height:100vh;
@@ -81,17 +124,19 @@ body{
 }
 
 @keyframes fadeIn{
+
     from{
         opacity:0;
         transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-/* ================= PAGE 1 LOGIN ================= */
+/* ================= LOGIN ================= */
 
 #loginPage{
     display:flex;
@@ -101,10 +146,13 @@ body{
 }
 
 .login-card{
+
     width:min(92%,520px);
+
     padding:45px 28px;
 
     background:rgba(255,255,255,.92);
+
     backdrop-filter:blur(12px);
 
     border-radius:40px;
@@ -122,15 +170,24 @@ body{
 }
 
 @keyframes lockFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-8px)}
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 .password{
+
     width:100%;
+
     padding:18px 20px;
 
     border:3px solid #e5c9e5;
+
     border-radius:25px;
 
     background:#fffaff;
@@ -138,32 +195,41 @@ body{
     outline:none;
 
     text-align:center;
+
     font-size:19px;
 
     color:#633e65;
 }
 
 .password:focus{
+
     border-color:#bd4daf;
-    box-shadow:0 0 18px rgba(189,77,175,.2);
+
+    box-shadow:
+    0 0 18px rgba(189,77,175,.2);
 }
 
 .enter-btn{
+
     margin-top:24px;
 
     padding:17px 58px;
 
     border:0;
+
     border-radius:50px;
 
     color:#fff;
 
     font-size:21px;
+
     font-weight:bold;
 
-    background:linear-gradient(135deg,#d944a5,#8d4ed8);
+    background:
+    linear-gradient(135deg,#d944a5,#8d4ed8);
 
-    box-shadow:0 12px 30px rgba(145,65,165,.25);
+    box-shadow:
+    0 12px 30px rgba(145,65,165,.25);
 
     cursor:pointer;
 
@@ -175,18 +241,26 @@ body{
 }
 
 .error{
+
     min-height:22px;
+
     margin-top:13px;
+
     color:#d53e6d;
+
     font-size:15px;
 }
 
 /* ================= COUNTDOWN ================= */
 
 #countdownPage{
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     flex-direction:column;
 
     background:
@@ -194,18 +268,25 @@ body{
 }
 
 .cake{
+
     position:relative;
+
     width:210px;
+
     height:180px;
+
     margin-bottom:20px;
+
     animation:cakeIn .8s ease;
 }
 
 @keyframes cakeIn{
+
     from{
         transform:scale(.3);
         opacity:0;
     }
+
     to{
         transform:scale(1);
         opacity:1;
@@ -213,6 +294,7 @@ body{
 }
 
 .cake-body{
+
     position:absolute;
 
     left:15px;
@@ -221,12 +303,14 @@ body{
     width:180px;
     height:75px;
 
-    background:linear-gradient(#ff83bd,#dc4d9d);
+    background:
+    linear-gradient(#ff83bd,#dc4d9d);
 
     border-radius:0 0 25px 25px;
 }
 
 .cake-top{
+
     position:absolute;
 
     left:15px;
@@ -243,6 +327,7 @@ body{
 }
 
 .cream{
+
     position:absolute;
 
     left:25px;
@@ -259,6 +344,7 @@ body{
 }
 
 .candle{
+
     position:absolute;
 
     left:96px;
@@ -280,6 +366,7 @@ body{
 }
 
 .flame{
+
     position:absolute;
 
     left:94px;
@@ -288,9 +375,10 @@ body{
     width:22px;
     height:30px;
 
-    background:linear-gradient(#fff36a,#ff8700);
+    background:
+    linear-gradient(#fff36a,#ff8700);
 
-    border-radius:50% 50% 50% 50%;
+    border-radius:50%;
 
     transform:rotate(45deg);
 
@@ -300,41 +388,52 @@ body{
 }
 
 @keyframes flame{
+
     from{
         transform:rotate(42deg) scale(.9);
     }
+
     to{
         transform:rotate(48deg) scale(1.1);
     }
 }
 
 .count-number{
+
     font-size:100px;
+
     font-weight:900;
+
     color:#a344a2;
 
     animation:numberPop .8s ease;
 }
 
 @keyframes numberPop{
+
     0%{
         transform:scale(1.6);
         opacity:0;
     }
+
     100%{
         transform:scale(1);
         opacity:1;
     }
 }
 
-/* ================= BIRTHDAY REVEAL ================= */
+/* ================= REVEAL ================= */
 
 #birthdayReveal{
+
     position:fixed;
+
     inset:0;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     background:
@@ -346,6 +445,7 @@ body{
 }
 
 .reveal-card{
+
     width:min(92%,650px);
 
     padding:45px 22px;
@@ -361,10 +461,12 @@ body{
 }
 
 @keyframes revealIn{
+
     from{
         transform:scale(.5);
         opacity:0;
     }
+
     to{
         transform:scale(1);
         opacity:1;
@@ -372,20 +474,25 @@ body{
 }
 
 .reveal-cake{
+
     font-size:75px;
+
     animation:bounce 1s infinite;
 }
 
 @keyframes bounce{
+
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
         transform:translateY(-10px);
     }
 }
 
 .reveal-title{
+
     margin-top:18px;
 
     font-size:clamp(38px,9vw,68px);
@@ -396,35 +503,43 @@ body{
 }
 
 .reveal-subtitle{
+
     margin-top:14px;
+
     font-size:20px;
 }
 
 .reveal-btn{
+
     margin-top:28px;
 
     border:0;
+
     border-radius:50px;
 
     padding:16px 45px;
 
-    background:linear-gradient(135deg,#d944a5,#8d4ed8);
+    background:
+    linear-gradient(135deg,#d944a5,#8d4ed8);
 
     color:#fff;
 
     font-size:20px;
+
     font-weight:bold;
 
     cursor:pointer;
 }
 
-/* ================= CONTENT PAGES ================= */
+/* ================= CONTENT ================= */
 
 .content-page{
+
     padding:45px 15px 55px;
 }
 
 .content-card{
+
     width:min(92%,700px);
 
     margin:auto;
@@ -439,9 +554,10 @@ body{
     0 22px 60px rgba(115,65,130,.16);
 }
 
-/* ================= PAGE 2 MESSAGE ================= */
+/* ================= MESSAGE ================= */
 
 .message-title{
+
     text-align:center;
 
     color:#a3429c;
@@ -452,60 +568,77 @@ body{
 }
 
 .message-card p{
+
     font-size:19px;
+
     line-height:1.8;
 
     margin-bottom:24px;
 }
 
 .highlight{
+
     color:#ae428f;
+
     font-weight:bold;
 }
 
 .next-btn{
+
     display:block;
 
     margin:32px auto 0;
 
     border:0;
+
     border-radius:50px;
 
     padding:16px 45px;
 
-    background:linear-gradient(135deg,#d944a5,#8d4ed8);
+    background:
+    linear-gradient(135deg,#d944a5,#8d4ed8);
 
     color:white;
 
     font-size:20px;
+
     font-weight:bold;
 
     cursor:pointer;
 }
 
-/* ================= PAGE 3 VIDEO ================= */
+/* ================= VIDEO ================= */
 
 .video-title{
+
     text-align:center;
 
     color:#a3429c;
 
     font-size:31px;
+
     font-weight:bold;
 
     margin-bottom:20px;
 }
 
 .video-description{
+
     text-align:center;
 
     font-size:18px;
+
     line-height:1.6;
 
     margin-bottom:24px;
 }
 
+/*
+   IMPORTANT VIDEO AREA
+*/
+
 .video-wrapper{
+
     width:100%;
 
     overflow:hidden;
@@ -515,19 +648,43 @@ body{
     background:#000;
 
     box-shadow:
-    0 18px 45px rgba(0,0,0,.2);
+    0 18px 45px rgba(0,0,0,.20);
+
+    position:relative;
 }
 
 .video-wrapper video{
+
     width:100%;
+
+    height:auto;
+
+    min-height:300px;
+
+    max-height:700px;
+
     display:block;
 
     background:#000;
 
-    max-height:650px;
+    object-fit:contain;
+}
+
+/* Video loading message */
+
+.video-loading{
+
+    text-align:center;
+
+    margin-top:12px;
+
+    color:#80657d;
+
+    font-size:14px;
 }
 
 .video-note{
+
     text-align:center;
 
     margin-top:13px;
@@ -537,17 +694,21 @@ body{
     font-size:16px;
 }
 
-/* ================= PAGE 4 BYE ================= */
+/* ================= BYE ================= */
 
 .bye-page{
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     padding:25px;
 }
 
 .bye-card{
+
     width:min(92%,650px);
 
     padding:55px 25px;
@@ -563,37 +724,45 @@ body{
 }
 
 .bye-emoji{
+
     font-size:75px;
 }
 
 .bye-card h1{
+
     margin-top:18px;
 
     color:#a3429c;
 
     font-size:42px;
+
     line-height:1.25;
 }
 
 .bye-card p{
+
     margin-top:18px;
 
     font-size:20px;
+
     line-height:1.6;
 }
 
 .bye{
+
     margin-top:25px;
 
     color:#a3429c;
 
     font-size:34px;
+
     font-weight:bold;
 }
 
 /* ================= CONFETTI ================= */
 
 .confetti{
+
     position:fixed;
 
     top:-30px;
@@ -606,8 +775,13 @@ body{
 }
 
 @keyframes confettiFall{
+
     to{
-        transform:translateY(110vh) rotate(720deg);
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
         opacity:0;
     }
 }
@@ -617,48 +791,69 @@ body{
 @media(max-width:600px){
 
     .login-card{
+
         padding:40px 20px;
+
         border-radius:32px;
     }
 
     .content-card{
+
         padding:35px 22px;
+
         border-radius:30px;
     }
 
     .message-title{
+
         font-size:31px;
     }
 
     .message-card p{
+
         font-size:18px;
+
         line-height:1.75;
     }
 
     .cake{
+
         transform:scale(.85);
     }
 
     .count-number{
+
         font-size:85px;
     }
 
     .reveal-title{
+
         font-size:43px;
     }
 
     .bye-card h1{
+
         font-size:34px;
     }
+
+    .video-wrapper{
+
+        border-radius:24px;
+    }
+
+    .video-wrapper video{
+
+        min-height:220px;
+    }
 }
+
 </style>
 </head>
-
 
 <body>
 
 
-<!-- ================= FLOATING HEARTS ================= -->
+<!-- FLOATING HEARTS -->
 
 <div class="hearts">
 
@@ -674,15 +869,9 @@ body{
 </div>
 
 
-<!-- =================================================
-     PAGE 1
-     LOGIN
-================================================= -->
+<!-- ================= LOGIN ================= -->
 
-<section
-    id="loginPage"
-    class="page"
->
+<section id="loginPage" class="page">
 
     <div class="login-card">
 
@@ -715,9 +904,7 @@ body{
 </section>
 
 
-<!-- =================================================
-     COUNTDOWN
-================================================= -->
+<!-- ================= COUNTDOWN ================= -->
 
 <section
     id="countdownPage"
@@ -742,15 +929,13 @@ body{
         id="countNumber"
         class="count-number"
     >
-        9
+        5
     </div>
 
 </section>
 
 
-<!-- =================================================
-     BIRTHDAY REVEAL
-================================================= -->
+<!-- ================= BIRTHDAY REVEAL ================= -->
 
 <section
     id="birthdayReveal"
@@ -764,12 +949,17 @@ body{
         </div>
 
         <div class="reveal-title">
+
             Happy Birthday<br>
+
             Deepika 🥹💗
+
         </div>
 
         <div class="reveal-subtitle">
+
             💐 A little surprise just for you 💐
+
         </div>
 
         <button
@@ -784,10 +974,7 @@ body{
 </section>
 
 
-<!-- =================================================
-     PAGE 2
-     MESSAGE ONLY
-================================================= -->
+<!-- ================= MESSAGE ================= -->
 
 <section
     id="messagePage"
@@ -800,12 +987,10 @@ body{
             Hey best friend... 🤍
         </h1>
 
-
         <p>
             Dear best friend... there's no point in writing
             a long, elaborate message, right? 😌
         </p>
-
 
         <p>
             But listen this—our friendship might not be
@@ -813,33 +998,35 @@ body{
             doesn't mean you've become my ex or ex-best friend... 🥹
         </p>
 
-
         <p>
+
             Because
+
             <span class="highlight">
                 best friends never become exes.
             </span>
 
             I still consider you my first and last best friend,
             and I always will 🤍...
-        </p>
 
+        </p>
 
         <p>
             Anyway, take care and keep moving forward in life...
             and choose your circle of friends wisely... 💕
         </p>
 
-
         <p>
+
             Have a fantastic time celebrating your
+
             <span class="highlight">
                 19th birthday!
             </span>
 
             🎂💐🤍
-        </p>
 
+        </p>
 
         <button
             class="next-btn"
@@ -853,10 +1040,7 @@ body{
 </section>
 
 
-<!-- =================================================
-     PAGE 3
-     VIDEO ONLY
-================================================= -->
+<!-- ================= VIDEO ================= -->
 
 <section
     id="videoPage"
@@ -869,7 +1053,6 @@ body{
             A little memory for you 💗
         </div>
 
-
         <div class="video-description">
 
             I didn't have any pics of you,
@@ -878,18 +1061,24 @@ body{
 
         </div>
 
-
         <div class="video-wrapper">
+
+            <!--
+              DIRECT CLOUDINARY VIDEO
+              No iframe / Cloudinary Player
+            -->
 
             <video
                 id="birthdayVideo"
                 controls
                 playsinline
-                preload="metadata"
+                webkit-playsinline
+                preload="auto"
+                controlsList="nodownload"
             >
 
                 <source
-                    src="https://res.cloudinary.com/s4rjpsff/video/upload/f_auto,q_auto/InShot_20260901_133144430.mp4"
+                    src="https://res.cloudinary.com/s4rjpsff/video/upload/f_auto,q_auto/InShot_20260901_181719307.mp4"
                     type="video/mp4"
                 >
 
@@ -899,11 +1088,16 @@ body{
 
         </div>
 
+        <div
+            id="videoStatus"
+            class="video-loading"
+        >
+            Loading video... 💗
+        </div>
 
         <div class="video-note">
             ▶️ Tap to watch 🤍
         </div>
-
 
         <button
             class="next-btn"
@@ -917,10 +1111,7 @@ body{
 </section>
 
 
-<!-- =================================================
-     PAGE 4
-     BYE ONLY
-================================================= -->
+<!-- ================= BYE ================= -->
 
 <section
     id="byePage"
@@ -934,8 +1125,11 @@ body{
         </div>
 
         <h1>
+
             Thanks yaar,<br>
+
             for watching this 💕
+
         </h1>
 
         <p>
@@ -951,9 +1145,7 @@ body{
 </section>
 
 
-<!-- =================================================
-     BACKGROUND MUSIC
-================================================= -->
+<!-- ================= BACKGROUND MUSIC ================= -->
 
 <audio
     id="bgMusic"
@@ -972,10 +1164,22 @@ body{
 <script>
 
 /* =================================================
-   ELEMENTS
+   SETTINGS
 ================================================= */
 
 const PASSWORD = "DEEPIKA89";
+
+/*
+   Background music volume
+   0.90 = 90%
+*/
+
+const MUSIC_VOLUME = 0.90;
+
+
+/* =================================================
+   ELEMENTS
+================================================= */
 
 const loginPage =
     document.getElementById("loginPage");
@@ -1010,6 +1214,9 @@ const bgMusic =
 const birthdayVideo =
     document.getElementById("birthdayVideo");
 
+const videoStatus =
+    document.getElementById("videoStatus");
+
 
 /* =================================================
    LOGIN
@@ -1032,22 +1239,15 @@ function login(){
         return;
     }
 
-
     error.textContent = "";
 
 
     /*
-       IMPORTANT:
-
-       We call play() during the user's
-       button click so the browser knows
-       the user interacted with the page.
-
-       Immediately pause it.
-       Therefore NO MUSIC during countdown.
+       Unlock audio during user interaction.
+       Music remains OFF during countdown.
     */
 
-    bgMusic.volume = 0.55;
+    bgMusic.volume = MUSIC_VOLUME;
 
     bgMusic.play()
         .then(function(){
@@ -1059,10 +1259,9 @@ function login(){
         })
         .catch(function(){
 
-            /*
-               Some mobile browsers may still
-               block this. We retry after countdown.
-            */
+            console.log(
+                "Audio waiting for next interaction"
+            );
 
         });
 
@@ -1095,12 +1294,12 @@ passwordInput.addEventListener(
 
 
 /* =================================================
-   COUNTDOWN 9 → 1
+   COUNTDOWN 5 → 0
 ================================================= */
 
 function startCountdown(){
 
-    let number = 9;
+    let number = 5;
 
     countNumber.textContent = number;
 
@@ -1112,27 +1311,34 @@ function startCountdown(){
 
             number--;
 
-            if(number >= 1){
+            countNumber.textContent =
+                number;
 
-                countNumber.textContent =
-                    number;
 
-                countNumber.style.animation =
-                    "none";
+            countNumber.style.animation =
+                "none";
 
-                void countNumber.offsetWidth;
+            void countNumber.offsetWidth;
 
-                countNumber.style.animation =
-                    "numberPop .8s ease";
+            countNumber.style.animation =
+                "numberPop .8s ease";
 
-                playTick();
 
-            }
-            else{
+            /*
+               Tick plays for 4,3,2,1,0
+            */
+
+            playTick();
+
+
+            if(number === 0){
 
                 clearInterval(timer);
 
-                countdownFinished();
+                setTimeout(
+                    countdownFinished,
+                    450
+                );
 
             }
 
@@ -1142,7 +1348,7 @@ function startCountdown(){
 
 
 /* =================================================
-   TICK SOUND
+   LOUDER TICK SOUND
 ================================================= */
 
 let audioContext = null;
@@ -1178,305 +1384,20 @@ function playTick(){
         oscillator.type = "sine";
 
         oscillator.frequency.setValueAtTime(
-            850,
+            900,
             audioContext.currentTime
         );
 
+
+        /*
+           LOUDER THAN BEFORE
+        */
 
         gain.gain.setValueAtTime(
             0.0001,
             audioContext.currentTime
         );
 
-
         gain.gain.exponentialRampToValueAtTime(
-            0.20,
-            audioContext.currentTime + 0.01
-        );
-
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.0001,
-            audioContext.currentTime + 0.12
-        );
-
-
-        oscillator.connect(gain);
-
-        gain.connect(
-            audioContext.destination
-        );
-
-
-        oscillator.start();
-
-        oscillator.stop(
-            audioContext.currentTime + 0.13
-        );
-
-
-    }catch(e){
-
-        console.log(
-            "Tick sound unavailable"
-        );
-
-    }
-
-}
-
-
-/* =================================================
-   COUNTDOWN FINISH
-================================================= */
-
-function countdownFinished(){
-
-    /*
-       Make absolutely sure
-       background music is still silent.
-    */
-
-    bgMusic.pause();
-
-
-    countdownPage.style.transition =
-        "opacity .6s ease, transform .6s ease";
-
-    countdownPage.style.opacity = "0";
-
-    countdownPage.style.transform =
-        "scale(1.08)";
-
-
-    setTimeout(function(){
-
-        countdownPage.classList.add("hidden");
-
-
-        birthdayReveal.classList.remove(
-            "hidden"
-        );
-
-
-        /*
-           Birthday reveal appears.
-        */
-
-        createConfetti();
-
-
-        /*
-           Start music at the exact moment
-           birthday reveal appears.
-        */
-
-        startMusic();
-
-    },600);
-
-}
-
-
-/* =================================================
-   START MUSIC
-================================================= */
-
-function startMusic(){
-
-    bgMusic.volume = 0.55;
-
-    bgMusic.play()
-        .catch(function(){
-
-            /*
-               If browser blocks playback,
-               it will retry on the next user
-               interaction.
-            */
-
-            console.log(
-                "Waiting for browser permission."
-            );
-
-        });
-
-}
-
-
-/* =================================================
-   BIRTHDAY → MESSAGE
-================================================= */
-
-function openMessage(){
-
-    birthdayReveal.classList.add("hidden");
-
-    messagePage.classList.remove("hidden");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =================================================
-   MESSAGE → VIDEO
-================================================= */
-
-function openVideo(){
-
-    messagePage.classList.add("hidden");
-
-    videoPage.classList.remove("hidden");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =================================================
-   VIDEO → BYE
-================================================= */
-
-function openBye(){
-
-    /*
-       Stop video if user presses Continue
-       before video ends.
-    */
-
-    birthdayVideo.pause();
-
-    videoPage.classList.add("hidden");
-
-    byePage.classList.remove("hidden");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =================================================
-   VIDEO START
-   → MUSIC OFF
-================================================= */
-
-birthdayVideo.addEventListener(
-    "play",
-    function(){
-
-        bgMusic.pause();
-
-    }
-);
-
-
-/* =================================================
-   VIDEO END
-   → MUSIC CONTINUES
-================================================= */
-
-birthdayVideo.addEventListener(
-    "ended",
-    function(){
-
-        startMusic();
-
-    }
-);
-
-
-/* =================================================
-   IF USER RETURNS TO WEBSITE
-================================================= */
-
-document.addEventListener(
-    "visibilitychange",
-    function(){
-
-        if(document.hidden){
-
-            bgMusic.pause();
-
-        }
-
-    }
-);
-
-
-/* =================================================
-   CONFETTI
-================================================= */
-
-function createConfetti(){
-
-    const items = [
-        "💗",
-        "💕",
-        "💖",
-        "💘",
-        "💝",
-        "✨",
-        "🌸",
-        "🎉"
-    ];
-
-
-    for(let i=0;i<45;i++){
-
-        const piece =
-            document.createElement("div");
-
-        piece.className =
-            "confetti";
-
-        piece.textContent =
-            items[
-                Math.floor(
-                    Math.random()*items.length
-                )
-            ];
-
-
-        piece.style.left =
-            Math.random()*100 + "vw";
-
-
-        piece.style.fontSize =
-            (14 + Math.random()*18) + "px";
-
-
-        piece.style.animationDuration =
-            (3 + Math.random()*4) + "s";
-
-
-        piece.style.animationDelay =
-            Math.random()*1.2 + "s";
-
-
-        document.body.appendChild(piece);
-
-
-        setTimeout(function(){
-
-            piece.remove();
-
-        },8000);
-
-    }
-
-}
-
-</script>
-
-</body>
-</html>
+            0.55,
+           
