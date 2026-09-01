@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1400,4 +1400,296 @@ function playTick(){
 
         gain.gain.exponentialRampToValueAtTime(
             0.55,
-           
+            audioContext.currentTime + 0.01
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioContext.currentTime + 0.18
+        );
+
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime + 0.20
+        );
+
+
+    }catch(e){
+
+        console.log(
+            "Tick sound unavailable"
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   COUNTDOWN FINISH
+================================================= */
+
+function countdownFinished(){
+
+    countdownPage.classList.add("hidden");
+
+    birthdayReveal.classList.remove("hidden");
+
+    birthdayReveal.classList.add("fadeIn");
+
+    createConfetti();
+
+
+    /*
+       Start music AFTER countdown.
+       Volume = 0.90
+    */
+
+    bgMusic.volume = MUSIC_VOLUME;
+
+    bgMusic.currentTime = 0;
+
+    bgMusic.play()
+        .catch(function(){
+
+            console.log(
+                "Music needs user interaction"
+            );
+
+        });
+
+}
+
+
+/* =================================================
+   MESSAGE
+================================================= */
+
+function openMessage(){
+
+    birthdayReveal.classList.add("hidden");
+
+    messagePage.classList.remove("hidden");
+
+    messagePage.classList.add("fadeIn");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =================================================
+   VIDEO PAGE
+================================================= */
+
+function openVideo(){
+
+    messagePage.classList.add("hidden");
+
+    videoPage.classList.remove("hidden");
+
+    videoPage.classList.add("fadeIn");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+
+    /*
+       Make sure the latest source is loaded.
+    */
+
+    birthdayVideo.load();
+
+
+    videoStatus.textContent =
+        "Video ready 💗";
+
+
+    /*
+       Music becomes quieter while video plays.
+    */
+
+    birthdayVideo.addEventListener(
+        "play",
+        function(){
+
+            bgMusic.volume = 0.20;
+
+        }
+    );
+
+
+    birthdayVideo.addEventListener(
+        "pause",
+        function(){
+
+            bgMusic.volume = MUSIC_VOLUME;
+
+        }
+    );
+
+
+    birthdayVideo.addEventListener(
+        "ended",
+        function(){
+
+            bgMusic.volume = MUSIC_VOLUME;
+
+        }
+    );
+
+}
+
+
+/* =================================================
+   VIDEO ERROR CHECK
+================================================= */
+
+birthdayVideo.addEventListener(
+    "loadedmetadata",
+    function(){
+
+        const duration =
+            birthdayVideo.duration;
+
+        console.log(
+            "Video duration:",
+            duration,
+            "seconds"
+        );
+
+        videoStatus.textContent =
+            "Video ready • " +
+            Math.round(duration) +
+            " seconds 💗";
+
+    }
+);
+
+
+birthdayVideo.addEventListener(
+    "canplay",
+    function(){
+
+        videoStatus.textContent =
+            "Video ready 💗";
+
+    }
+);
+
+
+birthdayVideo.addEventListener(
+    "error",
+    function(){
+
+        videoStatus.textContent =
+            "Video couldn't load. Please refresh the page. 😔";
+
+        console.log(
+            "Cloudinary video error:",
+            birthdayVideo.error
+        );
+
+    }
+);
+
+
+/* =================================================
+   BYE
+================================================= */
+
+function openBye(){
+
+    videoPage.classList.add("hidden");
+
+    byePage.classList.remove("hidden");
+
+    byePage.classList.add("fadeIn");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =================================================
+   CONFETTI
+================================================= */
+
+function createConfetti(){
+
+    const emojis = [
+        "💗",
+        "💕",
+        "💖",
+        "💝",
+        "✨",
+        "🎉",
+        "🌸"
+    ];
+
+
+    for(let i=0;i<35;i++){
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "confetti";
+
+        item.textContent =
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
+
+        item.style.left =
+            Math.random() * 100 + "%";
+
+        item.style.fontSize =
+            (18 + Math.random() * 20) + "px";
+
+        item.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        item.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(item);
+
+
+        setTimeout(
+            function(){
+
+                item.remove();
+
+            },
+            8000
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>       
