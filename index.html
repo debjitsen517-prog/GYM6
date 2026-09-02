@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>For Shreya 💗</title>
+<title>For Somnath 💗</title>
 
 <style>
 
@@ -375,7 +375,7 @@ body{
 
     min-height:500px;
 
-    padding:45px 25px;
+    padding:50px 25px;
 
     display:flex;
 
@@ -423,7 +423,7 @@ body{
 }
 
 
-/* QUESTION HEART */
+/* HEART */
 
 .question-heart{
 
@@ -489,7 +489,7 @@ body{
 
     width:100%;
 
-    height:115px;
+    height:150px;
 
     display:flex;
 
@@ -593,13 +593,13 @@ body{
 
 .no-error{
 
-    width:100%;
+    width:90%;
 
-    min-height:75px;
+    min-height:60px;
 
-    margin-top:10px;
+    margin-top:5px;
 
-    padding:16px 20px;
+    padding:15px 20px;
 
     display:flex;
 
@@ -609,40 +609,27 @@ body{
 
     text-align:center;
 
-    color:#d13c71;
+    color:#c52f68;
 
-    font-size:
-        clamp(
-            19px,
-            4.5vw,
-            27px
-        );
+    font-size:20px;
 
     font-weight:900;
 
-    line-height:1.35;
-
-    border-radius:22px;
+    line-height:1.4;
 
     background:
-        rgba(255,225,240,.75);
+        rgba(255,220,237,.65);
 
-    border:
-        2px solid
-        rgba(209,60,113,.15);
+    border-radius:20px;
 
     box-shadow:
-        0 10px 25px
-        rgba(180,70,120,.10);
+        0 8px 25px
+        rgba(180,60,120,.12);
 
     animation:
         errorPop
         .25s
         ease;
-
-    z-index:8;
-
-    position:relative;
 }
 
 @keyframes errorPop{
@@ -735,12 +722,12 @@ body{
 
     font-size:
         clamp(
-            32px,
-            8vw,
-            58px
+            30px,
+            7vw,
+            55px
         );
 
-    line-height:1.25;
+    line-height:1.3;
 
     font-weight:900;
 
@@ -749,13 +736,15 @@ body{
 
 .welcome-text{
 
-    margin-top:20px;
+    margin-top:25px;
 
-    font-size:20px;
+    font-size:21px;
 
-    line-height:1.6;
+    line-height:1.7;
 
     color:#674d65;
+
+    font-weight:600;
 }
 
 
@@ -785,7 +774,7 @@ body{
     }
 
     .button-area{
-        height:125px;
+        height:150px;
     }
 
     .yes-btn{
@@ -801,14 +790,9 @@ body{
     }
 
     .no-error{
-
-        min-height:85px;
-
-        font-size:20px;
-
-        padding:
-            15px
-            12px;
+        width:95%;
+        font-size:18px;
+        padding:13px 15px;
     }
 
     .welcome-card{
@@ -817,7 +801,7 @@ body{
     }
 
     .welcome-title{
-        font-size:36px;
+        font-size:34px;
     }
 
     .welcome-text{
@@ -909,9 +893,9 @@ body{
 
         <div class="question-title">
 
-            Heyyy Shreyaa... 🥹<br>
+            Heyyy Somnath... 🥹<br>
 
-            Will you be my girlfriend??
+            Will you be my Night partner??
 
         </div>
 
@@ -945,8 +929,6 @@ body{
         </div>
 
 
-        <!-- ERROR AREA -->
-
         <div
             id="noError"
             class="no-error"
@@ -974,20 +956,17 @@ body{
 
         <div class="welcome-title">
 
-            Welcome to my life<br>
+            Welcome to my life bby<br>
 
-            as a best friend,<br>
-
-            Shreya 🥹💕
+            as my Night partner only 🌚🫶🏻...
 
         </div>
 
         <div class="welcome-text">
 
-            Well... you clicked YES 😌❤️<br>
+            I consider myself blessed coz 🥹🫶🏻🌚<br>
 
-            So I guess you're officially
-            stuck with Debjit now! 🤭
+            I was able to share some of my strength with you 🥹🫶🏻🌚
 
         </div>
 
@@ -1020,7 +999,7 @@ body{
    SETTINGS
 ========================= */
 
-const PASSWORD = "DONT BE SERIOUS";
+const PASSWORD = "SOMJIT69";
 
 const MUSIC_VOLUME = 0.90;
 
@@ -1029,25 +1008,23 @@ const MUSIC_VOLUME = 0.90;
    ERROR MESSAGES
 ========================= */
 
-const errorMessages = [
+const noMessages = [
 
-    "এরকম করতে পারলি তো 🥺",
+    "erokom korte parlii to 🥺",
 
-    "মনে রাখবি,,,যেটা করছিস",
+    "mone rakhbi,,,jeta korchis",
 
-    "কথা বলিস না",
+    "kotha bolis na",
 
-    "ভাই এরকম কেন করছিস 🥺😡",
+    "vai erokom kno korchis 🥺😡",
 
-    "ভাই করিস না plss,,,",
+    "vai koriss na plss,,,",
 
-    "তোর বাচ্চা হবে নাই গাঁন্দু",
+    "tor baccha hobe nai ganduu",
 
-    "আবে লেওড়া গাল শুনবি কি ?? 😡😡"
+    "abee lewraa gal sunbi ki ?? 😡😡"
 
 ];
-
-let errorIndex = 0;
 
 
 /* =========================
@@ -1096,6 +1073,13 @@ const noError =
 
 
 /* =========================
+   ERROR COUNTER
+========================= */
+
+let noClickCount = 0;
+
+
+/* =========================
    LOGIN
 ========================= */
 
@@ -1123,13 +1107,12 @@ function login(){
     loginError.textContent = "";
 
 
-    /* MUSIC */
+    /* START MUSIC */
 
     bgMusic.volume =
         MUSIC_VOLUME;
 
     bgMusic.currentTime = 0;
-
 
     const musicPromise =
         bgMusic.play();
@@ -1196,28 +1179,19 @@ function moveNo(event){
     }
 
 
-    /* =========================
-       SHOW NEXT ERROR
-    ========================= */
+    /* SHOW REPEATING ERROR */
+
+    const messageIndex =
+        Math.min(
+            noClickCount,
+            noMessages.length - 1
+        );
 
     noError.textContent =
-        errorMessages[errorIndex];
+        noMessages[messageIndex];
 
+    noClickCount++;
 
-    errorIndex++;
-
-    /* Repeat from first message */
-
-    if(
-        errorIndex >= errorMessages.length
-    ){
-
-        errorIndex = 0;
-
-    }
-
-
-    /* Restart animation */
 
     noError.style.animation =
         "none";
@@ -1228,60 +1202,47 @@ function moveNo(event){
         "errorPop .25s ease";
 
 
-    /* =========================
-       GET CARD POSITION
-    ========================= */
+    /* GET CARD */
 
     const card =
         document.querySelector(
             ".question-card"
         );
 
-    const buttonArea =
-        document.querySelector(
-            ".button-area"
-        );
-
-    const areaRect =
-        buttonArea.getBoundingClientRect();
+    const cardRect =
+        card.getBoundingClientRect();
 
     const btnRect =
         noBtn.getBoundingClientRect();
 
 
-    /* =========================
-       RANDOM POSITION
-       ONLY INSIDE BUTTON AREA
-    ========================= */
+    /* RANDOM POSITION */
 
     const maxX =
-        areaRect.width -
+        cardRect.width -
         btnRect.width -
-        10;
+        30;
 
     const maxY =
-        areaRect.height -
+        cardRect.height -
         btnRect.height -
-        10;
+        30;
 
 
     const randomX =
         Math.max(
-            5,
+            10,
             Math.random() * maxX
         );
 
-
     const randomY =
         Math.max(
-            5,
+            10,
             Math.random() * maxY
         );
 
 
-    /* =========================
-       MOVE NO BUTTON
-    ========================= */
+    /* MOVE NO BUTTON */
 
     noBtn.style.position =
         "absolute";
@@ -1299,7 +1260,7 @@ function moveNo(event){
 
 
 /* =========================
-   MOUSE PROTECTION
+   DESKTOP HOVER PROTECTION
 ========================= */
 
 noBtn.addEventListener(
@@ -1330,7 +1291,7 @@ noBtn.addEventListener(
 
 
 /* =========================
-   YES BUTTON
+   YES
 ========================= */
 
 function sayYes(){
@@ -1362,7 +1323,7 @@ function sayYes(){
 
 
 /* =========================
-   INITIAL MUSIC
+   INITIAL MUSIC SETUP
 ========================= */
 
 bgMusic.volume =
