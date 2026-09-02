@@ -4,11 +4,18 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>For My Bokachodas 💜</title>
+<title>For Shreya 💗</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
     margin:0;
@@ -21,62 +28,146 @@ html{
 }
 
 body{
+
     min-height:100vh;
-    font-family:Arial,Helvetica,sans-serif;
-    overflow-x:hidden;
-    color:#4b3560;
+
+    overflow:hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#583c5d;
 
     background:
-    radial-gradient(circle at 10% 10%,rgba(255,255,255,.85),transparent 27%),
-    radial-gradient(circle at 90% 85%,rgba(205,170,255,.4),transparent 32%),
-    linear-gradient(135deg,#eadcff,#f8efff,#d9c3ff);
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,255,255,.75),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255,255,255,.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd8eb,
+            #e8d9ff,
+            #f8dced
+        );
 }
 
 
-/* ================= FLOATING HEARTS ================= */
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .hearts{
+
     position:fixed;
+
     inset:0;
-    overflow:hidden;
+
     pointer-events:none;
-    z-index:0;
+
+    overflow:hidden;
+
+    z-index:1;
 }
 
 .heart{
+
     position:absolute;
+
     font-size:25px;
-    opacity:.55;
-    animation:heartFloat 7s ease-in-out infinite;
+
+    opacity:.65;
+
+    animation:
+        heartFloat
+        7s
+        ease-in-out
+        infinite;
 }
 
-.heart:nth-child(1){left:5%;top:18%;animation-delay:0s}
-.heart:nth-child(2){left:17%;top:70%;animation-delay:1s}
-.heart:nth-child(3){left:30%;top:12%;animation-delay:2s}
-.heart:nth-child(4){left:48%;top:82%;animation-delay:3s}
-.heart:nth-child(5){left:66%;top:15%;animation-delay:1.5s}
-.heart:nth-child(6){left:80%;top:68%;animation-delay:4s}
-.heart:nth-child(7){left:92%;top:25%;animation-delay:2.5s}
-.heart:nth-child(8){left:55%;top:38%;animation-delay:5s}
+.heart:nth-child(1){
+    left:5%;
+    top:15%;
+}
+
+.heart:nth-child(2){
+    left:17%;
+    top:70%;
+    animation-delay:1s;
+}
+
+.heart:nth-child(3){
+    left:30%;
+    top:10%;
+    animation-delay:2s;
+}
+
+.heart:nth-child(4){
+    left:48%;
+    top:82%;
+    animation-delay:3s;
+}
+
+.heart:nth-child(5){
+    left:65%;
+    top:14%;
+    animation-delay:1.5s;
+}
+
+.heart:nth-child(6){
+    left:78%;
+    top:68%;
+    animation-delay:4s;
+}
+
+.heart:nth-child(7){
+    left:91%;
+    top:25%;
+    animation-delay:2.5s;
+}
+
+.heart:nth-child(8){
+    left:55%;
+    top:35%;
+    animation-delay:5s;
+}
 
 @keyframes heartFloat{
+
     0%,100%{
-        transform:translateY(0) rotate(0deg);
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
 
     50%{
-        transform:translateY(-25px) rotate(10deg);
+        transform:
+            translateY(-25px)
+            rotate(10deg);
     }
 }
 
 
-/* ================= COMMON ================= */
+/* =========================
+   COMMON PAGE
+========================= */
 
 .page{
+
     min-height:100vh;
+
     width:100%;
+
     position:relative;
-    z-index:2;
+
+    z-index:5;
 }
 
 .hidden{
@@ -84,35 +175,76 @@ body{
 }
 
 
-/* ================= LOGIN ================= */
+/* =========================
+   LOGIN PAGE
+========================= */
 
 #loginPage{
+
     display:flex;
-    justify-content:center;
+
     align-items:center;
+
+    justify-content:center;
+
     padding:20px;
 }
 
 .login-card{
-    width:min(92%,500px);
-    padding:45px 25px;
+
+    width:min(92%,520px);
+
+    padding:45px 28px;
+
     text-align:center;
 
-    background:rgba(255,255,255,.92);
+    background:
+        rgba(255,255,255,.94);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+        blur(15px);
 
-    border:1px solid rgba(255,255,255,.8);
+    border:
+        1px solid
+        rgba(255,255,255,.8);
 
-    border-radius:38px;
+    border-radius:40px;
 
     box-shadow:
-        0 25px 70px rgba(82,45,120,.22);
+        0 25px 70px
+        rgba(100,50,120,.20);
+
+    animation:
+        cardIn
+        .8s
+        ease;
 }
 
+@keyframes cardIn{
+
+    from{
+        opacity:0;
+        transform:
+            scale(.85)
+            translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* LOCK */
+
 .lock{
-    font-size:60px;
-    margin-bottom:22px;
+
+    font-size:65px;
+
+    margin-bottom:25px;
 
     animation:
         lockFloat
@@ -132,122 +264,158 @@ body{
     }
 }
 
-.login-title{
-    color:#70409c;
-    font-size:27px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
+
+/* PASSWORD */
 
 .password{
-    width:100%;
-    padding:17px 20px;
 
-    border:2px solid #c9afe7;
+    width:100%;
+
+    padding:18px 20px;
+
+    border:
+        3px solid
+        #e5c9e5;
 
     border-radius:25px;
 
-    background:#fcf9ff;
-
     outline:none;
+
+    background:#fffaff;
 
     text-align:center;
 
-    font-size:18px;
+    font-size:19px;
 
-    color:#563671;
+    color:#633e65;
+
+    transition:.2s;
 }
 
 .password:focus{
-    border-color:#8d4dc4;
+
+    border-color:#bd4daf;
 
     box-shadow:
-        0 0 18px rgba(141,77,196,.2);
+        0 0 20px
+        rgba(189,77,175,.20);
 }
 
-.enter-btn{
-    margin-top:23px;
 
-    padding:16px 55px;
+/* ENTER BUTTON */
+
+.enter-btn{
+
+    margin-top:24px;
+
+    padding:
+        17px
+        58px;
 
     border:0;
 
     border-radius:50px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #8145bd,
-            #b45be0
-        );
-
     color:white;
 
-    font-size:20px;
+    font-size:21px;
 
     font-weight:bold;
 
-    cursor:pointer;
+    background:
+        linear-gradient(
+            135deg,
+            #d944a5,
+            #8d4ed8
+        );
 
     box-shadow:
-        0 12px 30px rgba(104,57,151,.28);
+        0 12px 30px
+        rgba(145,65,165,.25);
+
+    cursor:pointer;
 
     transition:.2s;
 }
 
 .enter-btn:active{
-    transform:scale(.95);
+    transform:scale(.94);
 }
 
 .error{
+
     min-height:22px;
+
     margin-top:13px;
-    color:#d04d77;
+
+    color:#d53e6d;
+
     font-size:15px;
 }
 
 
-/* ================= MAIN PAGE ================= */
+/* =========================
+   QUESTION PAGE
+========================= */
 
-#mainPage{
-    padding:25px 12px 60px;
+#questionPage{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
 }
 
-.main-card{
-    width:min(94%,700px);
+.question-card{
 
-    margin:auto;
+    width:min(94%,650px);
 
-    padding:20px 25px 38px;
+    min-height:500px;
+
+    padding:45px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
 
     text-align:center;
 
-    background:rgba(255,255,255,.94);
+    background:
+        rgba(255,255,255,.94);
 
-    border-radius:38px;
+    backdrop-filter:
+        blur(15px);
+
+    border-radius:40px;
 
     box-shadow:
-        0 25px 70px rgba(79,43,117,.20);
+        0 25px 70px
+        rgba(100,50,120,.20);
 
     animation:
-        cardIn
+        questionIn
         .8s
         ease;
 }
 
-@keyframes cardIn{
+@keyframes questionIn{
 
     from{
         opacity:0;
-
         transform:
-            translateY(25px)
-            scale(.97);
+            translateY(30px)
+            scale(.9);
     }
 
     to{
         opacity:1;
-
         transform:
             translateY(0)
             scale(1);
@@ -255,85 +423,73 @@ body{
 }
 
 
-/* ================= PHOTO ================= */
+/* QUESTION HEART */
 
-.photo-wrapper{
-    width:100%;
-    overflow:hidden;
-    border-radius:28px;
-    margin-bottom:16px;
+.question-heart{
 
-    box-shadow:
-        0 15px 40px rgba(70,39,100,.22);
+    font-size:75px;
+
+    margin-bottom:18px;
+
+    animation:
+        heartBeat
+        1.2s
+        infinite;
 }
 
-.photo-wrapper img{
-    width:100%;
-    height:auto;
-    display:block;
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
 }
 
 
-/* ================= THANKS ================= */
+/* QUESTION */
 
-.thanks-text{
+.question-title{
 
     font-size:
         clamp(
             30px,
             7vw,
-            48px
+            52px
         );
 
-    line-height:1.12;
+    line-height:1.25;
 
     font-weight:900;
 
-    color:#5b3b7c;
+    color:#a3429c;
 
-    margin-bottom:2px;
+    margin-bottom:15px;
 }
 
-.thanks-heart{
-    font-size:38px;
-    margin-bottom:0;
-}
+.question-subtitle{
 
+    font-size:19px;
 
-/* ================= QUESTION ================= */
+    color:#765c74;
 
-.question{
-
-    font-size:
-        clamp(
-            31px,
-            7vw,
-            48px
-        );
-
-    line-height:1.12;
-
-    font-weight:900;
-
-    color:#70409d;
-
-    margin-top:7px;
-
-    margin-bottom:7px;
+    margin-bottom:25px;
 }
 
 
-/* ================= FUNNY MESSAGE ================= */
+/* =========================
+   BUTTON AREA
+========================= */
 
-.funny-message{
+.button-area{
 
-    min-height:62px;
+    position:relative;
 
     width:100%;
 
-    padding:0 5px;
-
-    margin:0 auto 5px;
+    height:115px;
 
     display:flex;
 
@@ -341,74 +497,7 @@ body{
 
     align-items:center;
 
-    text-align:center;
-
-    font-size:19px;
-
-    line-height:1.35;
-
-    font-weight:bold;
-
-    color:#bd416d;
-
-    animation:
-        messagePop
-        .25s
-        ease;
-}
-
-@keyframes messagePop{
-
-    from{
-        opacity:0;
-        transform:scale(.9);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-
-/* ================= BUTTON AREA ================= */
-
-.options-area{
-
-    position:relative;
-
-    width:100%;
-
-    height:165px;
-
-    margin-top:0;
-
-    overflow:visible;
-}
-
-
-/* ================= BUTTONS ================= */
-
-.option-btn{
-
-    position:absolute;
-
-    border:0;
-
-    border-radius:50px;
-
-    padding:15px 38px;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:
-        left .18s ease,
-        top .18s ease,
-        transform .18s ease;
+    gap:20px;
 }
 
 
@@ -416,30 +505,42 @@ body{
 
 .yes-btn{
 
-    left:50%;
+    padding:
+        16px
+        45px;
 
-    top:12px;
+    border:0;
 
-    transform:translateX(-50%);
+    border-radius:50px;
 
     background:
         linear-gradient(
             135deg,
-            #8145bd,
-            #b55ce1
+            #d944a5,
+            #8d4ed8
         );
 
     color:white;
 
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
     box-shadow:
-        0 10px 25px rgba(104,57,151,.28);
+        0 10px 25px
+        rgba(145,65,165,.25);
+
+    transition:.2s;
+
+    z-index:10;
 }
 
-.yes-btn:active{
+.yes-btn:hover{
 
     transform:
-        translateX(-50%)
-        scale(.94);
+        scale(1.06);
 }
 
 
@@ -447,62 +548,108 @@ body{
 
 .no-btn{
 
+    padding:
+        16px
+        42px;
+
+    border:0;
+
+    border-radius:50px;
+
+    background:#eee3f0;
+
+    color:#795879;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    position:absolute;
+
     left:50%;
 
-    top:78px;
+    top:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translate(
+            45px,
+            -50%
+        );
 
-    background:#f0e7f9;
+    transition:
+        left .15s ease,
+        top .15s ease,
+        transform .15s ease;
 
-    color:#67497a;
-
-    box-shadow:
-        0 8px 22px rgba(70,45,90,.15);
+    z-index:20;
 }
 
 
-/* ================= FINAL PAGE ================= */
+/* =========================
+   ERROR MESSAGE
+========================= */
 
-#finalPage{
+.no-error{
 
-    min-height:100vh;
+    width:100%;
+
+    min-height:75px;
+
+    margin-top:10px;
+
+    padding:16px 20px;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    padding:25px;
+    justify-content:center;
 
     text-align:center;
-}
 
-.final-card{
+    color:#d13c71;
 
-    width:min(94%,650px);
+    font-size:
+        clamp(
+            19px,
+            4.5vw,
+            27px
+        );
 
-    padding:55px 25px;
+    font-weight:900;
 
-    background:rgba(255,255,255,.94);
+    line-height:1.35;
 
-    border-radius:40px;
+    border-radius:22px;
+
+    background:
+        rgba(255,225,240,.75);
+
+    border:
+        2px solid
+        rgba(209,60,113,.15);
 
     box-shadow:
-        0 25px 70px rgba(78,43,115,.22);
+        0 10px 25px
+        rgba(180,70,120,.10);
 
     animation:
-        finalIn
-        .8s
+        errorPop
+        .25s
         ease;
+
+    z-index:8;
+
+    position:relative;
 }
 
-@keyframes finalIn{
+@keyframes errorPop{
 
     from{
         opacity:0;
-        transform:scale(.75);
+        transform:scale(.8);
     }
 
     to{
@@ -511,173 +658,172 @@ body{
     }
 }
 
-.final-emoji{
 
-    font-size:72px;
+/* =========================
+   WELCOME PAGE
+========================= */
 
-    margin-bottom:20px;
+#welcomePage{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
 }
 
-.final-title{
+.welcome-card{
+
+    width:min(94%,700px);
+
+    padding:
+        55px
+        25px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.95);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-radius:42px;
+
+    box-shadow:
+        0 25px 75px
+        rgba(100,50,120,.22);
+
+    animation:
+        welcomeIn
+        .8s
+        ease;
+}
+
+@keyframes welcomeIn{
+
+    from{
+        opacity:0;
+        transform:
+            scale(.5)
+            rotate(-3deg);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+.welcome-heart{
+
+    font-size:85px;
+
+    animation:
+        heartBeat
+        1s
+        infinite;
+}
+
+.welcome-title{
+
+    margin-top:20px;
 
     font-size:
         clamp(
-            31px,
-            7vw,
-            50px
+            32px,
+            8vw,
+            58px
         );
 
     line-height:1.25;
 
     font-weight:900;
 
-    color:#70409d;
+    color:#a3429c;
 }
 
-.final-subtitle{
+.welcome-text{
 
-    margin-top:22px;
+    margin-top:20px;
 
     font-size:20px;
 
     line-height:1.6;
 
-    color:#60456f;
+    color:#674d65;
 }
 
 
-/* ================= CONFETTI ================= */
-
-.confetti{
-
-    position:fixed;
-
-    top:-30px;
-
-    z-index:100;
-
-    pointer-events:none;
-
-    animation:
-        confettiFall
-        linear
-        forwards;
-}
-
-@keyframes confettiFall{
-
-    to{
-
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:0;
-    }
-}
-
-
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
     .login-card{
-
         padding:40px 20px;
-
         border-radius:32px;
     }
 
-    .main-card{
-
-        padding:
-            16px
-            17px
-            30px;
-
-        border-radius:30px;
+    .question-card{
+        min-height:500px;
+        padding:40px 20px;
+        border-radius:32px;
     }
 
-    .photo-wrapper{
-
-        border-radius:22px;
-
-        margin-bottom:13px;
-    }
-
-    .thanks-text{
-
-        font-size:32px;
-
-        margin-bottom:0;
-    }
-
-    .thanks-heart{
-
+    .question-title{
         font-size:34px;
     }
 
-    .question{
-
-        font-size:33px;
-
-        margin-top:4px;
-
-        margin-bottom:5px;
-    }
-
-    .funny-message{
-
+    .question-subtitle{
         font-size:17px;
-
-        min-height:58px;
-
-        padding:0 2px;
     }
 
-    .options-area{
-
-        height:165px;
+    .button-area{
+        height:125px;
     }
 
-    .option-btn{
+    .yes-btn{
+        padding:
+            15px
+            38px;
+    }
 
+    .no-btn{
+        padding:
+            15px
+            35px;
+    }
+
+    .no-error{
+
+        min-height:85px;
+
+        font-size:20px;
+
+        padding:
+            15px
+            12px;
+    }
+
+    .welcome-card{
+        padding:45px 20px;
+        border-radius:32px;
+    }
+
+    .welcome-title{
+        font-size:36px;
+    }
+
+    .welcome-text{
         font-size:18px;
-
-        padding:
-            14px
-            32px;
     }
 
-    .final-card{
-
-        padding:
-            45px
-            20px;
-    }
-
-    .final-emoji{
-
-        font-size:62px;
-    }
-}
-
-
-/* ================= VERY SMALL PHONES ================= */
-
-@media(max-width:380px){
-
-    .thanks-text{
-        font-size:29px;
-    }
-
-    .question{
-        font-size:30px;
-    }
-
-    .funny-message{
-        font-size:16px;
-    }
 }
 
 </style>
@@ -688,23 +834,27 @@ body{
 <body>
 
 
-<!-- ================= FLOATING HEARTS ================= -->
+<!-- =========================
+     FLOATING HEARTS
+========================= -->
 
 <div class="hearts">
 
-    <div class="heart">💜</div>
     <div class="heart">💗</div>
-    <div class="heart">💜</div>
-    <div class="heart">💖</div>
     <div class="heart">💕</div>
-    <div class="heart">💜</div>
+    <div class="heart">💖</div>
+    <div class="heart">💘</div>
     <div class="heart">💞</div>
+    <div class="heart">💓</div>
+    <div class="heart">💝</div>
     <div class="heart">💗</div>
 
 </div>
 
 
-<!-- ================= LOGIN ================= -->
+<!-- =========================
+     LOGIN PAGE
+========================= -->
 
 <section
     id="loginPage"
@@ -714,18 +864,14 @@ body{
     <div class="login-card">
 
         <div class="lock">
-            🔐
-        </div>
-
-        <div class="login-title">
-            A little surprise for you 💜
+            🔑
         </div>
 
         <input
             id="passwordInput"
             class="password"
             type="password"
-            placeholder="Enter Password 🔑"
+            placeholder="Enter Password 🔐"
             autocomplete="off"
         >
 
@@ -737,7 +883,7 @@ body{
         </button>
 
         <div
-            id="error"
+            id="loginError"
             class="error"
         ></div>
 
@@ -746,117 +892,102 @@ body{
 </section>
 
 
-<!-- ================= MAIN PAGE ================= -->
+<!-- =========================
+     QUESTION PAGE
+========================= -->
 
 <section
-    id="mainPage"
+    id="questionPage"
     class="page hidden"
 >
 
-    <div class="main-card">
+    <div class="question-card">
 
+        <div class="question-heart">
+            💗
+        </div>
 
-        <!-- PHOTO -->
+        <div class="question-title">
 
-        <div class="photo-wrapper">
+            Heyyy Shreyaa... 🥹<br>
 
-            <img
-                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788362804/IMG-20260812-WA0074.jpg"
-                alt="Our Memory 💜"
-            >
+            Will you be my girlfriend??
+
+        </div>
+
+        <div class="question-subtitle">
+
+            Think carefully... 😌💕
 
         </div>
 
 
-        <!-- THANKS -->
-
-        <div class="thanks-text">
-
-            Thanks guyss for
-            coming into my life 🥹
-
-        </div>
-
-        <div class="thanks-heart">
-            🫶🏻
-        </div>
-
-
-        <!-- QUESTION -->
-
-        <div class="question">
-
-            Can I be your best
-            friend? 🥹
-
-        </div>
-
-
-        <!-- FUNNY ERROR -->
-
-        <div
-            id="funnyMessage"
-            class="funny-message"
-        ></div>
-
-
-        <!-- OPTIONS -->
-
-        <div class="options-area">
+        <div class="button-area">
 
             <button
                 id="yesBtn"
-                class="option-btn yes-btn"
+                class="yes-btn"
                 onclick="sayYes()"
             >
-                YES 💜
+                Yes ❤️
             </button>
 
 
             <button
                 id="noBtn"
-                class="option-btn no-btn"
-                onclick="runAway()"
+                class="no-btn"
+                onclick="moveNo()"
+                ontouchstart="moveNo(event)"
             >
-                NO 😭
+                No 😝
             </button>
 
         </div>
 
+
+        <!-- ERROR AREA -->
+
+        <div
+            id="noError"
+            class="no-error"
+        ></div>
+
     </div>
 
 </section>
 
 
-<!-- ================= FINAL PAGE ================= -->
+<!-- =========================
+     WELCOME PAGE
+========================= -->
 
 <section
-    id="finalPage"
+    id="welcomePage"
     class="page hidden"
 >
 
-    <div class="final-card">
+    <div class="welcome-card">
 
-        <div class="final-emoji">
-            🥹🫶🏻💜
+        <div class="welcome-heart">
+            🥹💗
         </div>
 
-        <div class="final-title">
+        <div class="welcome-title">
 
-            Then also welcome to my life
-            as a best frndss,
-            bokachodass 🥹🫶🏻
+            Welcome to my life<br>
+
+            as a best friend,<br>
+
+            Shreya 🥹💕
 
         </div>
 
-        <div class="final-subtitle">
+        <div class="welcome-text">
 
-            Finally you chose the correct option! 😂💜
+            Well... you clicked YES 😌❤️<br>
 
-            <br><br>
-
-            Now no escape from your
-            God friend Debjit 😌🤝
+            So I guess you're officially
+            stuck with Debjit now! 🤭
 
         </div>
 
@@ -865,7 +996,9 @@ body{
 </section>
 
 
-<!-- ================= BACKGROUND MUSIC ================= -->
+<!-- =========================
+     BACKGROUND MUSIC
+========================= -->
 
 <audio
     id="bgMusic"
@@ -874,7 +1007,7 @@ body{
 >
 
     <source
-        src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788362135/Pehla_Nasha__-_Instrumental___Pehla_Nasha___Pehla_Nasha_-_Piano_256k__1.mp3"
+        src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788366842/Ishq_wala_love_instrumental_256k__1_1.mp3"
         type="audio/mpeg"
     >
 
@@ -883,41 +1016,88 @@ body{
 
 <script>
 
-/* ================= SETTINGS ================= */
+/* =========================
+   SETTINGS
+========================= */
 
-const PASSWORD = "CHABLAMI";
+const PASSWORD = "DONT BE SERIOUS";
 
 const MUSIC_VOLUME = 0.90;
 
 
-/* ================= ELEMENTS ================= */
+/* =========================
+   ERROR MESSAGES
+========================= */
+
+const errorMessages = [
+
+    "এরকম করতে পারলি তো 🥺",
+
+    "মনে রাখবি,,,যেটা করছিস",
+
+    "কথা বলিস না",
+
+    "ভাই এরকম কেন করছিস 🥺😡",
+
+    "ভাই করিস না plss,,,",
+
+    "তোর বাচ্চা হবে নাই গাঁন্দু",
+
+    "আবে লেওড়া গাল শুনবি কি ?? 😡😡"
+
+];
+
+let errorIndex = 0;
+
+
+/* =========================
+   ELEMENTS
+========================= */
 
 const loginPage =
-    document.getElementById("loginPage");
+    document.getElementById(
+        "loginPage"
+    );
 
-const mainPage =
-    document.getElementById("mainPage");
+const questionPage =
+    document.getElementById(
+        "questionPage"
+    );
 
-const finalPage =
-    document.getElementById("finalPage");
+const welcomePage =
+    document.getElementById(
+        "welcomePage"
+    );
 
 const passwordInput =
-    document.getElementById("passwordInput");
+    document.getElementById(
+        "passwordInput"
+    );
 
-const error =
-    document.getElementById("error");
+const loginError =
+    document.getElementById(
+        "loginError"
+    );
 
 const bgMusic =
-    document.getElementById("bgMusic");
+    document.getElementById(
+        "bgMusic"
+    );
 
 const noBtn =
-    document.getElementById("noBtn");
+    document.getElementById(
+        "noBtn"
+    );
 
-const funnyMessage =
-    document.getElementById("funnyMessage");
+const noError =
+    document.getElementById(
+        "noError"
+    );
 
 
-/* ================= LOGIN ================= */
+/* =========================
+   LOGIN
+========================= */
 
 function login(){
 
@@ -925,9 +1105,11 @@ function login(){
         passwordInput.value.trim();
 
 
-    if(password !== PASSWORD){
+    if(
+        password !== PASSWORD
+    ){
 
-        error.textContent =
+        loginError.textContent =
             "Wrong password 😝 Try again!";
 
         passwordInput.value = "";
@@ -938,39 +1120,60 @@ function login(){
     }
 
 
-    error.textContent = "";
+    loginError.textContent = "";
 
 
-    /* START MUSIC */
+    /* MUSIC */
 
     bgMusic.volume =
         MUSIC_VOLUME;
 
-    bgMusic.play().catch(function(){
+    bgMusic.currentTime = 0;
 
-        console.log(
-            "Music playback waiting..."
+
+    const musicPromise =
+        bgMusic.play();
+
+
+    if(
+        musicPromise !== undefined
+    ){
+
+        musicPromise.catch(
+            function(){
+
+                console.log(
+                    "Music playback waiting..."
+                );
+
+            }
         );
 
-    });
+    }
 
 
-    /* CHANGE PAGE */
+    loginPage.classList.add(
+        "hidden"
+    );
 
-    loginPage.classList.add("hidden");
-
-    mainPage.classList.remove("hidden");
+    questionPage.classList.remove(
+        "hidden"
+    );
 
 }
 
 
-/* ================= ENTER KEY ================= */
+/* =========================
+   ENTER KEY
+========================= */
 
 passwordInput.addEventListener(
     "keydown",
     function(event){
 
-        if(event.key === "Enter"){
+        if(
+            event.key === "Enter"
+        ){
 
             login();
 
@@ -980,84 +1183,108 @@ passwordInput.addEventListener(
 );
 
 
-/* ================= NO BUTTON ================= */
+/* =========================
+   NO BUTTON
+========================= */
 
-let noCount = 0;
+function moveNo(event){
 
+    if(event){
 
-function runAway(){
+        event.preventDefault();
 
-    noCount++;
-
-
-    const messages = [
-
-        "Hey bokachoda 😭 Choose another option for your God friend Debjit 🤨",
-
-        "Your answer doesn't supported here 😂 Please choose another one for your God friend Debjit 🫡",
-
-        "Abar NO?! 😭 Choose another option bokachoda 😂",
-
-        "ERROR 404: NO answer not supported 🤣💜",
-
-        "NO button is scared of you 😭 Try YES instead! 😂",
-
-        "Hey bokachoda 😭 Ei option ta tor jonno na! Choose another one 🤨💜",
-
-        "Please stop clicking NO 😭 Your God friend Debjit has rejected this answer 😂"
-
-    ];
+    }
 
 
-    funnyMessage.textContent =
-        messages[
-            (noCount - 1) %
-            messages.length
-        ];
+    /* =========================
+       SHOW NEXT ERROR
+    ========================= */
+
+    noError.textContent =
+        errorMessages[errorIndex];
 
 
-    const area =
+    errorIndex++;
+
+    /* Repeat from first message */
+
+    if(
+        errorIndex >= errorMessages.length
+    ){
+
+        errorIndex = 0;
+
+    }
+
+
+    /* Restart animation */
+
+    noError.style.animation =
+        "none";
+
+    void noError.offsetWidth;
+
+    noError.style.animation =
+        "errorPop .25s ease";
+
+
+    /* =========================
+       GET CARD POSITION
+    ========================= */
+
+    const card =
         document.querySelector(
-            ".options-area"
+            ".question-card"
         );
 
+    const buttonArea =
+        document.querySelector(
+            ".button-area"
+        );
 
-    const areaWidth =
-        area.clientWidth;
+    const areaRect =
+        buttonArea.getBoundingClientRect();
 
-    const areaHeight =
-        area.clientHeight;
+    const btnRect =
+        noBtn.getBoundingClientRect();
 
-    const buttonWidth =
-        noBtn.offsetWidth;
 
-    const buttonHeight =
-        noBtn.offsetHeight;
-
+    /* =========================
+       RANDOM POSITION
+       ONLY INSIDE BUTTON AREA
+    ========================= */
 
     const maxX =
-        Math.max(
-            0,
-            areaWidth - buttonWidth
-        );
+        areaRect.width -
+        btnRect.width -
+        10;
 
     const maxY =
-        Math.max(
-            0,
-            areaHeight - buttonHeight
-        );
+        areaRect.height -
+        btnRect.height -
+        10;
 
 
     const randomX =
-        Math.floor(
+        Math.max(
+            5,
             Math.random() * maxX
         );
 
+
     const randomY =
-        Math.floor(
+        Math.max(
+            5,
             Math.random() * maxY
         );
 
+
+    /* =========================
+       MOVE NO BUTTON
+    ========================= */
+
+    noBtn.style.position =
+        "absolute";
 
     noBtn.style.left =
         randomX + "px";
@@ -1068,132 +1295,78 @@ function runAway(){
     noBtn.style.transform =
         "none";
 
+}
 
-    noBtn.animate(
 
-        [
+/* =========================
+   MOUSE PROTECTION
+========================= */
 
-            {
-                transform:
-                    "scale(.75) rotate(-10deg)"
-            },
+noBtn.addEventListener(
+    "mouseenter",
+    function(){
 
-            {
-                transform:
-                    "scale(1.12) rotate(10deg)"
-            },
+        moveNo();
 
-            {
-                transform:
-                    "scale(1) rotate(0deg)"
-            }
+    }
+);
 
-        ],
 
-        {
-            duration:300,
-            easing:"ease-out"
-        }
+/* =========================
+   TOUCH PROTECTION
+========================= */
 
+noBtn.addEventListener(
+    "touchstart",
+    function(event){
+
+        moveNo(event);
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+/* =========================
+   YES BUTTON
+========================= */
+
+function sayYes(){
+
+    bgMusic.volume =
+        MUSIC_VOLUME;
+
+
+    if(
+        bgMusic.paused
+    ){
+
+        bgMusic.play().catch(
+            function(){}
+        );
+
+    }
+
+
+    questionPage.classList.add(
+        "hidden"
+    );
+
+    welcomePage.classList.remove(
+        "hidden"
     );
 
 }
 
 
-/* ================= YES ================= */
+/* =========================
+   INITIAL MUSIC
+========================= */
 
-function sayYes(){
-
-    mainPage.classList.add("hidden");
-
-    finalPage.classList.remove("hidden");
-
-    createConfetti();
-
-}
-
-
-/* ================= CONFETTI ================= */
-
-function createConfetti(){
-
-    const symbols = [
-
-        "💜",
-        "💗",
-        "💖",
-        "✨",
-        "💕",
-        "🫶🏻"
-
-    ];
-
-
-    for(
-        let i = 0;
-        i < 40;
-        i++
-    ){
-
-        const piece =
-            document.createElement("div");
-
-
-        piece.className =
-            "confetti";
-
-
-        piece.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
-
-
-        piece.style.left =
-            Math.random() * 100 + "vw";
-
-
-        piece.style.fontSize =
-            (
-                15 +
-                Math.random() * 18
-            ) + "px";
-
-
-        piece.style.animationDuration =
-            (
-                3 +
-                Math.random() * 4
-            ) + "s";
-
-
-        piece.style.animationDelay =
-            Math.random() * 1.2 + "s";
-
-
-        document.body.appendChild(
-            piece
-        );
-
-
-        setTimeout(
-
-            function(){
-
-                piece.remove();
-
-            },
-
-            7500
-
-        );
-
-    }
-
-}
+bgMusic.volume =
+    MUSIC_VOLUME;
 
 </script>
 
