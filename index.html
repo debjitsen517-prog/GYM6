@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Lititaa Di 🫶🏻</title>
+<title>For Litita Di 🫶🏻</title>
 
 <style>
 
@@ -31,8 +30,6 @@ body{
     linear-gradient(135deg,#ffd8eb,#e8d9ff,#f8dced);
 }
 
-/* ================= FLOATING HEARTS ================= */
-
 .hearts{
     position:fixed;
     inset:0;
@@ -48,28 +45,19 @@ body{
     animation:heartFloat 7s ease-in-out infinite;
 }
 
-.heart:nth-child(1){left:5%;top:18%;animation-delay:0s;}
-.heart:nth-child(2){left:17%;top:70%;animation-delay:1s;}
-.heart:nth-child(3){left:31%;top:12%;animation-delay:2s;}
-.heart:nth-child(4){left:48%;top:82%;animation-delay:3s;}
-.heart:nth-child(5){left:65%;top:15%;animation-delay:1.5s;}
-.heart:nth-child(6){left:78%;top:68%;animation-delay:4s;}
-.heart:nth-child(7){left:91%;top:25%;animation-delay:2.5s;}
-.heart:nth-child(8){left:55%;top:35%;animation-delay:5s;}
+.heart:nth-child(1){left:5%;top:18%}
+.heart:nth-child(2){left:17%;top:70%;animation-delay:1s}
+.heart:nth-child(3){left:31%;top:12%;animation-delay:2s}
+.heart:nth-child(4){left:48%;top:82%;animation-delay:3s}
+.heart:nth-child(5){left:65%;top:15%;animation-delay:1.5s}
+.heart:nth-child(6){left:78%;top:68%;animation-delay:4s}
+.heart:nth-child(7){left:91%;top:25%;animation-delay:2.5s}
+.heart:nth-child(8){left:55%;top:35%;animation-delay:5s}
 
 @keyframes heartFloat{
-
-    0%,100%{
-        transform:translateY(0) rotate(0);
-    }
-
-    50%{
-        transform:translateY(-25px) rotate(10deg);
-    }
-
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-25px) rotate(10deg)}
 }
-
-/* ================= COMMON ================= */
 
 .page{
     min-height:100vh;
@@ -87,848 +75,357 @@ body{
 }
 
 @keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
-/* ================= LOGIN ================= */
+
+/* LOGIN */
 
 #loginPage{
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:20px;
-
 }
 
 .login-card{
-
     width:min(92%,520px);
-
     padding:45px 28px;
-
     background:rgba(255,255,255,.92);
-
     backdrop-filter:blur(12px);
-
     border-radius:40px;
-
     text-align:center;
-
-    box-shadow:
-    0 25px 65px rgba(120,65,135,.18);
-
+    box-shadow:0 25px 65px rgba(120,65,135,.18);
 }
 
 .lock{
-
     font-size:58px;
-
     margin-bottom:28px;
-
     animation:lockFloat 2s ease-in-out infinite;
-
 }
 
 @keyframes lockFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
 }
 
 .password{
-
     width:100%;
-
     padding:18px 20px;
-
     border:3px solid #e5c9e5;
-
     border-radius:25px;
-
     background:#fffaff;
-
     outline:none;
-
     text-align:center;
-
     font-size:19px;
-
     color:#633e65;
-
 }
 
 .password:focus{
-
     border-color:#bd4daf;
-
-    box-shadow:
-    0 0 18px rgba(189,77,175,.2);
-
+    box-shadow:0 0 18px rgba(189,77,175,.2);
 }
 
-.enter-btn{
-
+.enter-btn,
+.next-btn,
+.reveal-btn{
     margin-top:24px;
-
-    padding:17px 58px;
-
+    padding:16px 45px;
     border:0;
-
     border-radius:50px;
-
     color:#fff;
-
-    font-size:21px;
-
+    font-size:20px;
     font-weight:bold;
-
-    background:
-    linear-gradient(135deg,#d944a5,#8d4ed8);
-
-    box-shadow:
-    0 12px 30px rgba(145,65,165,.25);
-
+    background:linear-gradient(135deg,#d944a5,#8d4ed8);
+    box-shadow:0 12px 30px rgba(145,65,165,.25);
     cursor:pointer;
-
-}
-
-.enter-btn:active{
-    transform:scale(.95);
 }
 
 .error{
-
-    min-height:25px;
-
+    min-height:22px;
     margin-top:13px;
-
     color:#d53e6d;
-
     font-size:15px;
-
-    line-height:1.5;
-
 }
 
-/* ================= COUNTDOWN ================= */
+
+/* COUNTDOWN */
 
 #countdownPage{
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     flex-direction:column;
-
-    background:
-    radial-gradient(circle at center,#fff1fa,#e3d7ff);
-
-}
-
-.count-text{
-
-    font-size:25px;
-
-    color:#8e4a98;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
-
+    background:radial-gradient(circle at center,#fff1fa,#e3d7ff);
 }
 
 .count-number{
-
-    font-size:110px;
-
+    font-size:105px;
     font-weight:900;
-
     color:#a344a2;
-
-    animation:numberPop .8s ease;
-
+    animation:numberPop .7s ease;
 }
 
 @keyframes numberPop{
-
-    0%{
-        transform:scale(1.6);
-        opacity:0;
-    }
-
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
-
+    0%{transform:scale(1.6);opacity:0}
+    100%{transform:scale(1);opacity:1}
 }
 
-/* ================= REVEAL ================= */
+
+/* RED CURTAIN */
 
 #birthdayReveal{
-
     position:fixed;
-
     inset:0;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-    radial-gradient(circle at center,#fff0fa,#e4d8ff);
-
+    background:#9b0d2d;
     z-index:50;
-
     text-align:center;
+    overflow:hidden;
+}
 
+.curtain-left,
+.curtain-right{
+    position:absolute;
+    top:0;
+    width:50%;
+    height:100%;
+    background:
+    linear-gradient(90deg,#710019,#b80f36,#76001c);
+    z-index:5;
+    box-shadow:0 0 35px rgba(0,0,0,.3);
+}
+
+.curtain-left{
+    left:0;
+    animation:openLeft 2s ease forwards;
+}
+
+.curtain-right{
+    right:0;
+    animation:openRight 2s ease forwards;
+}
+
+@keyframes openLeft{
+    to{transform:translateX(-100%)}
+}
+
+@keyframes openRight{
+    to{transform:translateX(100%)}
 }
 
 .reveal-card{
-
     width:min(92%,650px);
-
     padding:45px 22px;
-
     border-radius:40px;
-
-    background:rgba(255,255,255,.92);
-
-    box-shadow:
-    0 25px 70px rgba(120,65,135,.2);
-
-    animation:revealIn .8s ease;
-
+    background:rgba(255,255,255,.94);
+    box-shadow:0 25px 70px rgba(120,65,135,.2);
+    animation:revealIn 1s ease;
 }
 
 @keyframes revealIn{
-
-    from{
-        transform:scale(.5);
-        opacity:0;
-    }
-
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-
+    from{transform:scale(.5);opacity:0}
+    to{transform:scale(1);opacity:1}
 }
 
 .reveal-cake{
-
     font-size:75px;
-
-    animation:bounce 1s infinite;
-
-}
-
-@keyframes bounce{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
 }
 
 .reveal-title{
-
     margin-top:18px;
-
     font-size:clamp(38px,9vw,68px);
-
     font-weight:900;
-
     color:#a5409e;
-
 }
 
 .reveal-subtitle{
-
     margin-top:14px;
-
     font-size:20px;
-
 }
 
-.reveal-btn,
-.next-btn,
-.continue-btn{
 
-    margin-top:28px;
-
-    border:0;
-
-    border-radius:50px;
-
-    padding:16px 45px;
-
-    background:
-    linear-gradient(135deg,#d944a5,#8d4ed8);
-
-    color:#fff;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-}
-
-/* ================= CONTENT ================= */
+/* COMMON CONTENT */
 
 .content-page{
-
     padding:45px 15px 55px;
-
 }
 
 .content-card{
-
     width:min(92%,700px);
-
     margin:auto;
-
     padding:40px 32px;
-
     background:rgba(255,255,255,.92);
-
     border-radius:38px;
-
-    box-shadow:
-    0 22px 60px rgba(115,65,130,.16);
-
+    box-shadow:0 22px 60px rgba(115,65,130,.16);
 }
 
-.message-title{
-
+.message-title,
+.page-title{
     text-align:center;
-
     color:#a3429c;
-
     font-size:34px;
-
-    margin-bottom:32px;
-
+    margin-bottom:30px;
 }
 
-.message-card p{
-
-    font-size:18px;
-
+.content-card p{
+    font-size:19px;
     line-height:1.8;
-
-    margin-bottom:22px;
-
+    margin-bottom:24px;
 }
 
 .highlight{
-
     color:#ae428f;
-
     font-weight:bold;
-
 }
 
-/* ================= QUESTION ================= */
 
-.question-title{
+/* QUESTIONS */
 
+.question-card{
     text-align:center;
+}
 
+.question{
+    font-size:30px;
+    line-height:1.5;
     color:#a3429c;
-
-    font-size:31px;
-
-    line-height:1.4;
-
-    margin-bottom:30px;
-
-}
-
-.question-options{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-
-}
-
-.question-btn{
-
-    border:0;
-
-    border-radius:50px;
-
-    padding:15px 35px;
-
-    font-size:19px;
-
     font-weight:bold;
+    margin-bottom:30px;
+}
 
-    cursor:pointer;
+.option-area{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
+.option-btn{
+    padding:15px 35px;
+    border:0;
+    border-radius:50px;
+    background:linear-gradient(135deg,#d944a5,#8d4ed8);
     color:white;
-
-    background:
-    linear-gradient(135deg,#d944a5,#8d4ed8);
-
+    font-size:19px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .question-error{
-
-    min-height:100px;
-
-    margin-top:25px;
-
-    text-align:center;
-
-    color:#d53e6d;
-
-    font-size:18px;
-
+    min-height:30px;
+    margin-top:22px;
+    color:#d93663;
     font-weight:bold;
-
-    line-height:1.6;
-
+    font-size:17px;
 }
 
-/* ================= RED CURTAIN ================= */
 
-#curtainPage{
+/* CHOCOLATE */
 
-    position:fixed;
-
-    inset:0;
-
-    z-index:100;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#8f071d;
-
-}
-
-.curtain{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        90deg,
-        #65000f,
-        #c21838,
-        #7e0015,
-        #d42145,
-        #65000f
-    );
-
-    transform-origin:top;
-
-    animation:curtainOpen 1.8s ease forwards;
-
-}
-
-.curtain-text{
-
-    position:relative;
-
-    z-index:2;
-
-    color:white;
-
-    font-size:30px;
-
-    font-weight:bold;
-
-    opacity:0;
-
-    animation:curtainText 1.2s 1.4s forwards;
-
-}
-
-@keyframes curtainOpen{
-
-    0%{
-        transform:scaleY(1);
-    }
-
-    100%{
-        transform:scaleY(0);
-    }
-
-}
-
-@keyframes curtainText{
-
-    to{
-        opacity:1;
-    }
-
-}
-
-/* ================= CHOCOLATE ================= */
-
-.chocolate-title{
-
+.choco-title{
     text-align:center;
-
     color:#a3429c;
-
     font-size:31px;
-
-    line-height:1.4;
-
-    margin-bottom:28px;
-
-}
-
-.chocolate-options{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
-
-.choco-btn{
-
-    border:0;
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    background:
-    linear-gradient(135deg,#d944a5,#8d4ed8);
-
-    color:white;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-}
-
-.choco-error{
-
-    min-height:120px;
-
-    margin-top:25px;
-
-    text-align:center;
-
-    color:#d53e6d;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    line-height:1.7;
-
-}
-
-/* ================= SOMETHING ELSE ================= */
-
-.chocolate-input{
-
-    width:100%;
-
-    padding:17px 20px;
-
-    border:3px solid #e5c9e5;
-
-    border-radius:25px;
-
-    outline:none;
-
-    font-size:18px;
-
-    text-align:center;
-
-    margin-top:20px;
-
-}
-
-/* ================= VIDEO ================= */
-
-.video-title{
-
-    text-align:center;
-
-    color:#a3429c;
-
-    font-size:31px;
-
-    font-weight:bold;
-
-    line-height:1.4;
-
-    margin-bottom:22px;
-
-}
-
-.video-description{
-
-    text-align:center;
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    margin-bottom:25px;
-
-}
-
-.video-wrapper{
-
-    width:100%;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    background:#000;
-
-    box-shadow:
-    0 18px 45px rgba(0,0,0,.20);
-
-    position:relative;
-
-}
-
-.video-wrapper video{
-
-    width:100%;
-
-    height:auto;
-
-    min-height:230px;
-
-    max-height:700px;
-
-    display:block;
-
-    background:#000;
-
-    object-fit:contain;
-
-}
-
-.video-note{
-
-    text-align:center;
-
-    margin-top:13px;
-
-    color:#80657d;
-
-    font-size:16px;
-
-}
-
-/* ================= EXERCISE ================= */
-
-.exercise-card{
-
-    width:min(94%,750px);
-
-    margin:auto;
-
-    padding:30px 20px 35px;
-
-    background:rgba(255,255,255,.94);
-
-    border-radius:35px;
-
-    box-shadow:
-    0 22px 60px rgba(115,65,130,.16);
-
-    text-align:center;
-
-}
-
-.exercise-title{
-
-    color:#a3429c;
-
-    font-size:25px;
-
-    font-weight:bold;
-
     line-height:1.5;
-
-    margin-bottom:22px;
-
+    margin-bottom:30px;
 }
 
-.exercise-media{
 
+/* INPUT */
+
+.custom-input{
     width:100%;
+    padding:17px 20px;
+    border:3px solid #e5c9e5;
+    border-radius:22px;
+    outline:none;
+    font-size:18px;
+    text-align:center;
+    margin-top:25px;
+}
 
-    border-radius:25px;
+.custom-input:focus{
+    border-color:#bd4daf;
+}
 
+
+/* MEDIA */
+
+.media-title{
+    text-align:center;
+    color:#a3429c;
+    font-size:30px;
+    line-height:1.4;
+    margin-bottom:22px;
+    font-weight:bold;
+}
+
+.media-box{
+    width:100%;
+    border-radius:28px;
+    overflow:hidden;
+    background:#000;
+    box-shadow:0 18px 45px rgba(0,0,0,.2);
+}
+
+.media-box img,
+.media-box video{
+    width:100%;
+    max-height:720px;
     display:block;
-
-    max-height:650px;
-
     object-fit:contain;
-
-    background:#111;
-
+    background:#000;
 }
 
-.exercise-img{
-
-    background:white;
-
+.media-description{
+    text-align:center;
+    font-size:17px;
+    line-height:1.6;
+    margin-top:18px;
 }
 
-/* ================= LAST PAGES ================= */
+
+/* BYE */
 
 .bye-page{
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     padding:25px;
-
 }
 
 .bye-card{
-
     width:min(92%,650px);
-
     padding:55px 25px;
-
     text-align:center;
-
     background:rgba(255,255,255,.92);
-
     border-radius:40px;
-
-    box-shadow:
-    0 25px 65px rgba(115,65,130,.18);
-
+    box-shadow:0 25px 65px rgba(115,65,130,.18);
 }
 
 .bye-emoji{
-
     font-size:75px;
-
 }
 
 .bye-card h1{
-
     margin-top:18px;
-
     color:#a3429c;
-
-    font-size:38px;
-
+    font-size:40px;
     line-height:1.3;
-
 }
 
 .bye-card p{
-
     margin-top:18px;
-
     font-size:20px;
-
     line-height:1.6;
-
 }
 
-.bye{
 
-    margin-top:25px;
-
-    color:#a3429c;
-
-    font-size:34px;
-
-    font-weight:bold;
-
-}
-
-/* ================= CONFETTI ================= */
-
-.confetti{
-
-    position:fixed;
-
-    top:-30px;
-
-    z-index:200;
-
-    pointer-events:none;
-
-    animation:confettiFall linear forwards;
-
-}
-
-@keyframes confettiFall{
-
-    to{
-
-        transform:
-        translateY(110vh)
-        rotate(720deg);
-
-        opacity:0;
-
-    }
-
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -942,45 +439,41 @@ body{
         border-radius:30px;
     }
 
-    .message-card p{
-        font-size:18px;
-        line-height:1.75;
-    }
-
     .count-number{
-        font-size:90px;
+        font-size:85px;
     }
 
     .reveal-title{
         font-size:43px;
     }
 
-    .question-title,
-    .chocolate-title{
-        font-size:27px;
+    .content-card p{
+        font-size:18px;
+        line-height:1.75;
     }
 
-    .exercise-title{
-        font-size:22px;
+    .question{
+        font-size:25px;
     }
 
-    .video-wrapper{
+    .media-box{
         border-radius:24px;
     }
 
+    .bye-card h1{
+        font-size:34px;
+    }
 }
 
 </style>
-
 </head>
 
 <body>
 
 
-<!-- ================= HEARTS ================= -->
+<!-- FLOATING HEARTS -->
 
 <div class="hearts">
-
     <div class="heart">💗</div>
     <div class="heart">💕</div>
     <div class="heart">💖</div>
@@ -989,13 +482,10 @@ body{
     <div class="heart">💓</div>
     <div class="heart">💝</div>
     <div class="heart">💗</div>
-
 </div>
 
 
-<!-- =========================================================
-     PAGE 1 : LOGIN
-========================================================= -->
+<!-- ================= LOGIN ================= -->
 
 <section id="loginPage" class="page">
 
@@ -1011,10 +501,7 @@ body{
             autocomplete="off"
         >
 
-        <button
-            class="enter-btn"
-            onclick="login()"
-        >
+        <button class="enter-btn" onclick="login()">
             Enter ❤️
         </button>
 
@@ -1025,18 +512,9 @@ body{
 </section>
 
 
-<!-- =========================================================
-     PAGE 2 : COUNTDOWN
-========================================================= -->
+<!-- ================= COUNTDOWN ================= -->
 
-<section
-    id="countdownPage"
-    class="page hidden"
->
-
-    <div class="count-text">
-        Something special is coming... 👀💗
-    </div>
+<section id="countdownPage" class="page hidden">
 
     <div
         id="countNumber"
@@ -1048,14 +526,12 @@ body{
 </section>
 
 
-<!-- =========================================================
-     PAGE 3 : BIRTHDAY REVEAL
-========================================================= -->
+<!-- ================= THIRD PAGE ================= -->
 
-<section
-    id="birthdayReveal"
-    class="hidden"
->
+<section id="birthdayReveal" class="hidden">
+
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
 
     <div class="reveal-card">
 
@@ -1064,23 +540,15 @@ body{
         </div>
 
         <div class="reveal-title">
-
             Happy Birthday<br>
-
-            Lititaa Di 🫶🏻
-
+            Lititaa Di 🥹🫶🏻
         </div>
 
         <div class="reveal-subtitle">
-
             💐 A little surprise just for you 💐
-
         </div>
 
-        <button
-            class="reveal-btn"
-            onclick="openMessage()"
-        >
+        <button class="reveal-btn" onclick="openMessage()">
             Continue 👉
         </button>
 
@@ -1089,83 +557,44 @@ body{
 </section>
 
 
-<!-- =========================================================
-     PAGE 4 : BIRTHDAY MESSAGE
-========================================================= -->
+<!-- ================= MESSAGE ================= -->
 
-<section
-    id="messagePage"
-    class="page content-page hidden"
->
+<section id="messagePage" class="page content-page hidden">
 
-    <div class="content-card message-card">
+    <div class="content-card">
 
         <h1 class="message-title">
-            Hey Gym ratt ,,,our Lititaa di 👾
+            Hey Gym ratt,,,our Lititaa di 👾
         </h1>
 
         <p>
-
-            Happy Birthday Lititaa di 🥹🥳
+            happy Birthday Lititaa di 🥹🥳
             many many happy returns of the day 💓
             stay happy always like me 🥰
-
-        </p>
-
-        <p>
-
             accha rahoo sadaa 🫠
             meraaa asirvadd hamesaa apkee sath rahegaa 🥹🖐🏻
-
         </p>
 
         <p>
-
-            and Gym lagatar kartee jaooo,,,,itna kam time me
-            agar aisa improve ho skta hain to kuch time badd
-            boht improve hogaa,,,
-
+            And Gym lagatar kartee jaooo,,,,itna kam time me agar
+            aisa improve ho skta hain to kuch time badd boht improve hogaa,,,
+            ap ho hi pretty,,,,then Gym karke or bhi strong ho jaogeee 👾💪🏻
         </p>
 
         <p>
-
-            ap ho hi pretty,,,,then Gym karke or bhi
-            strong ho jaogeee 👾💪🏻
-
+            haann or ek baatt brithday kaa bohot bohot badhaiyaaa 🫶🏻❤️
+            andd andddd thankkkk u so much for being a beautiful,
+            cute 🥹🌹 responsible sister in my life and also thankss
+            to my Life,,,,for accepting a beautiful gym rat Sister
+            like YOU 🫶🏻🌹🫂...
         </p>
 
         <p>
-
-            haann or ek baatt brithday kaa bohot bohot
-            badhaiyaaa 🫶🏻❤️
-
+            whtevr enjoy ur mostttt delicious and mosttt enjoyable
+            dayyy 🥳🌹...
         </p>
 
-        <p>
-
-            andd andddd thankkkk u so much for being a
-            beautiful, cute 🥹🌹 responsible sister in my life
-
-        </p>
-
-        <p>
-
-            and also thankss to my Life,,,,for accepting a
-            beautiful gym rat Sister like YOU 🫶🏻🌹🫂...
-
-        </p>
-
-        <p>
-
-            whtevr enjoy ur mostttt delicious and mosttt
-            enjoyable dayyy 🥳🌹...
-
-        </p>
-
-        <button
-            class="next-btn"
-            onclick="openQuestionCurtain()"
-        >
+        <button class="next-btn" onclick="openQuestion()">
             Continue 👉
         </button>
 
@@ -1174,207 +603,123 @@ body{
 </section>
 
 
-<!-- =========================================================
-     RED CURTAIN BEFORE QUESTION
-========================================================= -->
+<!-- ================= CUTE QUESTION ================= -->
 
-<section
-    id="curtainPage"
-    class="hidden"
->
+<section id="questionPage" class="page content-page hidden">
 
-    <div class="curtain"></div>
+    <div class="content-card question-card">
 
-    <div class="curtain-text">
-        Waittt... 👀
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 5 : CUTE QUESTION
-========================================================= -->
-
-<section
-    id="questionPage"
-    class="page content-page hidden"
->
-
-    <div class="content-card">
-
-        <div class="question-title">
-
-            Btw i have a question... 🥹<br>
-
+        <div class="question">
+            Btw i have a question,,,<br>
             Were you cute when you were little? 🥹
-
         </div>
 
-        <div class="question-options">
+        <div class="option-area">
 
-            <button
-                class="question-btn"
-                onclick="yesQuestion()"
-            >
+            <button class="option-btn" onclick="cuteYes()">
                 Yes 😌
             </button>
 
-            <button
-                class="question-btn"
-                onclick="noQuestion()"
-            >
-                No 😏
+            <button class="option-btn" onclick="cuteNo()">
+                No 😑
             </button>
 
         </div>
 
-        <div
-            id="questionError"
-            class="question-error"
-        ></div>
+        <div id="cuteError" class="question-error"></div>
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     PAGE 6 : CHOCOLATE
-========================================================= -->
+<!-- ================= TRUTH PAGE ================= -->
 
-<section
-    id="chocolatePage"
-    class="page content-page hidden"
->
+<section id="truthPage" class="page content-page hidden">
+
+    <div class="content-card question-card">
+
+        <div class="question">
+            finally,,,sotti ta bolle 🥹🌹🧿
+        </div>
+
+        <p>
+            whatever,,, Whats ur fav choclate???
+        </p>
+
+        <div class="option-area">
+
+            <button class="option-btn" onclick="chocolateYes()">
+                Yes 🥹
+            </button>
+
+            <button class="option-btn" onclick="chocolateNo()">
+                No 😑
+            </button>
+
+        </div>
+
+        <div id="chocoError" class="question-error"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHOCOLATE NAME ================= -->
+
+<section id="chocolatePage" class="page content-page hidden">
+
+    <div class="content-card question-card">
+
+        <div class="choco-title">
+            Okayyy Lititaa di 😌🌹<br>
+            Tell me your favourite chocolate 🍫
+        </div>
+
+        <div class="option-area">
+
+            <button class="option-btn" onclick="selectChocolate('Mou\\'s Loo')">
+                Mou's Loo 🍫
+            </button>
+
+            <button class="option-btn" onclick="openCustomChocolate()">
+                Something else 👀
+            </button>
+
+        </div>
+
+        <div id="customChocolateArea"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHOCOLATE FINAL ================= -->
+
+<section id="chocolateFinalPage" class="page content-page hidden">
 
     <div class="content-card">
-
-        <div class="chocolate-title">
-
-            Finally,,,sotti ta bolle 🥹🌹🧿
-
-            <br><br>
-
-            Whatever... What's ur fav chocolate? 🍫
-
-        </div>
-
-        <div class="chocolate-options">
-
-            <button
-                class="choco-btn"
-                onclick="chocolateAnswer('yes')"
-            >
-                Yes 😌
-            </button>
-
-            <button
-                class="choco-btn"
-                onclick="chocolateAnswer('no')"
-            >
-                No 😏
-            </button>
-
-        </div>
-
-        <div
-            id="chocoError"
-            class="choco-error"
-        ></div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 7 : SOMETHING ELSE INPUT
-========================================================= -->
-
-<section
-    id="somethingPage"
-    class="page content-page hidden"
->
-
-    <div class="content-card">
-
-        <div class="chocolate-title">
-
-            Accha accha 😌🍫<br>
-
-            Tell me your favourite chocolate 👀
-
-        </div>
-
-        <input
-            id="chocolateInput"
-            class="chocolate-input"
-            type="text"
-            placeholder="Type chocolate name here 🍫"
-        >
-
-        <button
-            class="continue-btn"
-            onclick="submitChocolate()"
-        >
-            Continue 👉
-        </button>
-
-        <div
-            id="chocolateInputError"
-            class="error"
-        ></div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 8 : CHOCOLATE JOKE
-========================================================= -->
-
-<section
-    id="chocolateJokePage"
-    class="page content-page hidden"
->
-
-    <div class="content-card message-card">
 
         <h1 class="message-title">
-            Heyy litita di 👾
+            Heyy Litita Di 😭🍫
         </h1>
 
         <p>
-
-            app Gym karte hooo naa... 🏋🏻‍♀️👾
-
+            app Gym karte hooo naa,,,
+            chocolate khanaa acchi baat nhi hain health ke liyeee 😮‍💨🤣
         </p>
 
         <p>
-
-            chocolate khanaa acchi baat nhi hain
-            health ke liyeee 😮‍💨🤣
-
-        </p>
-
-        <p>
-
             so ma kisi chocolate nehi dungaa 😮‍💨🤣
-
         </p>
 
         <p>
-
             apko kya laga ma apko chocolate dungaa 🤣🤣
-
         </p>
 
-        <button
-            class="next-btn"
-            onclick="startExercises()"
-        >
+        <button class="next-btn" onclick="openExercise1()">
             Continue 👉
         </button>
 
@@ -1383,33 +728,24 @@ body{
 </section>
 
 
-<!-- =========================================================
-     EXERCISE PAGE 1
-========================================================= -->
+<!-- ================= EXERCISE 1 ================= -->
 
-<section
-    id="exercise1"
-    class="page content-page hidden"
->
+<section id="exercise1" class="page content-page hidden">
 
-    <div class="exercise-card">
+    <div class="content-card">
 
-        <div class="exercise-title">
-
+        <div class="media-title">
             Tomar jnno best chest exercise suggest korlm...😁👽
-
         </div>
 
-        <img
-            class="exercise-media"
-            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/531b24b047c398ac71015cb81b881113.gif"
-            alt="Chest exercises"
-        >
+        <div class="media-box">
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/531b24b047c398ac71015cb81b881113.gif"
+                alt="Chest exercises"
+            >
+        </div>
 
-        <button
-            class="next-btn"
-            onclick="nextExercise(2)"
-        >
+        <button class="next-btn" onclick="openExercise2()">
             Next 👉
         </button>
 
@@ -1418,17 +754,253 @@ body{
 </section>
 
 
-<!-- =========================================================
-     EXERCISE PAGE 2
-========================================================= -->
+<!-- ================= EXERCISE 2 ================= -->
 
-<section
-    id="exercise2"
-    class="page content-page hidden"
->
+<section id="exercise2" class="page content-page hidden">
 
-    <div class="exercise-card">
+    <div class="content-card">
 
-        <div class="exercise-title">
+        <div class="media-title">
+            and this is best exercises for back according to me 👽🤭
+        </div>
 
-            and this i
+        <div class="media-box">
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506706911.jpg"
+                alt="Back exercises"
+            >
+        </div>
+
+        <button class="next-btn" onclick="openExercise3()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXERCISE 3 ================= -->
+
+<section id="exercise3" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            and Here are some best triceps exercises...
+        </div>
+
+        <div class="media-box">
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506655264.jpg"
+                alt="Triceps exercises"
+            >
+        </div>
+
+        <button class="next-btn" onclick="openExercise4()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXERCISE 4 ================= -->
+
+<section id="exercise4" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            this is best biceps exercises 💪🏻👽
+        </div>
+
+        <div class="media-box">
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506601517.jpg"
+                alt="Biceps exercises"
+            >
+        </div>
+
+        <button class="next-btn" onclick="openExercise5()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXERCISE 5 ================= -->
+
+<section id="exercise5" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            and some best shoulder exercises fou u 🫠
+        </div>
+
+        <div class="media-box">
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507841/d5a01d47146d5e517c8b1d272d86e05a.jpg"
+                alt="Shoulder exercises"
+            >
+        </div>
+
+        <button class="next-btn" onclick="openExercise6()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXERCISE 6 ================= -->
+
+<section id="exercise6" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            and here are some leg's best exercises for u..😄
+        </div>
+
+        <div class="media-box">
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/Fitclub-leg-Workout-Beginner-Leg-Workout.png"
+                alt="Leg exercises"
+            >
+        </div>
+
+        <button class="next-btn" onclick="openBankuVideo()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BANKU VIDEO ================= -->
+
+<section id="bankuPage" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            here are someee bankuu moments 🌝😹😍
+        </div>
+
+        <div class="media-box">
+            <video
+                id="bankuVideo"
+                controls
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+            >
+                <source
+                    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788509964/InShot_20260904_134730121.mp4"
+                    type="video/mp4"
+                >
+            </video>
+        </div>
+
+        <button class="next-btn" onclick="openRealityVideo()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REALITY VIDEO ================= -->
+
+<section id="realityPage" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            Here's a little reality for you...🥹🫶🏻
+        </div>
+
+        <div class="media-box">
+
+            <video
+                id="realityVideo"
+                controls
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+            >
+                <source
+                    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788510696/Varun___Lifestyle___Travel_on_Instagram___Really_it_works_____20july__reels__explore__memes__fyppppppppppppppppppppppppppppppppppppppppppppppppppppp_1080p.mp4"
+                    type="video/mp4"
+                >
+            </video>
+
+        </div>
+
+        <button class="next-btn" onclick="openSisterVideo()">
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SISTER VIDEO ================= -->
+
+<section id="sisterPage" class="page content-page hidden">
+
+    <div class="content-card">
+
+        <div class="media-title">
+            Heyy litiii behena 🥹🧿
+        </div>
+
+        <div class="media-box">
+
+            <video
+                id="sisterVideo"
+                controls
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+            >
+                <source
+                    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788512010/InShot_20260904_142152370.mp4"
+                    type="video/mp4"
+                >
+            </video>
+
+        </div>
+
+        <button class="next-btn" onclick="openBye()">
+            Continue 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LAST ================= -->
+
+<section id="byePage" class="page bye-page hidden">
+
+    <div class="bye-card">
+
+        <div class="bye-emoji">
+            🥰💗
+        </div>
+
+        <h1>
+            Thanks yaar,<br>
+            for watching this 💕
+        
