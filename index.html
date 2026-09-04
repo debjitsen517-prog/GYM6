@@ -7,6 +7,7 @@
 <title>For Lititaa Di 🫶🏻</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -40,11 +41,11 @@ body{
     z-index:2;
 }
 
-.fadeIn{
-    animation:fadeIn .7s ease;
+.fade{
+    animation:fade .7s ease;
 }
 
-@keyframes fadeIn{
+@keyframes fade{
     from{
         opacity:0;
         transform:translateY(20px);
@@ -55,6 +56,7 @@ body{
     }
 }
 
+
 /* ================= HEARTS ================= */
 
 .hearts{
@@ -62,33 +64,34 @@ body{
     inset:0;
     pointer-events:none;
     overflow:hidden;
-    z-index:0;
+    z-index:1;
 }
 
 .heart{
     position:absolute;
     font-size:24px;
     opacity:.65;
-    animation:heartFloat 7s ease-in-out infinite;
+    animation:float 7s ease-in-out infinite;
 }
 
-.heart:nth-child(1){left:5%;top:18%;}
-.heart:nth-child(2){left:17%;top:70%;animation-delay:1s;}
-.heart:nth-child(3){left:31%;top:12%;animation-delay:2s;}
-.heart:nth-child(4){left:48%;top:82%;animation-delay:3s;}
-.heart:nth-child(5){left:65%;top:15%;animation-delay:1.5s;}
-.heart:nth-child(6){left:78%;top:68%;animation-delay:4s;}
-.heart:nth-child(7){left:91%;top:25%;animation-delay:2.5s;}
-.heart:nth-child(8){left:55%;top:35%;animation-delay:5s;}
+.heart:nth-child(1){left:5%;top:18%}
+.heart:nth-child(2){left:17%;top:70%;animation-delay:1s}
+.heart:nth-child(3){left:31%;top:12%;animation-delay:2s}
+.heart:nth-child(4){left:48%;top:82%;animation-delay:3s}
+.heart:nth-child(5){left:65%;top:15%;animation-delay:1.5s}
+.heart:nth-child(6){left:78%;top:68%;animation-delay:4s}
+.heart:nth-child(7){left:91%;top:25%;animation-delay:2.5s}
+.heart:nth-child(8){left:55%;top:35%;animation-delay:5s}
 
-@keyframes heartFloat{
+@keyframes float{
     0%,100%{
-        transform:translateY(0) rotate(0);
+        transform:translateY(0);
     }
     50%{
         transform:translateY(-25px) rotate(10deg);
     }
 }
+
 
 /* ================= LOGIN ================= */
 
@@ -102,8 +105,7 @@ body{
 .login-card{
     width:min(92%,520px);
     padding:45px 28px;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.94);
     border-radius:40px;
     text-align:center;
     box-shadow:0 25px 65px rgba(120,65,135,.18);
@@ -112,12 +114,6 @@ body{
 .lock{
     font-size:58px;
     margin-bottom:28px;
-    animation:lockFloat 2s ease-in-out infinite;
-}
-
-@keyframes lockFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
 }
 
 .password{
@@ -134,7 +130,6 @@ body{
 
 .password:focus{
     border-color:#bd4daf;
-    box-shadow:0 0 18px rgba(189,77,175,.2);
 }
 
 .enter-btn,
@@ -148,7 +143,6 @@ body{
     font-size:20px;
     font-weight:bold;
     background:linear-gradient(135deg,#d944a5,#8d4ed8);
-    box-shadow:0 12px 30px rgba(145,65,165,.25);
     cursor:pointer;
 }
 
@@ -165,6 +159,7 @@ body{
     font-size:15px;
 }
 
+
 /* ================= COUNTDOWN ================= */
 
 #countdownPage{
@@ -172,52 +167,19 @@ body{
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    background:radial-gradient(circle at center,#fff1fa,#e3d7ff);
+    background:radial-gradient(circle,#fff1fa,#e3d7ff);
 }
 
 .count-number{
     font-size:110px;
     font-weight:900;
     color:#a344a2;
-    animation:numberPop .8s ease;
+    animation:pop .7s ease;
 }
 
-@keyframes numberPop{
-    0%{
-        transform:scale(1.6);
-        opacity:0;
-    }
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-/* ================= REVEAL ================= */
-
-#birthdayReveal{
-    position:fixed;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:radial-gradient(circle at center,#fff0fa,#e4d8ff);
-    z-index:50;
-    text-align:center;
-}
-
-.reveal-card{
-    width:min(92%,650px);
-    padding:45px 22px;
-    border-radius:40px;
-    background:rgba(255,255,255,.92);
-    box-shadow:0 25px 70px rgba(120,65,135,.2);
-    animation:revealIn .8s ease;
-}
-
-@keyframes revealIn{
+@keyframes pop{
     from{
-        transform:scale(.5);
+        transform:scale(1.6);
         opacity:0;
     }
     to{
@@ -226,52 +188,68 @@ body{
     }
 }
 
-.reveal-cake{
+
+/* ================= BIRTHDAY ================= */
+
+#birthdayPage{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:radial-gradient(circle,#fff0fa,#e4d8ff);
+    z-index:50;
+    text-align:center;
+}
+
+.birthday-card{
+    width:min(92%,650px);
+    padding:45px 22px;
+    border-radius:40px;
+    background:rgba(255,255,255,.94);
+    box-shadow:0 25px 70px rgba(120,65,135,.2);
+}
+
+.birthday-cake{
     font-size:75px;
-    animation:bounce 1s infinite;
 }
 
-@keyframes bounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
-
-.reveal-title{
+.birthday-title{
     margin-top:18px;
     font-size:clamp(38px,9vw,68px);
     font-weight:900;
     color:#a5409e;
 }
 
-.reveal-subtitle{
+.birthday-subtitle{
     margin-top:14px;
     font-size:20px;
 }
 
+
 /* ================= CONTENT ================= */
 
-.content-page{
+.content{
     padding:45px 15px 55px;
 }
 
-.content-card{
+.card{
     width:min(92%,700px);
     margin:auto;
     padding:40px 32px;
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
     border-radius:38px;
     box-shadow:0 22px 60px rgba(115,65,130,.16);
 }
 
-.message-title,
-.page-title{
+.title{
     text-align:center;
     color:#a3429c;
-    font-size:35px;
+    font-size:34px;
     margin-bottom:30px;
 }
 
-.message-card p{
+.card p{
     font-size:19px;
     line-height:1.8;
     margin-bottom:24px;
@@ -282,6 +260,7 @@ body{
     font-weight:bold;
 }
 
+
 /* ================= QUESTION ================= */
 
 .question{
@@ -290,11 +269,11 @@ body{
 
 .question h1{
     color:#a3429c;
-    font-size:32px;
-    line-height:1.4;
+    font-size:30px;
+    line-height:1.5;
 }
 
-.question-buttons{
+.options{
     display:flex;
     justify-content:center;
     gap:18px;
@@ -302,7 +281,7 @@ body{
     margin-top:30px;
 }
 
-.option-btn{
+.option{
     padding:15px 35px;
     border:0;
     border-radius:50px;
@@ -313,7 +292,7 @@ body{
     cursor:pointer;
 }
 
-.question-error{
+.q-error{
     min-height:30px;
     margin-top:25px;
     color:#d63c67;
@@ -321,46 +300,42 @@ body{
     font-weight:bold;
 }
 
+
 /* ================= CHOCOLATE ================= */
 
-.choco-options{
+.chocolate-options{
     display:flex;
     justify-content:center;
     gap:15px;
     flex-wrap:wrap;
-    margin-top:25px;
 }
 
-.choco-btn{
+.chocolate-btn{
     padding:14px 25px;
-    border:0;
+    border:2px solid #dfb8dc;
     border-radius:40px;
-    background:#fff;
+    background:white;
     color:#9c438e;
-    border:2px solid #e1b8dc;
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
 }
 
-.custom-box{
-    margin-top:25px;
+.custom{
     display:none;
+    margin-top:25px;
 }
 
-.custom-box input{
+.custom input{
     width:100%;
     padding:16px;
     border-radius:20px;
     border:2px solid #ddb5d8;
     outline:none;
-    font-size:18px;
     text-align:center;
+    font-size:18px;
 }
 
-.custom-box button{
-    margin-top:15px;
-}
 
 /* ================= MEDIA ================= */
 
@@ -372,63 +347,55 @@ body{
     margin-bottom:22px;
 }
 
-.media-box{
+.media{
     width:100%;
     border-radius:28px;
     overflow:hidden;
     background:#000;
-    box-shadow:0 18px 45px rgba(0,0,0,.2);
 }
 
-.media-box img,
-.media-box video{
+.media img,
+.media video{
+    display:block;
     width:100%;
     max-height:700px;
-    display:block;
     object-fit:contain;
 }
 
-.media-box video{
+.media video{
     background:#000;
 }
 
-.media-note{
-    text-align:center;
-    margin-top:15px;
-    font-size:16px;
-    color:#80657d;
-}
 
-/* ================= BYE ================= */
+/* ================= LAST ================= */
 
-.bye-page{
+#lastPage{
     display:flex;
     align-items:center;
     justify-content:center;
     padding:25px;
 }
 
-.bye-card{
+.last-card{
     width:min(92%,650px);
     padding:55px 25px;
     text-align:center;
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
     border-radius:40px;
-    box-shadow:0 25px 65px rgba(115,65,130,.18);
 }
 
-.bye-emoji{
+.last-card .emoji{
     font-size:75px;
 }
 
-.bye-card h1{
+.last-card h1{
     margin-top:18px;
     color:#a3429c;
     font-size:38px;
     line-height:1.3;
 }
 
-.bye-card p{
+.last-card p{
     margin-top:18px;
     font-size:20px;
     line-height:1.6;
@@ -441,6 +408,7 @@ body{
     font-weight:bold;
 }
 
+
 /* ================= MOBILE ================= */
 
 @media(max-width:600px){
@@ -450,12 +418,12 @@ body{
         border-radius:32px;
     }
 
-    .content-card{
+    .card{
         padding:35px 22px;
         border-radius:30px;
     }
 
-    .message-card p{
+    .card p{
         font-size:18px;
         line-height:1.75;
     }
@@ -464,28 +432,22 @@ body{
         font-size:90px;
     }
 
-    .reveal-title{
-        font-size:43px;
-    }
-
     .question h1{
         font-size:27px;
     }
 
-    .bye-card h1{
+    .last-card h1{
         font-size:34px;
     }
-
-    .media-box{
-        border-radius:24px;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING HEARTS -->
+
+<!-- HEARTS -->
 
 <div class="hearts">
     <div class="heart">💗</div>
@@ -499,9 +461,9 @@ body{
 </div>
 
 
-<!-- ==================================================
-     PAGE 1 LOGIN
-================================================== -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <section id="loginPage" class="page">
 
@@ -510,14 +472,19 @@ body{
         <div class="lock">🔐</div>
 
         <input
-            id="passwordInput"
+            id="password"
             class="password"
             type="password"
             placeholder="Enter Password 🔑"
             autocomplete="off"
         >
 
-        <button id="enterBtn" class="enter-btn">
+        <!-- DIRECT onclick -->
+        <button
+            type="button"
+            class="enter-btn"
+            onclick="login()"
+        >
             Enter ❤️
         </button>
 
@@ -528,37 +495,54 @@ body{
 </section>
 
 
-<!-- ==================================================
-     PAGE 2 COUNTDOWN
-================================================== -->
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
 
-<section id="countdownPage" class="page hidden">
+<section
+    id="countdownPage"
+    class="page hidden"
+>
 
-    <div id="countNumber" class="count-number">3</div>
+    <div
+        id="countNumber"
+        class="count-number"
+    >
+        3
+    </div>
 
 </section>
 
 
-<!-- ==================================================
-     PAGE 3 BIRTHDAY
-================================================== -->
+<!-- =====================================================
+     BIRTHDAY PAGE
+===================================================== -->
 
-<section id="birthdayReveal" class="hidden">
+<section
+    id="birthdayPage"
+    class="hidden"
+>
 
-    <div class="reveal-card">
+    <div class="birthday-card">
 
-        <div class="reveal-cake">🎂</div>
+        <div class="birthday-cake">
+            🎂
+        </div>
 
-        <div class="reveal-title">
+        <div class="birthday-title">
             Happy Birthday<br>
             Lititaa Di 🫶🏻
         </div>
 
-        <div class="reveal-subtitle">
+        <div class="birthday-subtitle">
             💐 A little surprise just for you 💐
         </div>
 
-        <button class="reveal-btn" id="birthdayContinue">
+        <button
+            type="button"
+            class="reveal-btn"
+            onclick="openMessage()"
+        >
             Continue 👉
         </button>
 
@@ -567,38 +551,41 @@ body{
 </section>
 
 
-<!-- ==================================================
-     PAGE 4 MESSAGE
-================================================== -->
+<!-- =====================================================
+     MESSAGE
+===================================================== -->
 
-<section id="messagePage" class="page content-page hidden">
+<section
+    id="messagePage"
+    class="page content hidden"
+>
 
-    <div class="content-card message-card">
+    <div class="card">
 
-        <h1 class="message-title">
+        <h1 class="title">
             Hey Gym ratt ,,,our Lititaa di 👾
         </h1>
 
         <p>
-            happy Birthday Lititaa di 🥹🥳many many happy returns
-            of the day 💓 stay happy always like me 🥰
+            happy Birthday Lititaa di 🥹🥳many many happy
+            returns of the day 💓 stay happy always like me 🥰
         </p>
 
         <p>
-            accha rahoo sadaa 🫠meraaa asirvadd hamesaa apkee
-            sath rahegaa 🥹🖐🏻
+            accha rahoo sadaa 🫠meraaa asirvadd hamesaa
+            apkee sath rahegaa 🥹🖐🏻
         </p>
 
         <p>
-            and Gym lagatar kartee jaooo,,,,itna kam time me agar
-            aisa improve ho skta hain to kuch time badd boht
-            improve hogaa,,,ap ho hi pretty,,,,then Gym karke
-            or bhi strong ho jaogeee 👾💪🏻
+            and Gym lagatar kartee jaooo,,,,itna kam time me
+            agar aisa improve ho skta hain to kuch time badd
+            boht improve hogaa,,,ap ho hi pretty,,,,then Gym
+            karke or bhi strong ho jaogeee 👾💪🏻
         </p>
 
         <p>
-            haann or ek baatt brithday kaa bohot bohot badhaiyaaa
-            🫶🏻❤️
+            haann or ek baatt brithday kaa bohot bohot
+            badhaiyaaa 🫶🏻❤️
         </p>
 
         <p>
@@ -609,11 +596,15 @@ body{
         </p>
 
         <p>
-            whtevr enjoy ur mostttt delicious and mosttt enjoyable
-            dayyy 🥳🌹...
+            whtevr enjoy ur mostttt delicious and mosttt
+            enjoyable dayyy 🥳🌹...
         </p>
 
-        <button class="next-btn" id="messageContinue">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="openQuestion()"
+        >
             Next 👉
         </button>
 
@@ -622,47 +613,64 @@ body{
 </section>
 
 
-<!-- ==================================================
-     PAGE 5 QUESTION
-================================================== -->
+<!-- =====================================================
+     QUESTION
+===================================================== -->
 
-<section id="questionPage" class="page content-page hidden">
+<section
+    id="questionPage"
+    class="page content hidden"
+>
 
-    <div class="content-card question">
+    <div class="card question">
 
         <h1>
             Btw i have a question... 🥹<br><br>
             Were you cute when you were little? 🥹
         </h1>
 
-        <div class="question-buttons">
+        <div class="options">
 
-            <button class="option-btn" id="yesBtn">
+            <button
+                type="button"
+                class="option"
+                onclick="questionYes()"
+            >
                 Yes 😌
             </button>
 
-            <button class="option-btn" id="noBtn">
+            <button
+                type="button"
+                class="option"
+                onclick="questionNo()"
+            >
                 No 😶
             </button>
 
         </div>
 
-        <div id="questionError" class="question-error"></div>
+        <div
+            id="questionError"
+            class="q-error"
+        ></div>
 
     </div>
 
 </section>
 
 
-<!-- ==================================================
-     PAGE 6 CHOCOLATE
-================================================== -->
+<!-- =====================================================
+     CHOCOLATE
+===================================================== -->
 
-<section id="chocolatePage" class="page content-page hidden">
+<section
+    id="chocolatePage"
+    class="page content hidden"
+>
 
-    <div class="content-card question">
+    <div class="card question">
 
-        <h1 class="page-title">
+        <h1 class="title">
             Finally,,,sotti ta bolle 🥹🌹🧿
         </h1>
 
@@ -670,23 +678,38 @@ body{
             Whatever... What's ur fav chocolate? 🍫
         </h2>
 
-        <div class="choco-options">
+        <div class="chocolate-options">
 
-            <button class="choco-btn" data-choice="Dairy Milk">
+            <button
+                type="button"
+                class="chocolate-btn"
+                onclick="chocolateDone()"
+            >
                 Dairy Milk
             </button>
 
-            <button class="choco-btn" data-choice="KitKat">
+            <button
+                type="button"
+                class="chocolate-btn"
+                onclick="chocolateDone()"
+            >
                 KitKat
             </button>
 
-            <button class="choco-btn" id="somethingElseBtn">
+            <button
+                type="button"
+                class="chocolate-btn"
+                onclick="showCustomChocolate()"
+            >
                 Something Else
             </button>
 
         </div>
 
-        <div class="custom-box" id="customBox">
+        <div
+            id="customChocolateBox"
+            class="custom"
+        >
 
             <input
                 id="customChocolate"
@@ -694,7 +717,11 @@ body{
                 placeholder="Write your favourite chocolate 🍫"
             >
 
-            <button class="next-btn" id="customContinue">
+            <button
+                type="button"
+                class="next-btn"
+                onclick="customChocolateDone()"
+            >
                 Continue 👉
             </button>
 
@@ -705,21 +732,24 @@ body{
 </section>
 
 
-<!-- ==================================================
-     PAGE 7 CHOCOLATE RESULT
-================================================== -->
+<!-- =====================================================
+     CHOCOLATE RESULT
+===================================================== -->
 
-<section id="chocolateResultPage" class="page content-page hidden">
+<section
+    id="resultPage"
+    class="page content hidden"
+>
 
-    <div class="content-card message-card">
+    <div class="card">
 
-        <h1 class="message-title">
+        <h1 class="title">
             Heyy litita di 👾
         </h1>
 
         <p>
-            app Gym karte hooo naa,,, choclate khanaa acchi baat
-            nhi hain health ke liyeee 😮‍💨
+            app Gym karte hooo naa,,, choclate khanaa acchi
+            baat nhi hain health ke liyeee 😮‍💨🤣
         </p>
 
         <p>
@@ -730,7 +760,11 @@ body{
             apko kya laga ma apko chocolate dungaa 🤣🤣
         </p>
 
-        <button class="next-btn" id="exerciseStart">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="startExercise()"
+        >
             Continue 👉
         </button>
 
@@ -739,26 +773,35 @@ body{
 </section>
 
 
-<!-- ==================================================
-     EXERCISE PAGE 1
-================================================== -->
+<!-- =====================================================
+     EXERCISE 1
+===================================================== -->
 
-<section id="exercise1" class="page content-page hidden">
+<section
+    id="exercise1"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             Tomar jnno best chest exercise suggest korlm...😁👽
         </h1>
 
-        <div class="media-box">
+        <div class="media">
+
             <img
                 src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/531b24b047c398ac71015cb81b881113.gif"
                 alt="Chest exercise"
             >
+
         </div>
 
-        <button class="next-btn exerciseNext">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="exerciseNext(2)"
+        >
             Next 👉
         </button>
 
@@ -767,26 +810,35 @@ body{
 </section>
 
 
-<!-- ==================================================
-     EXERCISE PAGE 2
-================================================== -->
+<!-- =====================================================
+     EXERCISE 2
+===================================================== -->
 
-<section id="exercise2" class="page content-page hidden">
+<section
+    id="exercise2"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             and this is best exercises for back according to me 👽🤭
         </h1>
 
-        <div class="media-box">
+        <div class="media">
+
             <img
                 src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506706911.jpg"
                 alt="Back exercise"
             >
+
         </div>
 
-        <button class="next-btn exerciseNext">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="exerciseNext(3)"
+        >
             Next 👉
         </button>
 
@@ -795,26 +847,35 @@ body{
 </section>
 
 
-<!-- ==================================================
-     EXERCISE PAGE 3
-================================================== -->
+<!-- =====================================================
+     EXERCISE 3
+===================================================== -->
 
-<section id="exercise3" class="page content-page hidden">
+<section
+    id="exercise3"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             and Here are some best triceps exercises...
         </h1>
 
-        <div class="media-box">
+        <div class="media">
+
             <img
                 src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506655264.jpg"
                 alt="Triceps exercise"
             >
+
         </div>
 
-        <button class="next-btn exerciseNext">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="exerciseNext(4)"
+        >
             Next 👉
         </button>
 
@@ -823,26 +884,35 @@ body{
 </section>
 
 
-<!-- ==================================================
-     EXERCISE PAGE 4
-================================================== -->
+<!-- =====================================================
+     EXERCISE 4
+===================================================== -->
 
-<section id="exercise4" class="page content-page hidden">
+<section
+    id="exercise4"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             this is best biceps exercises 💪🏻👽
         </h1>
 
-        <div class="media-box">
+        <div class="media">
+
             <img
                 src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506601517.jpg"
                 alt="Biceps exercise"
             >
+
         </div>
 
-        <button class="next-btn exerciseNext">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="exerciseNext(5)"
+        >
             Next 👉
         </button>
 
@@ -851,26 +921,35 @@ body{
 </section>
 
 
-<!-- ==================================================
-     EXERCISE PAGE 5
-================================================== -->
+<!-- =====================================================
+     EXERCISE 5
+===================================================== -->
 
-<section id="exercise5" class="page content-page hidden">
+<section
+    id="exercise5"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             and some best shoulder exercises fou u 🫠
         </h1>
 
-        <div class="media-box">
+        <div class="media">
+
             <img
                 src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507841/d5a01d47146d5e517c8b1d272d86e05a.jpg"
                 alt="Shoulder exercise"
             >
+
         </div>
 
-        <button class="next-btn exerciseNext">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="exerciseNext(6)"
+        >
             Next 👉
         </button>
 
@@ -879,26 +958,35 @@ body{
 </section>
 
 
-<!-- ==================================================
-     EXERCISE PAGE 6
-================================================== -->
+<!-- =====================================================
+     EXERCISE 6
+===================================================== -->
 
-<section id="exercise6" class="page content-page hidden">
+<section
+    id="exercise6"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             and here are some leg's best exercises for u..😄
         </h1>
 
-        <div class="media-box">
+        <div class="media">
+
             <img
                 src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/Fitclub-leg-Workout-Beginner-Leg-Workout.png"
                 alt="Leg exercise"
             >
+
         </div>
 
-        <button class="next-btn exerciseNext">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="openPage10()"
+        >
             Next 👉
         </button>
 
@@ -907,35 +995,44 @@ body{
 </section>
 
 
-<!-- ==================================================
-     PAGE 10 PEHLA NASHA RETURNS
-================================================== -->
+<!-- =====================================================
+     PAGE 10
+===================================================== -->
 
-<section id="page10" class="page content-page hidden">
+<section
+    id="page10"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             Here are some bankuu moments 🌝😹😍
         </h1>
 
-        <div class="media-box">
+        <div class="media">
 
             <video
-                class="specialVideo"
+                id="video10"
                 controls
                 playsinline
                 preload="metadata"
             >
+
                 <source
                     src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788509964/InShot_20260904_134730121.mp4"
                     type="video/mp4"
                 >
+
             </video>
 
         </div>
 
-        <button class="next-btn page10Next">
+        <button
+            type="button"
+            class="next-btn"
+            onclick="openPage11()"
+        >
             Next 👉
         </button>
 
@@ -944,34 +1041,29 @@ body{
 </section>
 
 
-<!-- ==================================================
-     PAGE 11 REALITY
-================================================== -->
+<!-- =====================================================
+     PAGE 11
+===================================================== -->
 
-<section id="page11" class="page content-page hidden">
+<section
+    id="page11"
+    class="page content hidden"
+>
 
-    <div class="content-card">
+    <div class="card">
 
         <h1 class="media-title">
             Here's a little reality for you...🥹🫶🏻
         </h1>
 
-        <div class="media-box">
+        <div class="media">
 
             <video
-                class="specialVideo"
+                id="video11"
                 controls
                 playsinline
                 preload="metadata"
             >
+
                 <source
-                    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788510696/Varun___Lifestyle___Travel_on_Instagram___Really_it_works_____20july__reels__explore__memes__fyppppppppppppppppppppppppppppppppppppppppppppppppppppp_1080p.mp4"
-                    type="video/mp4"
-                >
-            </video>
-
-        </div>
-
-        <button class="next-btn page11Next">
-            Next 👉
-        </
+                    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788510696/Varun___Lifestyle___Travel_on_Instagram___Really_it_works_____20july__reels__explore__memes__fyppppppppppppppppppppppppppppppppppppppppppppppppp
