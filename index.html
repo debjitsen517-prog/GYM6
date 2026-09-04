@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,6 +9,7 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>For Lititaa Di 🫶🏻</title>
+
 
 <style>
 
@@ -26,33 +28,91 @@ html{
 }
 
 body{
+
     min-height:100vh;
-    overflow-x:hidden;
 
     font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-    color:#583c5d;
+    color:#5b3b5f;
+
+    overflow-x:hidden;
 
     background:
+
     radial-gradient(
         circle at 10% 10%,
         rgba(255,255,255,.7),
         transparent 28%
     ),
+
     radial-gradient(
         circle at 90% 80%,
-        rgba(255,255,255,.4),
+        rgba(255,255,255,.45),
         transparent 30%
     ),
+
     linear-gradient(
         135deg,
         #ffd8eb,
-        #e8d9ff,
-        #f8dced
+        #e5d8ff,
+        #f9dced
     );
+
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.hidden{
+    display:none !important;
+}
+
+.page{
+
+    min-height:100vh;
+
+    width:100%;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.fade{
+
+    animation:
+    fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px)
+        scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
 }
 
 
@@ -61,17 +121,21 @@ body{
 ===================================================== */
 
 .hearts{
-    position:fixed;
-    inset:0;
 
-    pointer-events:none;
+    position:fixed;
+
+    inset:0;
 
     overflow:hidden;
 
-    z-index:0;
+    pointer-events:none;
+
+    z-index:1;
+
 }
 
 .heart{
+
     position:absolute;
 
     font-size:24px;
@@ -79,110 +143,98 @@ body{
     opacity:.65;
 
     animation:
-    heartFloat
-    7s
-    ease-in-out
-    infinite;
+    heartFloat 7s ease-in-out infinite;
+
 }
 
 .heart:nth-child(1){
+
     left:5%;
     top:18%;
+
 }
 
 .heart:nth-child(2){
+
     left:17%;
     top:70%;
+
     animation-delay:1s;
+
 }
 
 .heart:nth-child(3){
+
     left:31%;
     top:12%;
+
     animation-delay:2s;
+
 }
 
 .heart:nth-child(4){
+
     left:48%;
     top:82%;
+
     animation-delay:3s;
+
 }
 
 .heart:nth-child(5){
+
     left:65%;
     top:15%;
+
     animation-delay:1.5s;
+
 }
 
 .heart:nth-child(6){
+
     left:78%;
     top:68%;
+
     animation-delay:4s;
+
 }
 
 .heart:nth-child(7){
+
     left:91%;
     top:25%;
+
     animation-delay:2.5s;
+
 }
 
 .heart:nth-child(8){
+
     left:55%;
     top:35%;
+
     animation-delay:5s;
+
 }
 
 @keyframes heartFloat{
 
     0%,100%{
+
         transform:
         translateY(0)
         rotate(0);
+
     }
 
     50%{
+
         transform:
-        translateY(-25px)
+        translateY(-28px)
         rotate(10deg);
-    }
-}
 
-
-/* =====================================================
-   COMMON
-===================================================== */
-
-.page{
-    min-height:100vh;
-    width:100%;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.hidden{
-    display:none !important;
-}
-
-.fadeIn{
-    animation:
-    fadeIn
-    .7s
-    ease;
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(20px);
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 
@@ -195,9 +247,11 @@ body{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     padding:20px;
+
 }
 
 .login-card{
@@ -208,51 +262,47 @@ body{
 
     text-align:center;
 
+    border-radius:40px;
+
     background:
     rgba(255,255,255,.94);
 
-    backdrop-filter:blur(12px);
-
-    border-radius:40px;
-
     box-shadow:
     0 25px 65px
-    rgba(120,65,135,.18);
+    rgba(120,65,135,.20);
+
+    backdrop-filter:
+    blur(12px);
+
 }
 
 .lock{
 
-    font-size:58px;
+    font-size:60px;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
 
     animation:
-    lockFloat
-    2s
-    ease-in-out
-    infinite;
+    lockFloat 2s ease-in-out infinite;
+
 }
 
 @keyframes lockFloat{
 
     0%,100%{
-        transform:translateY(0);
+
+        transform:
+        translateY(0);
+
     }
 
     50%{
-        transform:translateY(-8px);
+
+        transform:
+        translateY(-8px);
+
     }
-}
 
-.login-title{
-
-    color:#a3429c;
-
-    font-size:32px;
-
-    font-weight:bold;
-
-    margin-bottom:22px;
 }
 
 .password{
@@ -261,11 +311,10 @@ body{
 
     padding:18px 20px;
 
-    border:3px solid #e5c9e5;
+    border:
+    3px solid #e5c9e5;
 
     border-radius:25px;
-
-    background:#fffaff;
 
     outline:none;
 
@@ -274,6 +323,9 @@ body{
     font-size:19px;
 
     color:#633e65;
+
+    background:#fffaff;
+
 }
 
 .password:focus{
@@ -282,24 +334,27 @@ body{
 
     box-shadow:
     0 0 18px
-    rgba(189,77,175,.2);
+    rgba(189,77,175,.20);
+
 }
 
-.enter-btn{
-
-    margin-top:24px;
-
-    padding:17px 58px;
+.enter-btn,
+.next-btn,
+.reveal-btn{
 
     border:0;
 
     border-radius:50px;
 
-    color:#fff;
+    padding:16px 45px;
 
-    font-size:21px;
+    color:white;
+
+    font-size:20px;
 
     font-weight:bold;
+
+    cursor:pointer;
 
     background:
     linear-gradient(
@@ -310,26 +365,52 @@ body{
 
     box-shadow:
     0 12px 30px
-    rgba(145,65,165,.25);
+    rgba(145,65,165,.22);
 
-    cursor:pointer;
+    transition:
+    transform .2s ease,
+    box-shadow .2s ease;
 
-    transition:.2s;
 }
 
-.enter-btn:active{
-    transform:scale(.95);
+.enter-btn{
+
+    margin-top:24px;
+
+}
+
+.enter-btn:hover,
+.next-btn:hover,
+.reveal-btn:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 15px 35px
+    rgba(145,65,165,.30);
+
+}
+
+.enter-btn:active,
+.next-btn:active,
+.reveal-btn:active{
+
+    transform:
+    scale(.95);
+
 }
 
 .error{
 
     min-height:22px;
 
-    margin-top:13px;
+    margin-top:14px;
 
     color:#d53e6d;
 
     font-size:15px;
+
 }
 
 
@@ -342,16 +423,19 @@ body{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     flex-direction:column;
 
     background:
+
     radial-gradient(
         circle at center,
         #fff1fa,
         #e3d7ff
     );
+
 }
 
 .count-number{
@@ -362,165 +446,137 @@ body{
 
     color:#a344a2;
 
+    text-shadow:
+    0 8px 25px
+    rgba(120,60,140,.18);
+
     animation:
-    numberPop
-    .8s
-    ease;
-}
+    numberPop .7s ease;
 
-.count-text{
-
-    margin-top:10px;
-
-    font-size:22px;
-
-    color:#80507e;
-
-    font-weight:bold;
 }
 
 @keyframes numberPop{
 
-    0%{
-        transform:scale(1.6);
+    from{
+
         opacity:0;
+
+        transform:
+        scale(1.6);
+
     }
 
-    100%{
-        transform:scale(1);
+    to{
+
         opacity:1;
+
+        transform:
+        scale(1);
+
     }
+
 }
 
 
 /* =====================================================
-   RED CURTAIN
+   BIRTHDAY REVEAL
 ===================================================== */
 
-#curtain{
+#birthdayPage{
 
     position:fixed;
 
     inset:0;
 
-    z-index:100;
-
-    background:
-    linear-gradient(
-        90deg,
-        #8b001f,
-        #ed174c,
-        #a90029
-    );
+    z-index:50;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
-
-    pointer-events:none;
-
-    animation:
-    curtainOpen
-    1.8s
-    ease
-    forwards;
-}
-
-.curtain-text{
-
-    color:white;
-
-    font-size:34px;
-
-    font-weight:bold;
 
     text-align:center;
 
-    text-shadow:
-    0 5px 20px
-    rgba(0,0,0,.3);
+    padding:20px;
 
-    animation:
-    curtainText
-    1.2s
-    ease
-    forwards;
-}
+    background:
 
-@keyframes curtainText{
+    radial-gradient(
+        circle at center,
+        #fff0fa,
+        #e4d8ff
+    );
 
-    from{
-        opacity:1;
-    }
-
-    to{
-        opacity:0;
-    }
-}
-
-@keyframes curtainOpen{
-
-    0%{
-        clip-path:
-        inset(0 0 0 0);
-    }
-
-    100%{
-        clip-path:
-        inset(0 100% 0 0);
-        visibility:hidden;
-    }
-}
-
-
-/* =====================================================
-   BIRTHDAY PAGE
-===================================================== */
-
-.birthday-page{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:25px;
 }
 
 .birthday-card{
 
-    width:min(94%,720px);
+    width:min(92%,650px);
 
-    padding:55px 25px;
+    padding:45px 22px;
 
-    text-align:center;
+    border-radius:40px;
 
     background:
     rgba(255,255,255,.94);
 
-    border-radius:42px;
-
     box-shadow:
     0 25px 70px
-    rgba(120,65,135,.2);
+    rgba(120,65,135,.22);
 
     animation:
-    revealIn
-    .8s
-    ease;
+    birthdayIn .8s ease;
+
+}
+
+@keyframes birthdayIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.5);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+
+    }
+
 }
 
 .birthday-cake{
 
-    font-size:80px;
+    font-size:75px;
 
     animation:
-    bounce
-    1s
-    infinite;
+    cakeBounce 1s infinite;
+
+}
+
+@keyframes cakeBounce{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-10px);
+
+    }
+
 }
 
 .birthday-title{
@@ -528,44 +584,22 @@ body{
     margin-top:18px;
 
     font-size:
-    clamp(40px,9vw,70px);
+    clamp(38px,9vw,68px);
 
     font-weight:900;
 
+    line-height:1.15;
+
     color:#a5409e;
 
-    line-height:1.15;
 }
 
 .birthday-subtitle{
 
-    margin-top:18px;
+    margin-top:16px;
 
-    font-size:21px;
-}
+    font-size:20px;
 
-@keyframes revealIn{
-
-    from{
-        transform:scale(.5);
-        opacity:0;
-    }
-
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-@keyframes bounce{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
 }
 
 
@@ -573,57 +607,55 @@ body{
    CONTENT
 ===================================================== */
 
-.content-page{
+.content{
 
-    padding:45px 15px 55px;
+    padding:
+    45px 15px 55px;
+
 }
 
-.content-card{
+.card{
 
-    width:min(92%,750px);
+    width:min(92%,700px);
 
     margin:auto;
 
-    padding:40px 32px;
+    padding:
+    40px 32px;
+
+    border-radius:38px;
 
     background:
     rgba(255,255,255,.94);
 
-    border-radius:38px;
-
     box-shadow:
     0 22px 60px
-    rgba(115,65,130,.16);
+    rgba(115,65,130,.17);
 
-    animation:
-    fadeIn
-    .7s
-    ease;
 }
 
-
-/* =====================================================
-   MESSAGE
-===================================================== */
-
-.message-title{
+.title{
 
     text-align:center;
 
     color:#a3429c;
 
-    font-size:36px;
+    font-size:34px;
+
+    line-height:1.35;
 
     margin-bottom:30px;
+
 }
 
-.message-card p{
+.card p{
 
     font-size:19px;
 
-    line-height:1.85;
+    line-height:1.8;
 
-    margin-bottom:23px;
+    margin-bottom:24px;
+
 }
 
 .highlight{
@@ -631,49 +663,7 @@ body{
     color:#ae428f;
 
     font-weight:bold;
-}
 
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.next-btn{
-
-    display:block;
-
-    margin:30px auto 0;
-
-    border:0;
-
-    border-radius:50px;
-
-    padding:16px 45px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #d944a5,
-        #8d4ed8
-    );
-
-    color:white;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 10px 25px
-    rgba(130,50,150,.2);
-
-    transition:.2s;
-}
-
-.next-btn:active{
-    transform:scale(.95);
 }
 
 
@@ -681,24 +671,23 @@ body{
    QUESTION
 ===================================================== */
 
-.question-card{
+.question{
 
     text-align:center;
+
 }
 
 .question-title{
 
     color:#a3429c;
 
-    font-size:
-    clamp(28px,7vw,43px);
+    font-size:30px;
 
-    line-height:1.3;
+    line-height:1.5;
 
-    margin-bottom:30px;
 }
 
-.option-area{
+.options{
 
     display:flex;
 
@@ -707,17 +696,27 @@ body{
     gap:18px;
 
     flex-wrap:wrap;
+
+    margin-top:30px;
+
 }
 
-.option-btn{
+.option{
 
-    min-width:130px;
-
-    padding:15px 30px;
+    padding:
+    15px 35px;
 
     border:0;
 
     border-radius:50px;
+
+    color:white;
+
+    font-size:19px;
+
+    font-weight:bold;
+
+    cursor:pointer;
 
     background:
     linear-gradient(
@@ -726,26 +725,22 @@ body{
         #8d4ed8
     );
 
-    color:#fff;
-
-    font-size:19px;
-
-    font-weight:bold;
-
-    cursor:pointer;
 }
 
-.question-error{
+.q-error{
 
-    min-height:35px;
+    min-height:60px;
 
-    margin-top:22px;
+    margin-top:25px;
 
-    color:#d52e5d;
+    color:#d63c67;
 
     font-size:18px;
 
     font-weight:bold;
+
+    line-height:1.5;
+
 }
 
 
@@ -753,145 +748,89 @@ body{
    CHOCOLATE
 ===================================================== */
 
-.chocolate-title{
-
-    text-align:center;
-
-    color:#a3429c;
-
-    font-size:
-    clamp(28px,7vw,40px);
-
-    line-height:1.3;
-
-    margin-bottom:30px;
-}
-
 .chocolate-options{
 
     display:flex;
 
-    flex-direction:column;
+    justify-content:center;
 
     gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+
 }
 
 .chocolate-btn{
 
-    width:100%;
+    padding:
+    14px 25px;
 
-    padding:17px;
+    border:
+    2px solid #dfb8dc;
 
-    border:0;
+    border-radius:40px;
 
-    border-radius:22px;
+    background:white;
 
-    background:
-    linear-gradient(
-        135deg,
-        #fff,
-        #ffe8f5
-    );
+    color:#9c438e;
 
-    color:#744067;
-
-    border:2px solid #e4b8d7;
-
-    font-size:19px;
+    font-size:17px;
 
     font-weight:bold;
 
     cursor:pointer;
 
-    transition:.2s;
 }
 
-.chocolate-btn:hover{
+.custom{
 
-    transform:scale(1.02);
+    display:none;
 
-    background:#ffe0f0;
+    margin-top:25px;
+
 }
 
-.chocolate-input{
+.custom input{
 
     width:100%;
 
-    margin-top:20px;
+    padding:16px;
 
-    padding:17px;
+    border:
+    2px solid #ddb5d8;
 
-    border-radius:22px;
-
-    border:3px solid #e4c2dc;
+    border-radius:20px;
 
     outline:none;
 
     text-align:center;
 
     font-size:18px;
+
 }
 
 
 /* =====================================================
-   EXERCISE IMAGE PAGES
+   MEDIA
 ===================================================== */
 
-.exercise-title{
+.media-title{
 
     text-align:center;
 
     color:#a3429c;
 
-    font-size:
-    clamp(25px,6vw,38px);
+    font-size:29px;
 
-    line-height:1.35;
+    line-height:1.4;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
+
 }
 
-.exercise-image{
-
-    width:100%;
-
-    max-height:650px;
-
-    object-fit:contain;
-
-    display:block;
-
-    border-radius:28px;
-
-    background:#fff;
-
-    box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.15);
-}
-
-
-/* =====================================================
-   VIDEO
-===================================================== */
-
-.video-title{
-
-    text-align:center;
-
-    color:#a3429c;
-
-    font-size:
-    clamp(27px,6vw,38px);
-
-    font-weight:bold;
-
-    line-height:1.3;
-
-    margin-bottom:20px;
-}
-
-.video-wrapper{
+.media{
 
     width:100%;
 
@@ -903,124 +842,111 @@ body{
 
     box-shadow:
     0 18px 45px
-    rgba(0,0,0,.2);
+    rgba(0,0,0,.20);
 
-    position:relative;
 }
 
-.video-wrapper video{
+.media img{
+
+    display:block;
 
     width:100%;
 
-    height:auto;
-
     max-height:700px;
 
+    object-fit:contain;
+
+}
+
+.media video{
+
     display:block;
+
+    width:100%;
+
+    max-height:700px;
 
     background:#000;
 
     object-fit:contain;
+
 }
 
 .video-note{
 
     text-align:center;
 
-    margin-top:13px;
+    margin-top:12px;
 
     color:#80657d;
 
-    font-size:16px;
+    font-size:15px;
+
 }
 
 
 /* =====================================================
-   BETWEEN VIDEO QUESTION
+   LAST PAGE
 ===================================================== */
 
-.mini-question{
-
-    text-align:center;
-}
-
-.mini-question h1{
-
-    color:#a3429c;
-
-    font-size:
-    clamp(32px,8vw,50px);
-
-    margin-bottom:35px;
-}
-
-.mini-options{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-}
-
-
-/* =====================================================
-   BYE
-===================================================== */
-
-.bye-page{
+#lastPage{
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     padding:25px;
+
 }
 
-.bye-card{
+.last-card{
 
     width:min(92%,650px);
 
-    padding:55px 25px;
+    padding:
+    55px 25px;
 
     text-align:center;
+
+    border-radius:40px;
 
     background:
     rgba(255,255,255,.94);
 
-    border-radius:40px;
-
     box-shadow:
     0 25px 65px
     rgba(115,65,130,.18);
+
 }
 
-.bye-emoji{
+.last-emoji{
 
     font-size:75px;
+
 }
 
-.bye-card h1{
+.last-card h1{
 
     margin-top:18px;
 
     color:#a3429c;
 
-    font-size:42px;
+    font-size:38px;
 
-    line-height:1.25;
+    line-height:1.3;
+
 }
 
-.bye-card p{
+.last-card p{
 
     margin-top:18px;
 
     font-size:20px;
 
     line-height:1.6;
+
 }
 
 .bye{
@@ -1032,6 +958,7 @@ body{
     font-size:34px;
 
     font-weight:bold;
+
 }
 
 
@@ -1042,46 +969,59 @@ body{
 @media(max-width:600px){
 
     .login-card{
-        padding:40px 20px;
+
+        padding:
+        40px 20px;
+
         border-radius:32px;
+
     }
 
-    .content-card{
-        padding:35px 22px;
+    .card{
+
+        padding:
+        35px 22px;
+
         border-radius:30px;
+
     }
 
-    .message-title{
-        font-size:30px;
-    }
+    .card p{
 
-    .message-card p{
         font-size:18px;
-        line-height:1.8;
+
+        line-height:1.75;
+
     }
 
-    .birthday-title{
-        font-size:43px;
+    .count-number{
+
+        font-size:90px;
+
     }
 
-    .birthday-cake{
-        font-size:70px;
+    .question-title{
+
+        font-size:27px;
+
     }
 
-    .exercise-image{
-        border-radius:22px;
-    }
+    .last-card h1{
 
-    .video-wrapper{
-        border-radius:22px;
-    }
-
-    .bye-card h1{
         font-size:34px;
+
     }
+
+    .media{
+
+        border-radius:24px;
+
+    }
+
 }
 
 </style>
+
 </head>
 
 
@@ -1107,7 +1047,7 @@ body{
 
 
 <!-- =====================================================
-     LOGIN
+     PAGE 1 — LOGIN
 ===================================================== -->
 
 <section
@@ -1121,29 +1061,26 @@ class="page"
             🔐
         </div>
 
-        <div class="login-title">
-            For Lititaa Di 🫶🏻
-        </div>
-
         <input
-        id="passwordInput"
-        class="password"
-        type="password"
-        placeholder="Enter Password 🔑"
-        autocomplete="off"
+            id="password"
+            class="password"
+            type="password"
+            placeholder="Enter Password 🔑"
+            autocomplete="off"
         >
 
         <button
-        class="enter-btn"
-        id="enterButton"
-        type="button"
+            id="enterButton"
+            type="button"
+            class="enter-btn"
+            onclick="login()"
         >
             Enter ❤️
         </button>
 
         <div
-        id="loginError"
-        class="error"
+            id="loginError"
+            class="error"
         ></div>
 
     </div>
@@ -1152,7 +1089,7 @@ class="page"
 
 
 <!-- =====================================================
-     COUNTDOWN
+     PAGE 2 — COUNTDOWN
 ===================================================== -->
 
 <section
@@ -1167,36 +1104,16 @@ class="page hidden"
         3
     </div>
 
-    <div class="count-text">
-        Something special is waiting... 🥹💗
-    </div>
-
 </section>
 
 
 <!-- =====================================================
-     RED CURTAIN
-===================================================== -->
-
-<div
-id="curtain"
-class="hidden"
->
-
-    <div class="curtain-text">
-        Waittt... 👀💗
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     BIRTHDAY PAGE
+     PAGE 3 — BIRTHDAY
 ===================================================== -->
 
 <section
 id="birthdayPage"
-class="page birthday-page hidden"
+class="hidden"
 >
 
     <div class="birthday-card">
@@ -1206,19 +1123,27 @@ class="page birthday-page hidden"
         </div>
 
         <div class="birthday-title">
+
             Happy Birthday<br>
-            Lititaa Di 🥹💗
+
+            Lititaa Di 🫶🏻
+
         </div>
 
         <div class="birthday-subtitle">
+
             💐 A little surprise just for you 💐
+
         </div>
 
         <button
-        class="next-btn"
-        onclick="openPage('messagePage')"
+        type="button"
+        class="reveal-btn"
+        onclick="openMessage()"
         >
+
             Continue 👉
+
         </button>
 
     </div>
@@ -1227,61 +1152,78 @@ class="page birthday-page hidden"
 
 
 <!-- =====================================================
-     MESSAGE
+     PAGE 4 — MESSAGE
 ===================================================== -->
 
 <section
 id="messagePage"
-class="page content-page hidden"
+class="page content hidden"
 >
 
-    <div class="content-card message-card">
+    <div class="card">
 
-        <h1 class="message-title">
-            Hey Gym ratt,,, our Lititaa di 👾
+        <h1 class="title">
+            Hey Gym ratt ,,,our Lititaa di 👾
         </h1>
 
         <p>
+
             happy Birthday Lititaa di 🥹🥳
             many many happy returns of the day 💓
             stay happy always like me 🥰
+
         </p>
 
         <p>
+
             accha rahoo sadaa 🫠
-            meraaa asirvadd hamesaa apkee sath rahegaa 🥹🖐🏻
+            meraaa asirvadd hamesaa apkee sath rahegaa
+            🥹🖐🏻
+
         </p>
 
         <p>
-            and Gym lagatar kartee jaooo,,,,itna kam time me
-            agar aisa improve ho skta hain to kuch time badd
-            boht improve hogaa,,,ap ho hi pretty,,,,then Gym
-            karke or bhi strong ho jaogeee 👾💪🏻
+
+            and Gym lagatar kartee jaooo,,,,
+            itna kam time me agar aisa improve ho skta hain
+            to kuch time badd boht improve hogaa,,,
+            ap ho hi pretty,,,,
+            then Gym karke or bhi strong ho jaogeee 👾💪🏻
+
         </p>
 
         <p>
-            haann or ek baatt brithday kaa bohot bohot
-            badhaiyaaa 🫶🏻❤️
+
+            haann or ek baatt brithday kaa
+            bohot bohot badhaiyaaa 🫶🏻❤️
+
         </p>
 
         <p>
-            andd andddd thankkkk u so much for being a
-            beautiful, cute 🥹🌹 responsible sister in my
-            life and also thankss to my Life,,,,for accepting
-            a beautiful gym rat Sister like YOU
-            🫶🏻🌹🫂...
+
+            andd andddd thankkkk u so much for being
+            a beautiful, cute 🥹🌹 responsible sister
+            in my life and also thankss to my Life,,,
+            for accepting a beautiful gym rat Sister
+            like YOU 🫶🏻🌹🫂...
+
         </p>
 
         <p>
-            whtevr enjoy ur mostttt delicious and mosttt
-            enjoyable dayyy 🥳🌹...
+
+            whtevr enjoy ur mostttt delicious
+            and mosttt enjoyable dayyy 🥳🌹...
+
         </p>
 
         <button
+        type="button"
         class="next-btn"
-        onclick="openPage('questionPage')"
+        onclick="openQuestion()"
         >
+
             Next 👉
+
         </button>
 
     </div>
@@ -1290,42 +1232,54 @@ class="page content-page hidden"
 
 
 <!-- =====================================================
-     QUESTION
+     PAGE 5 — QUESTION
 ===================================================== -->
 
 <section
 id="questionPage"
-class="page content-page hidden"
+class="page content hidden"
 >
 
-    <div class="content-card question-card">
+    <div class="card question">
 
-        <div class="question-title">
-            Btw i have a question 🥹<br><br>
+        <h1 class="question-title">
+
+            Btw i have a question... 🥹<br><br>
+
             Were you cute when you were little? 🥹
-        </div>
 
-        <div class="option-area">
+        </h1>
+
+
+        <div class="options">
 
             <button
-            class="option-btn"
-            onclick="cuteYes()"
+            type="button"
+            class="option"
+            onclick="questionYes()"
             >
-                Yes 🥰
+
+                Yes 😌
+
             </button>
 
+
             <button
-            class="option-btn"
-            onclick="cuteNo()"
+            type="button"
+            class="option"
+            onclick="questionNo()"
             >
+
                 No 😶
+
             </button>
 
         </div>
+
 
         <div
         id="questionError"
-        class="question-error"
+        class="q-error"
         ></div>
 
     </div>
@@ -1334,48 +1288,85 @@ class="page content-page hidden"
 
 
 <!-- =====================================================
-     FINAL YES PAGE
+     PAGE 6 — CHOCOLATE
 ===================================================== -->
 
 <section
-id="cuteResultPage"
-class="page content-page hidden"
+id="chocolatePage"
+class="page content hidden"
 >
 
-    <div class="content-card question-card">
+    <div class="card question">
 
-        <div class="question-title">
-            finally,,,sotti ta bolle 🥹🌹🧿
-        </div>
+        <h1 class="title">
 
-        <p
-        style="
-        font-size:20px;
-        line-height:1.7;
-        "
-        >
-            whatever 😌💗
-        </p>
+            Finally,,,sotti ta bolle 🥹🌹🧿
 
-        <div class="question-title"
-        style="margin-top:30px;">
-            Whats ur fav choclate??? 🍫👀
-        </div>
+        </h1>
+
+        <h2>
+
+            Whatever,,, Whats ur fav chocolate? 🍫
+
+        </h2>
+
 
         <div class="chocolate-options">
 
             <button
+            type="button"
             class="chocolate-btn"
-            onclick="chooseChocolate('Mou’s Loo')"
+            onclick="chocolateDone()"
             >
-                Mou's Loo 🥹🍫
+
+                Dairy Milk
+
             </button>
 
+
             <button
+            type="button"
             class="chocolate-btn"
-            onclick="chooseSomethingElse()"
+            onclick="chocolateDone()"
             >
-                Something else 😶
+
+                KitKat
+
+            </button>
+
+
+            <button
+            type="button"
+            class="chocolate-btn"
+            onclick="showCustomChocolate()"
+            >
+
+                Something Else
+
+            </button>
+
+        </div>
+
+
+        <div
+        id="customChocolateBox"
+        class="custom"
+        >
+
+            <input
+            id="customChocolate"
+            type="text"
+            placeholder="Write your favourite chocolate 🍫"
+            >
+
+            <button
+            type="button"
+            class="next-btn"
+            onclick="customChocolateDone()"
+            >
+
+                Continue 👉
+
             </button>
 
         </div>
@@ -1386,32 +1377,54 @@ class="page content-page hidden"
 
 
 <!-- =====================================================
-     SOMETHING ELSE
+     PAGE 7 — CHOCOLATE RESULT
 ===================================================== -->
 
 <section
-id="somethingElsePage"
-class="page content-page hidden"
+id="resultPage"
+class="page content hidden"
 >
 
-    <div class="content-card question-card">
+    <div class="card">
 
-        <div class="chocolate-title">
-            Accha bolo tahole... 👀🍫
-        </div>
+        <h1 class="title">
 
-        <input
-        id="chocolateInput"
-        class="chocolate-input"
-        type="text"
-        placeholder="Your favourite chocolate 🍫"
-        >
+            Heyy litita di 👾
+
+        </h1>
+
+
+        <p>
+
+            app Gym karte hooo naa,,,
+            choclate khanaa acchi baat nhi hain
+            health ke liyeee 😮‍💨🤣
+
+        </p>
+
+
+        <p>
+
+            so ma kisi choclate nehi dungaa 😮‍💨🤣
+
+        </p>
+
+
+        <p>
+
+            apko kya laga ma apko chocolate dungaa 🤣🤣
+
+        </p>
+
 
         <button
+        type="button"
         class="next-btn"
-        onclick="submitChocolate()"
+        onclick="startExercise()"
         >
+
             Continue 👉
+
         </button>
 
     </div>
@@ -1420,12 +1433,1305 @@ class="page content-page hidden"
 
 
 <!-- =====================================================
-     CHOCOLATE RESULT
+     EXERCISE 1 — CHEST
 ===================================================== -->
 
 <section
-id="chocolateResultPage"
-class="page content-page hidden"
+id="exercise1"
+class="page content hidden"
 >
 
-    <div class="conten
+    <div class="card">
+
+        <h1 class="media-title">
+
+            Tomar jnno best chest exercise
+            suggest korlm...😁👽
+
+        </h1>
+
+
+        <div class="media">
+
+            <img
+            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/531b24b047c398ac71015cb81b881113.gif"
+            alt="Chest exercise"
+            >
+
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="exerciseNext(2)"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXERCISE 2 — BACK
+===================================================== -->
+
+<section
+id="exercise2"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            and this is best exercises
+            for back according to me 👽🤭
+
+        </h1>
+
+
+        <div class="media">
+
+            <img
+            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506706911.jpg"
+            alt="Back exercise"
+            >
+
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="exerciseNext(3)"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXERCISE 3 — TRICEPS
+===================================================== -->
+
+<section
+id="exercise3"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            and Here are some best
+            triceps exercises...
+
+        </h1>
+
+
+        <div class="media">
+
+            <img
+            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506655264.jpg"
+            alt="Triceps exercise"
+            >
+
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="exerciseNext(4)"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXERCISE 4 — BICEPS
+===================================================== -->
+
+<section
+id="exercise4"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            this is best biceps exercises
+            💪🏻👽
+
+        </h1>
+
+
+        <div class="media">
+
+            <img
+            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506601517.jpg"
+            alt="Biceps exercise"
+            >
+
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="exerciseNext(5)"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXERCISE 5 — SHOULDER
+===================================================== -->
+
+<section
+id="exercise5"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            and some best shoulder
+            exercises fou u 🫠
+
+        </h1>
+
+
+        <div class="media">
+
+            <img
+            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507841/d5a01d47146d5e517c8b1d272d86e05a.jpg"
+            alt="Shoulder exercise"
+            >
+
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="exerciseNext(6)"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXERCISE 6 — LEGS
+===================================================== -->
+
+<section
+id="exercise6"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            and here are some leg's
+            best exercises for u..😄
+
+        </h1>
+
+
+        <div class="media">
+
+            <img
+            src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/Fitclub-leg-Workout-Beginner-Leg-Workout.png"
+            alt="Leg exercise"
+            >
+
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="openPage10()"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 10 — VIDEO 1
+===================================================== -->
+
+<section
+id="page10"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            here are someee bankuu
+            moments 🌝😹😍
+
+        </h1>
+
+
+        <div class="media">
+
+            <video
+            id="video10"
+            controls
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+            >
+
+                <source
+                src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788509964/InShot_20260904_134730121.mp4"
+                type="video/mp4"
+                >
+
+            </video>
+
+        </div>
+
+
+        <div class="video-note">
+            ▶️ Tap to watch 🤍
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="openPage11()"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 11 — VIDEO 2
+===================================================== -->
+
+<section
+id="page11"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            Here's a little reality
+            for you...🥹🫶🏻
+
+        </h1>
+
+
+        <div class="media">
+
+            <video
+            id="video11"
+            controls
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+            >
+
+                <source
+                src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788510696/Varun___Lifestyle___Travel_on_Instagram___Really_it_works_____20july__reels__explore__memes__fyppppppppppppppppppppppppppppppppppppppppppppppppppppp_1080p.mp4"
+                type="video/mp4"
+                >
+
+            </video>
+
+        </div>
+
+
+        <div class="video-note">
+            🔊 Sound on for full experience
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="openPage12()"
+        >
+
+            Next 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 12 — VIDEO 3
+===================================================== -->
+
+<section
+id="page12"
+class="page content hidden"
+>
+
+    <div class="card">
+
+        <h1 class="media-title">
+
+            Heyy litiii behena 🥹🧿
+
+        </h1>
+
+
+        <div class="media">
+
+            <video
+            id="video12"
+            controls
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+            >
+
+                <source
+                src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788512010/InShot_20260904_142152370.mp4"
+                type="video/mp4"
+                >
+
+            </video>
+
+        </div>
+
+
+        <div class="video-note">
+            ▶️ Tap to watch 🤍
+        </div>
+
+
+        <button
+        type="button"
+        class="next-btn"
+        onclick="openLast()"
+        >
+
+            Continue 👉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LAST PAGE
+===================================================== -->
+
+<section
+id="lastPage"
+class="page hidden"
+>
+
+    <div class="last-card">
+
+        <div class="last-emoji">
+            🥰💗
+        </div>
+
+
+        <h1>
+
+            okhyy whatever<br>
+
+            See you again soon 💕
+
+        </h1>
+
+
+        <p>
+
+            And Happy walaaa birthday
+            once again 🫶🏻🌹
+
+        </p>
+
+
+        <div class="bye">
+
+            Byee 🫂👋
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PEHLA NASHA
+===================================================== -->
+
+<audio
+id="pehlaNasha"
+preload="auto"
+loop
+>
+
+    <source
+    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788362135/Pehla_Nasha__-_Instrumental___Pehla_Nasha___Pehla_Nasha_-_Piano_256k__1.mp3"
+    type="audio/mpeg"
+    >
+
+</audio>
+
+
+<!-- =====================================================
+     SULTAN
+===================================================== -->
+
+<audio
+id="sultan"
+preload="auto"
+loop
+>
+
+    <source
+    src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788508584/Sultan_Title_Song___Salman_Khan__Anushka_Sharma___Sukhwinder_Singh__Shadab_Faridi__Vishal___Shekhar_256k__1.mp3"
+    type="audio/mpeg"
+    >
+
+</audio>
+
+
+<script>
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+const PASSWORD = "Gymrat";
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const pehlaNasha =
+document.getElementById("pehlaNasha");
+
+const sultan =
+document.getElementById("sultan");
+
+pehlaNasha.volume = 0.90;
+
+sultan.volume = 0.90;
+
+
+/* =====================================================
+   PAGE CONTROL
+===================================================== */
+
+function hideAllPages(){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.add("hidden");
+
+    });
+
+    document
+    .getElementById("birthdayPage")
+    .classList.add("hidden");
+
+}
+
+
+function showPage(id){
+
+    hideAllPages();
+
+    const page =
+    document.getElementById(id);
+
+    page.classList.remove("hidden");
+
+    page.classList.remove("fade");
+
+    void page.offsetWidth;
+
+    page.classList.add("fade");
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login(){
+
+    const passwordBox =
+    document.getElementById("password");
+
+    const errorBox =
+    document.getElementById("loginError");
+
+    const password =
+    passwordBox.value.trim();
+
+
+    if(password !== PASSWORD){
+
+        errorBox.innerHTML =
+        "Wrong password 😝 Try again!";
+
+        passwordBox.value = "";
+
+        passwordBox.focus();
+
+        return;
+
+    }
+
+
+    errorBox.innerHTML = "";
+
+
+    /*
+       IMPORTANT:
+
+       Music does NOT start here.
+
+       Countdown starts first.
+    */
+
+
+    showPage("countdownPage");
+
+    startCountdown();
+
+}
+
+
+/* =====================================================
+   ENTER KEY
+===================================================== */
+
+document
+.getElementById("password")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            login();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+function startCountdown(){
+
+    let number = 3;
+
+    const counter =
+    document.getElementById("countNumber");
+
+
+    counter.innerHTML = number;
+
+    counter.style.animation =
+    "numberPop .7s ease";
+
+    playTick();
+
+
+    const timer =
+    setInterval(function(){
+
+        number--;
+
+
+        if(number <= 0){
+
+            clearInterval(timer);
+
+
+            setTimeout(function(){
+
+                showBirthday();
+
+            },500);
+
+
+            return;
+
+        }
+
+
+        counter.innerHTML =
+        number;
+
+
+        counter.style.animation =
+        "none";
+
+        void counter.offsetWidth;
+
+        counter.style.animation =
+        "numberPop .7s ease";
+
+
+        playTick();
+
+
+    },1000);
+
+}
+
+
+/* =====================================================
+   LOUD TICK
+===================================================== */
+
+let audioContext = null;
+
+
+function playTick(){
+
+    try{
+
+        if(!audioContext){
+
+            audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+        }
+
+
+        if(
+            audioContext.state ===
+            "suspended"
+        ){
+
+            audioContext.resume();
+
+        }
+
+
+        const oscillator =
+        audioContext.createOscillator();
+
+
+        const gain =
+        audioContext.createGain();
+
+
+        oscillator.type =
+        "sine";
+
+
+        oscillator.frequency.setValueAtTime(
+            900,
+            audioContext.currentTime
+        );
+
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            audioContext.currentTime
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.75,
+            audioContext.currentTime + 0.02
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            audioContext.currentTime + 0.25
+        );
+
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+
+        oscillator.start();
+
+
+        oscillator.stop(
+            audioContext.currentTime + 0.3
+        );
+
+
+    }catch(error){
+
+        console.log(
+            "Tick error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   BIRTHDAY PAGE
+===================================================== */
+
+function showBirthday(){
+
+    hideAllPages();
+
+
+    const birthday =
+    document.getElementById(
+        "birthdayPage"
+    );
+
+
+    birthday.classList.remove(
+        "hidden"
+    );
+
+
+    /*
+       PEHLA NASHA STARTS HERE
+    */
+
+    sultan.pause();
+
+    sultan.currentTime = 0;
+
+
+    pehlaNasha.currentTime = 0;
+
+    pehlaNasha.volume = 0.90;
+
+
+    pehlaNasha.play()
+    .catch(function(error){
+
+        console.log(
+            "Pehla Nasha autoplay:",
+            error
+        );
+
+    });
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function openMessage(){
+
+    showPage("messagePage");
+
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+function openQuestion(){
+
+    showPage("questionPage");
+
+}
+
+
+/* =====================================================
+   QUESTION YES
+===================================================== */
+
+function questionYes(){
+
+    document.getElementById(
+        "questionError"
+    ).innerHTML = "";
+
+
+    showPage(
+        "chocolatePage"
+    );
+
+}
+
+
+/* =====================================================
+   QUESTION NO
+===================================================== */
+
+let noCount = 0;
+
+
+function questionNo(){
+
+    noCount++;
+
+
+    const error =
+    document.getElementById(
+        "questionError"
+    );
+
+
+    if(noCount === 1){
+
+        error.innerHTML =
+        "do u know,,Lying is a veryy bad thing";
+
+    }
+
+
+    else if(noCount === 2){
+
+        error.innerHTML =
+        "oi lituuu,,,Why are you lying???😡";
+
+    }
+
+
+    else if(noCount === 3){
+
+        error.innerHTML =
+        "kono lav nei mitthe bole coz ekhne mitthe jinis support nei na 🤣";
+
+    }
+
+
+    else if(noCount === 4){
+
+        error.innerHTML =
+        "besis hocche ebar 😡😡😡";
+
+    }
+
+
+    else if(noCount === 5){
+
+        error.innerHTML =
+        "ete battery waste hocche r kichu na 😮‍💨";
+
+    }
+
+
+    else if(noCount === 6){
+
+        error.innerHTML =
+        "Darao ami magic kore yes click kore dicchi 😑";
+
+
+        /*
+           3 seconds
+        */
+
+        setTimeout(function(){
+
+            error.innerHTML = "";
+
+            questionYes();
+
+        },3000);
+
+    }
+
+}
+
+
+/* =====================================================
+   CHOCOLATE
+===================================================== */
+
+function chocolateDone(){
+
+    showPage(
+        "resultPage"
+    );
+
+}
+
+
+function showCustomChocolate(){
+
+    const box =
+    document.getElementById(
+        "customChocolateBox"
+    );
+
+
+    box.style.display =
+    "block";
+
+
+    document
+    .getElementById(
+        "customChocolate"
+    )
+    .focus();
+
+}
+
+
+function customChocolateDone(){
+
+    const input =
+    document.getElementById(
+        "customChocolate"
+    );
+
+
+    const value =
+    input.value.trim();
+
+
+    if(value === ""){
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    chocolateDone();
+
+}
+
+
+/* =====================================================
+   START EXERCISE
+===================================================== */
+
+function startExercise(){
+
+    /*
+       Pehla Nasha OFF
+    */
+
+    pehlaNasha.pause();
+
+
+    /*
+       Sultan ON
+    */
+
+    sultan.currentTime = 0;
+
+    sultan.volume = 0.90;
+
+
+    sultan.play()
+    .catch(function(error){
+
+        console.log(
+            "Sultan autoplay:",
+            error
+        );
+
+    });
+
+
+    showPage(
+        "exercise1"
+    );
+
+}
+
+
+/* =====================================================
+   EXERCISE NEXT
+===================================================== */
+
+function exerciseNext(number){
+
+    showPage(
+        "exercise" + number
+    );
+
+}
+
+
+/* =====================================================
+   EXERCISE END
+===================================================== */
+
+function openPage10(){
+
+    /*
+       Sultan OFF
+    */
+
+    sultan.pause();
+
+    sultan.currentTime = 0;
+
+
+    /*
+       Pehla Nasha BACK
+    */
+
+    pehlaNasha.currentTime = 0;
+
+    pehlaNasha.volume = 0.90;
+
+
+    pehlaNasha.play()
+    .catch(function(error){
+
+        console.log(
+            "Pehla Nasha:",
+            error
+        );
+
+    });
+
+
+    showPage(
+        "page10"
+    );
+
+}
+
+
+/* =====================================================
+   VIDEO PAGE 10 → 11
+===================================================== */
+
+function openPage11(){
+
+    showPage(
+        "page11"
+    );
+
+}
+
+
+/* =====================================================
+   VIDEO PAGE 11 → 12
+===================================================== */
+
+function openPage12(){
+
+    showPage(
+        "page12"
+    );
+
+}
+
+
+/* =====================================================
+   LAST PAGE
+===================================================== */
+
+function openLast(){
+
+    showPage(
+        "lastPage"
+    );
+
+}
+
+
+/* =====================================================
+   VIDEO MUSIC SYSTEM
+===================================================== */
+
+const videos =
+document.querySelectorAll(
+    "video"
+);
+
+
+videos.forEach(function(video){
+
+    /*
+       VIDEO START
+    */
+
+    video.addEventListener(
+        "play",
+        function(){
+
+            /*
+               Both background
+               songs OFF
+            */
+
+            pehlaNasha.pause();
+
+            sultan.pause();
+
+        }
+    );
+
+
+    /*
+       VIDEO PAUSE
+    */
+
+    video.addEventListener(
+        "pause",
+        function(){
+
+            /*
+               If video hasn't ended,
+               restore Pehla Nasha.
+            */
+
+            if(
+                !video.ended &&
+                !video.paused === false
+            ){
+
+                pehlaNasha.play()
+                .catch(function(){});
+
+            }
+
+        }
+    );
+
+
+    /*
+       VIDEO END
+    */
+
+    video.addEventListener(
+        "ended",
+        function(){
+
+            pehlaNasha.volume =
+            0.90;
+
+
+            pehlaNasha.play()
+            .catch(function(error){
+
+                console.log(
+                    "Resume music:",
+                    error
+                );
+
+            });
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   FIX VIDEO MUSIC MORE RELIABLY
+===================================================== */
+
+videos.forEach(function(video){
+
+    video.addEventListener(
+        "play",
+        function(){
+
+            pehlaNasha.pause();
+
+            sultan.pause();
+
+        }
+    );
+
+
+    video.addEventListener(
+        "ended",
+        function(){
+
+            pehlaNasha.play()
+            .catch(function(){});
+
+        }
+    );
+
+});
+
+
+</script>
+
+</body>
+</html>
