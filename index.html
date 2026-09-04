@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>For Somnath 💗</title>
+<title>For Litita Di 🫶🏻</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 *{
     margin:0;
@@ -28,73 +19,70 @@ html{
 }
 
 body{
-
     min-height:100vh;
-
-    overflow:hidden;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
     color:#583c5d;
 
     background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(255,255,255,.75),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(255,255,255,.45),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #ffd8eb,
-            #e8d9ff,
-            #f8dced
-        );
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.65),transparent 28%),
+    radial-gradient(circle at 90% 80%,rgba(255,255,255,.35),transparent 30%),
+    linear-gradient(135deg,#ffd8eb,#e8d9ff,#f8dced);
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.page{
+    min-height:100vh;
+    width:100%;
+    position:relative;
+    z-index:2;
+}
+
+.fadeIn{
+    animation:fadeIn .7s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* ================= FLOATING HEARTS ================= */
 
 .hearts{
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     overflow:hidden;
-
-    z-index:1;
+    z-index:0;
 }
 
 .heart{
-
     position:absolute;
-
-    font-size:25px;
-
+    font-size:24px;
     opacity:.65;
-
-    animation:
-        heartFloat
-        7s
-        ease-in-out
-        infinite;
+    animation:heartFloat 7s ease-in-out infinite;
 }
 
 .heart:nth-child(1){
     left:5%;
-    top:15%;
+    top:18%;
 }
 
 .heart:nth-child(2){
@@ -104,8 +92,8 @@ body{
 }
 
 .heart:nth-child(3){
-    left:30%;
-    top:10%;
+    left:31%;
+    top:12%;
     animation-delay:2s;
 }
 
@@ -117,7 +105,7 @@ body{
 
 .heart:nth-child(5){
     left:65%;
-    top:14%;
+    top:15%;
     animation-delay:1.5s;
 }
 
@@ -140,121 +128,45 @@ body{
 }
 
 @keyframes heartFloat{
-
     0%,100%{
-        transform:
-            translateY(0)
-            rotate(0deg);
+        transform:translateY(0) rotate(0);
     }
 
     50%{
-        transform:
-            translateY(-25px)
-            rotate(10deg);
+        transform:translateY(-25px) rotate(10deg);
     }
 }
 
 
-/* =========================
-   COMMON PAGE
-========================= */
-
-.page{
-
-    min-height:100vh;
-
-    width:100%;
-
-    position:relative;
-
-    z-index:5;
-}
-
-.hidden{
-    display:none !important;
-}
-
-
-/* =========================
-   LOGIN PAGE
-========================= */
+/* ================= LOGIN ================= */
 
 #loginPage{
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     padding:20px;
 }
 
 .login-card{
-
     width:min(92%,520px);
-
     padding:45px 28px;
-
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-radius:40px;
     text-align:center;
 
-    background:
-        rgba(255,255,255,.94);
-
-    backdrop-filter:
-        blur(15px);
-
-    border:
-        1px solid
-        rgba(255,255,255,.8);
-
-    border-radius:40px;
-
     box-shadow:
-        0 25px 70px
-        rgba(100,50,120,.20);
-
-    animation:
-        cardIn
-        .8s
-        ease;
+    0 25px 65px rgba(120,65,135,.18);
 }
-
-@keyframes cardIn{
-
-    from{
-        opacity:0;
-        transform:
-            scale(.85)
-            translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            scale(1)
-            translateY(0);
-    }
-}
-
-
-/* LOCK */
 
 .lock{
+    font-size:58px;
+    margin-bottom:28px;
 
-    font-size:65px;
-
-    margin-bottom:25px;
-
-    animation:
-        lockFloat
-        2s
-        ease-in-out
-        infinite;
+    animation:lockFloat 2s ease-in-out infinite;
 }
 
 @keyframes lockFloat{
-
     0%,100%{
         transform:translateY(0);
     }
@@ -264,493 +176,535 @@ body{
     }
 }
 
-
-/* PASSWORD */
-
 .password{
-
     width:100%;
-
     padding:18px 20px;
 
-    border:
-        3px solid
-        #e5c9e5;
-
+    border:3px solid #e5c9e5;
     border-radius:25px;
 
+    background:#fffaff;
     outline:none;
 
-    background:#fffaff;
-
     text-align:center;
-
     font-size:19px;
-
     color:#633e65;
+}
+
+.password:focus{
+    border-color:#bd4daf;
+
+    box-shadow:
+    0 0 18px rgba(189,77,175,.2);
+}
+
+.enter-btn,
+.next-btn,
+.reveal-btn{
+    border:0;
+    border-radius:50px;
+
+    background:
+    linear-gradient(135deg,#d944a5,#8d4ed8);
+
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 12px 30px rgba(145,65,165,.25);
 
     transition:.2s;
 }
 
-.password:focus{
+.enter-btn{
+    margin-top:24px;
+    padding:17px 58px;
+}
 
-    border-color:#bd4daf;
+.enter-btn:active,
+.next-btn:active,
+.reveal-btn:active{
+    transform:scale(.95);
+}
 
-    box-shadow:
-        0 0 20px
-        rgba(189,77,175,.20);
+.error{
+    min-height:22px;
+    margin-top:13px;
+    color:#d53e6d;
+    font-size:15px;
 }
 
 
-/* ENTER BUTTON */
+/* ================= COUNTDOWN ================= */
 
-.enter-btn{
-
-    margin-top:24px;
-
-    padding:
-        17px
-        58px;
-
-    border:0;
-
-    border-radius:50px;
-
-    color:white;
-
-    font-size:21px;
-
-    font-weight:bold;
+#countdownPage{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
 
     background:
-        linear-gradient(
-            135deg,
-            #d944a5,
-            #8d4ed8
-        );
+    radial-gradient(circle at center,#fff1fa,#e3d7ff);
+}
+
+.count-text{
+    font-size:22px;
+    color:#8b4b91;
+    margin-bottom:15px;
+}
+
+.count-number{
+    font-size:110px;
+    font-weight:900;
+    color:#a344a2;
+
+    animation:numberPop .8s ease;
+}
+
+@keyframes numberPop{
+    0%{
+        transform:scale(1.6);
+        opacity:0;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
+/* ================= REVEAL ================= */
+
+#birthdayReveal{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(circle at center,#fff0fa,#e4d8ff);
+
+    z-index:50;
+    text-align:center;
+}
+
+.reveal-card{
+    width:min(92%,700px);
+    padding:45px 22px;
+
+    border-radius:40px;
+    background:rgba(255,255,255,.92);
 
     box-shadow:
-        0 12px 30px
-        rgba(145,65,165,.25);
+    0 25px 70px rgba(120,65,135,.2);
+
+    animation:revealIn .8s ease;
+}
+
+@keyframes revealIn{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.reveal-cake{
+    font-size:75px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.reveal-title{
+    margin-top:18px;
+
+    font-size:clamp(38px,9vw,68px);
+    font-weight:900;
+
+    color:#a5409e;
+}
+
+.reveal-subtitle{
+    margin-top:14px;
+    font-size:20px;
+}
+
+.reveal-btn{
+    margin-top:28px;
+    padding:16px 45px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.content-page{
+    padding:45px 15px 55px;
+}
+
+.content-card{
+    width:min(92%,700px);
+    margin:auto;
+
+    padding:40px 32px;
+
+    background:rgba(255,255,255,.92);
+    border-radius:38px;
+
+    box-shadow:
+    0 22px 60px rgba(115,65,130,.16);
+}
+
+.message-title{
+    text-align:center;
+    color:#a3429c;
+
+    font-size:34px;
+    line-height:1.35;
+
+    margin-bottom:32px;
+}
+
+.message-card p{
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.highlight{
+    color:#ae428f;
+    font-weight:bold;
+}
+
+.next-btn{
+    display:block;
+    margin:32px auto 0;
+    padding:16px 45px;
+}
+
+
+/* ================= QUESTION ================= */
+
+.question-title{
+    text-align:center;
+
+    color:#a3429c;
+    font-size:31px;
+    line-height:1.4;
+
+    margin-bottom:30px;
+}
+
+.question-options{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.option-btn{
+    border:0;
+    border-radius:50px;
+
+    padding:15px 35px;
+
+    background:
+    linear-gradient(135deg,#d944a5,#8d4ed8);
+
+    color:#fff;
+    font-size:19px;
+    font-weight:bold;
 
     cursor:pointer;
 
     transition:.2s;
 }
 
-.enter-btn:active{
+.option-btn:active{
     transform:scale(.94);
 }
 
-.error{
+.question-error{
+    min-height:60px;
 
-    min-height:22px;
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#d33d6c;
+
+    font-size:18px;
+    line-height:1.5;
+    font-weight:bold;
+}
+
+
+/* ================= RED CURTAIN ================= */
+
+.curtain{
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        #7c0015,
+        #e00032,
+        #8d001c
+    );
+
+    z-index:300;
+
+    animation:curtainOpen 1.7s ease forwards;
+}
+
+.curtain:before,
+.curtain:after{
+    content:"";
+
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:50%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #5c0010,
+        #d4002c,
+        #6e0015
+    );
+}
+
+.curtain:before{
+    left:0;
+    animation:leftCurtain 1.5s ease forwards;
+}
+
+.curtain:after{
+    right:0;
+    animation:rightCurtain 1.5s ease forwards;
+}
+
+@keyframes leftCurtain{
+    to{
+        transform:translateX(-105%);
+    }
+}
+
+@keyframes rightCurtain{
+    to{
+        transform:translateX(105%);
+    }
+}
+
+@keyframes curtainOpen{
+    0%,70%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        pointer-events:none;
+    }
+}
+
+
+/* ================= CHOCOLATE ================= */
+
+.chocolate-title{
+    text-align:center;
+
+    color:#a3429c;
+    font-size:31px;
+
+    margin-bottom:28px;
+}
+
+.chocolate-options{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.chocolate-btn{
+    border:3px solid #e6c8e3;
+
+    border-radius:22px;
+
+    padding:17px;
+
+    background:#fff8fd;
+
+    color:#74456f;
+
+    font-size:19px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.chocolate-btn:hover{
+    transform:translateY(-2px);
+    border-color:#c96ab7;
+}
+
+.chocolate-input{
+    width:100%;
+
+    padding:17px;
+
+    border:3px solid #e5c9e5;
+    border-radius:22px;
+
+    outline:none;
+
+    font-size:18px;
+    text-align:center;
+
+    margin-top:15px;
+}
+
+.chocolate-input:focus{
+    border-color:#bd4daf;
+}
+
+
+/* ================= MEDIA ================= */
+
+.media-title{
+    text-align:center;
+
+    color:#a3429c;
+
+    font-size:30px;
+    font-weight:bold;
+
+    line-height:1.4;
+
+    margin-bottom:24px;
+}
+
+.media-wrapper{
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:#000;
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.20);
+}
+
+.media-wrapper img,
+.media-wrapper video{
+    width:100%;
+    max-height:700px;
+
+    display:block;
+
+    object-fit:contain;
+
+    background:#000;
+}
+
+.media-wrapper img{
+    height:auto;
+}
+
+.media-wrapper video{
+    min-height:220px;
+}
+
+.media-note{
+    text-align:center;
 
     margin-top:13px;
 
-    color:#d53e6d;
+    color:#80657d;
 
     font-size:15px;
 }
 
 
-/* =========================
-   QUESTION PAGE
-========================= */
+/* ================= BYE ================= */
 
-#questionPage{
-
+.bye-page{
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    padding:20px;
+    padding:25px;
 }
 
-.question-card{
+.bye-card{
+    width:min(92%,650px);
 
-    width:min(94%,650px);
-
-    min-height:500px;
-
-    padding:50px 25px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
+    padding:55px 25px;
 
     text-align:center;
 
-    background:
-        rgba(255,255,255,.94);
-
-    backdrop-filter:
-        blur(15px);
+    background:rgba(255,255,255,.92);
 
     border-radius:40px;
 
     box-shadow:
-        0 25px 70px
-        rgba(100,50,120,.20);
-
-    animation:
-        questionIn
-        .8s
-        ease;
+    0 25px 65px rgba(115,65,130,.18);
 }
 
-@keyframes questionIn{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(30px)
-            scale(.9);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-/* HEART */
-
-.question-heart{
-
+.bye-emoji{
     font-size:75px;
-
-    margin-bottom:18px;
-
-    animation:
-        heartBeat
-        1.2s
-        infinite;
 }
 
-@keyframes heartBeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.12);
-    }
-}
-
-
-/* QUESTION */
-
-.question-title{
-
-    font-size:
-        clamp(
-            30px,
-            7vw,
-            52px
-        );
-
-    line-height:1.25;
-
-    font-weight:900;
+.bye-card h1{
+    margin-top:18px;
 
     color:#a3429c;
 
-    margin-bottom:15px;
-}
-
-.question-subtitle{
-
-    font-size:19px;
-
-    color:#765c74;
-
-    margin-bottom:25px;
-}
-
-
-/* =========================
-   BUTTON AREA
-========================= */
-
-.button-area{
-
-    position:relative;
-
-    width:100%;
-
-    height:150px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:20px;
-}
-
-
-/* YES */
-
-.yes-btn{
-
-    padding:
-        16px
-        45px;
-
-    border:0;
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d944a5,
-            #8d4ed8
-        );
-
-    color:white;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 10px 25px
-        rgba(145,65,165,.25);
-
-    transition:.2s;
-
-    z-index:10;
-}
-
-.yes-btn:hover{
-
-    transform:
-        scale(1.06);
-}
-
-
-/* NO */
-
-.no-btn{
-
-    padding:
-        16px
-        42px;
-
-    border:0;
-
-    border-radius:50px;
-
-    background:#eee3f0;
-
-    color:#795879;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:
-        translate(
-            45px,
-            -50%
-        );
-
-    transition:
-        left .15s ease,
-        top .15s ease,
-        transform .15s ease;
-
-    z-index:20;
-}
-
-
-/* =========================
-   ERROR MESSAGE
-========================= */
-
-.no-error{
-
-    width:90%;
-
-    min-height:60px;
-
-    margin-top:5px;
-
-    padding:15px 20px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    color:#c52f68;
-
-    font-size:20px;
-
-    font-weight:900;
-
-    line-height:1.4;
-
-    background:
-        rgba(255,220,237,.65);
-
-    border-radius:20px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(180,60,120,.12);
-
-    animation:
-        errorPop
-        .25s
-        ease;
-}
-
-@keyframes errorPop{
-
-    from{
-        opacity:0;
-        transform:scale(.8);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-
-/* =========================
-   WELCOME PAGE
-========================= */
-
-#welcomePage{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-}
-
-.welcome-card{
-
-    width:min(94%,700px);
-
-    padding:
-        55px
-        25px;
-
-    text-align:center;
-
-    background:
-        rgba(255,255,255,.95);
-
-    backdrop-filter:
-        blur(15px);
-
-    border-radius:42px;
-
-    box-shadow:
-        0 25px 75px
-        rgba(100,50,120,.22);
-
-    animation:
-        welcomeIn
-        .8s
-        ease;
-}
-
-@keyframes welcomeIn{
-
-    from{
-        opacity:0;
-        transform:
-            scale(.5)
-            rotate(-3deg);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            scale(1)
-            rotate(0);
-    }
-}
-
-.welcome-heart{
-
-    font-size:85px;
-
-    animation:
-        heartBeat
-        1s
-        infinite;
-}
-
-.welcome-title{
-
-    margin-top:20px;
-
-    font-size:
-        clamp(
-            30px,
-            7vw,
-            55px
-        );
-
+    font-size:40px;
     line-height:1.3;
-
-    font-weight:900;
-
-    color:#a3429c;
 }
 
-.welcome-text{
+.bye-card p{
+    margin-top:18px;
 
+    font-size:20px;
+    line-height:1.6;
+}
+
+.bye{
     margin-top:25px;
 
-    font-size:21px;
+    color:#a3429c;
 
-    line-height:1.7;
-
-    color:#674d65;
-
-    font-weight:600;
+    font-size:34px;
+    font-weight:bold;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
@@ -759,68 +713,48 @@ body{
         border-radius:32px;
     }
 
-    .question-card{
-        min-height:500px;
-        padding:40px 20px;
-        border-radius:32px;
+    .content-card{
+        padding:35px 22px;
+        border-radius:30px;
     }
 
-    .question-title{
+    .message-title{
+        font-size:29px;
+    }
+
+    .message-card p{
+        font-size:18px;
+        line-height:1.75;
+    }
+
+    .count-number{
+        font-size:90px;
+    }
+
+    .reveal-title{
+        font-size:43px;
+    }
+
+    .media-title{
+        font-size:27px;
+    }
+
+    .bye-card h1{
         font-size:34px;
     }
 
-    .question-subtitle{
-        font-size:17px;
+    .media-wrapper{
+        border-radius:24px;
     }
-
-    .button-area{
-        height:150px;
-    }
-
-    .yes-btn{
-        padding:
-            15px
-            38px;
-    }
-
-    .no-btn{
-        padding:
-            15px
-            35px;
-    }
-
-    .no-error{
-        width:95%;
-        font-size:18px;
-        padding:13px 15px;
-    }
-
-    .welcome-card{
-        padding:45px 20px;
-        border-radius:32px;
-    }
-
-    .welcome-title{
-        font-size:34px;
-    }
-
-    .welcome-text{
-        font-size:18px;
-    }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 
-<!-- =========================
-     FLOATING HEARTS
-========================= -->
+<!-- ================= FLOATING HEARTS ================= -->
 
 <div class="hearts">
 
@@ -836,26 +770,21 @@ body{
 </div>
 
 
-<!-- =========================
-     LOGIN PAGE
-========================= -->
+<!-- ================= LOGIN ================= -->
 
-<section
-    id="loginPage"
-    class="page"
->
+<section id="loginPage" class="page">
 
     <div class="login-card">
 
         <div class="lock">
-            🔑
+            🔐
         </div>
 
         <input
             id="passwordInput"
             class="password"
             type="password"
-            placeholder="Enter Password 🔐"
+            placeholder="Enter Password 🔑"
             autocomplete="off"
         >
 
@@ -866,72 +795,173 @@ body{
             Enter ❤️
         </button>
 
-        <div
-            id="loginError"
-            class="error"
-        ></div>
+        <div id="error" class="error"></div>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     QUESTION PAGE
-========================= -->
+<!-- ================= COUNTDOWN ================= -->
+
+<section
+    id="countdownPage"
+    class="page hidden"
+>
+
+    <div class="count-text">
+        Wait a little... 🥹
+    </div>
+
+    <div
+        id="countNumber"
+        class="count-number"
+    >
+        3
+    </div>
+
+</section>
+
+
+<!-- ================= BIRTHDAY REVEAL ================= -->
+
+<section
+    id="birthdayReveal"
+    class="hidden"
+>
+
+    <div class="reveal-card">
+
+        <div class="reveal-cake">
+            🎂
+        </div>
+
+        <div class="reveal-title">
+
+            Happy Birthday<br>
+
+            Litita Di 🫶🏻
+
+        </div>
+
+        <div class="reveal-subtitle">
+
+            💐 A little surprise just for you 💐
+
+        </div>
+
+        <button
+            class="reveal-btn"
+            onclick="openMessage()"
+        >
+            Continue 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 3 MESSAGE ================= -->
+
+<section
+    id="messagePage"
+    class="page content-page hidden"
+>
+
+    <div class="content-card message-card">
+
+        <h1 class="message-title">
+            Hey Gym ratt, our Lititaa di 👾
+        </h1>
+
+        <p>
+            happy Birthday Lititaa di 🥹🥳
+            many many happy returns of the day 💓
+        </p>
+
+        <p>
+            stay happy always like me 🥰
+            accha rahoo sadaa 🫠
+            meraaa asirvadd hamesaa apkee sath rahegaa 🥹🖐🏻
+        </p>
+
+        <p>
+            and Gym lagatar kartee jaooo 🫠
+            itna kam time me agar aisa improve ho skta hain
+            to kuch time badd boht improve hogaa...
+        </p>
+
+        <p>
+            ap ho hi pretty,
+            then Gym karke or bhi strong ho jaogeee 👾💪🏻
+        </p>
+
+        <p>
+            haann or ek baatt,
+            brithday kaa bohot bohot badhaiyaaa 🫶🏻❤️
+        </p>
+
+        <p>
+            andd andddd thankkkk u so much for being a
+            beautiful, cute 🥹🌹 responsible sister in my life
+            and also thankss to my Life,
+            for accepting a beautiful gym rat Sister like YOU
+            🫶🏻🌹🫂...
+        </p>
+
+        <p>
+            whtevr enjoy ur mostttt delicious and mosttt
+            enjoyable dayyy 🥳🌹...
+        </p>
+
+        <button
+            class="next-btn"
+            onclick="openQuestion()"
+        >
+            Next 👉
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUESTION ================= -->
 
 <section
     id="questionPage"
-    class="page hidden"
+    class="page content-page hidden"
 >
 
-    <div class="question-card">
+    <div class="content-card">
 
-        <div class="question-heart">
-            💗
-        </div>
+        <h1 class="question-title">
+            Btw i have a question... 🥹<br><br>
+            Were you cute when you were little? 🥹
+        </h1>
 
-        <div class="question-title">
-
-            Heyyy Somnath... 🥹<br>
-
-            Will you be my Night partner??
-
-        </div>
-
-        <div class="question-subtitle">
-
-            Think carefully... 😌💕
-
-        </div>
-
-
-        <div class="button-area">
+        <div class="question-options">
 
             <button
-                id="yesBtn"
-                class="yes-btn"
-                onclick="sayYes()"
+                class="option-btn"
+                onclick="answerYes()"
             >
-                Yes ❤️
+                Yes 😌
             </button>
 
-
             <button
-                id="noBtn"
-                class="no-btn"
-                onclick="moveNo()"
-                ontouchstart="moveNo(event)"
+                class="option-btn"
+                onclick="answerNo()"
             >
-                No 😝
+                No 😑
             </button>
 
         </div>
-
 
         <div
-            id="noError"
-            class="no-error"
+            id="questionError"
+            class="question-error"
         ></div>
 
     </div>
@@ -939,397 +969,280 @@ body{
 </section>
 
 
-<!-- =========================
-     WELCOME PAGE
-========================= -->
+<!-- ================= TRUTH PAGE ================= -->
 
 <section
-    id="welcomePage"
-    class="page hidden"
+    id="truthPage"
+    class="page content-page hidden"
 >
 
-    <div class="welcome-card">
+    <div class="content-card">
 
-        <div class="welcome-heart">
-            🥹💗
+        <h1 class="message-title">
+            Finally... sotti ta bolle 🥹🌹🧿
+        </h1>
+
+        <p style="text-align:center;font-size:20px;line-height:1.7;">
+            Whatever... 😌<br><br>
+            What's ur fav choclate?
+        </p>
+
+        <div class="chocolate-options">
+
+            <button
+                class="chocolate-btn"
+                onclick="chooseChocolate('Dairy Milk')"
+            >
+                Dairy Milk 🍫
+            </button>
+
+            <button
+                class="chocolate-btn"
+                onclick="chooseChocolate('KitKat')"
+            >
+                KitKat 🍫
+            </button>
+
+            <button
+                class="chocolate-btn"
+                onclick="chooseSomethingElse()"
+            >
+                Something else 😶
+            </button>
+
         </div>
 
-        <div class="welcome-title">
-
-            Welcome to my life bby<br>
-
-            as my Night partner only 🌚🫶🏻...
-
-        </div>
-
-        <div class="welcome-text">
-
-            I consider myself blessed coz 🥹🫶🏻🌚<br>
-
-            I was able to share some of my strength with you 🥹🫶🏻🌚
-
-        </div>
+        <div id="customChocolateArea"></div>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     BACKGROUND MUSIC
-========================= -->
+<!-- ================= CHOCOLATE RESPONSE ================= -->
 
-<audio
-    id="bgMusic"
-    preload="auto"
-    loop
+<section
+    id="chocolateResponsePage"
+    class="page content-page hidden"
 >
 
-    <source
-        src="https://res.cloudinary.com/s4rjpsff/video/upload/v1788366842/Ishq_wala_love_instrumental_256k__1_1.mp3"
-        type="audio/mpeg"
-    >
+    <div class="content-card message-card">
 
-</audio>
+        <h1 class="message-title">
+            Heyy litita di 👾
+        </h1>
 
+        <p>
+            app Gym karte hooo naa...
+        </p>
 
-<script>
+        <p>
+            choclate khanaa acchi baat nhi hain
+            health ke liyeee 😮‍💨🤣
+        </p>
 
-/* =========================
-   SETTINGS
-========================= */
+        <p>
+            so ma kisi choclate nehi dungaa 😮‍💨🤣
+        </p>
 
-const PASSWORD = "SOMJIT69";
+        <p>
+            apko kya laga ma apko chocolate dungaa 🤣🤣
+        </p>
 
-const MUSIC_VOLUME = 0.90;
+        <button
+            class="next-btn"
+            onclick="startExerciseTheme()"
+        >
+            Continue 👉
+        </button>
 
+    </div>
 
-/* =========================
-   ERROR MESSAGES
-========================= */
+</section>
 
-const noMessages = [
 
-    "erokom korte parlii to 🥺",
+<!-- ========================================================= -->
+<!-- ================= EXERCISE SECTION ======================= -->
+<!-- ========================================================= -->
 
-    "mone rakhbi,,,jeta korchis",
 
-    "kotha bolis na",
+<!-- ================= CHEST ================= -->
 
-    "vai erokom kno korchis 🥺😡",
+<section
+    id="chestPage"
+    class="page content-page hidden exercise-page"
+>
 
-    "vai koriss na plss,,,",
+    <div class="content-card">
 
-    "tor baccha hobe nai ganduu",
+        <div class="media-title">
+            Tomar jnno best chest exercise suggest korlm...😁👽
+        </div>
 
-    "abee lewraa gal sunbi ki ?? 😡😡"
+        <div class="media-wrapper">
 
-];
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/531b24b047c398ac71015cb81b881113.gif"
+                alt="Chest exercises"
+            >
 
+        </div>
 
-/* =========================
-   ELEMENTS
-========================= */
+        <button
+            class="next-btn"
+            onclick="openBackPage()"
+        >
+            Continue 👉
+        </button>
 
-const loginPage =
-    document.getElementById(
-        "loginPage"
-    );
+    </div>
 
-const questionPage =
-    document.getElementById(
-        "questionPage"
-    );
+</section>
 
-const welcomePage =
-    document.getElementById(
-        "welcomePage"
-    );
 
-const passwordInput =
-    document.getElementById(
-        "passwordInput"
-    );
+<!-- ================= BACK ================= -->
 
-const loginError =
-    document.getElementById(
-        "loginError"
-    );
+<section
+    id="backPage"
+    class="page content-page hidden exercise-page"
+>
 
-const bgMusic =
-    document.getElementById(
-        "bgMusic"
-    );
+    <div class="content-card">
 
-const noBtn =
-    document.getElementById(
-        "noBtn"
-    );
+        <div class="media-title">
+            and this is best exercises for back according to me 👽🤭
+        </div>
 
-const noError =
-    document.getElementById(
-        "noError"
-    );
+        <div class="media-wrapper">
 
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506706911.jpg"
+                alt="Back exercises"
+            >
 
-/* =========================
-   ERROR COUNTER
-========================= */
+        </div>
 
-let noClickCount = 0;
+        <button
+            class="next-btn"
+            onclick="openTricepsPage()"
+        >
+            Continue 👉
+        </button>
 
+    </div>
 
-/* =========================
-   LOGIN
-========================= */
+</section>
 
-function login(){
 
-    const password =
-        passwordInput.value.trim();
+<!-- ================= TRICEPS ================= -->
 
+<section
+    id="tricepsPage"
+    class="page content-page hidden exercise-page"
+>
 
-    if(
-        password !== PASSWORD
-    ){
+    <div class="content-card">
 
-        loginError.textContent =
-            "Wrong password 😝 Try again!";
+        <div class="media-title">
+            and Here are some best triceps exercises...
+        </div>
 
-        passwordInput.value = "";
+        <div class="media-wrapper">
 
-        passwordInput.focus();
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506655264.jpg"
+                alt="Triceps exercises"
+            >
 
-        return;
-    }
+        </div>
 
+        <button
+            class="next-btn"
+            onclick="openBicepsPage()"
+        >
+            Continue 👉
+        </button>
 
-    loginError.textContent = "";
+    </div>
 
+</section>
 
-    /* START MUSIC */
 
-    bgMusic.volume =
-        MUSIC_VOLUME;
+<!-- ================= BICEPS ================= -->
 
-    bgMusic.currentTime = 0;
+<section
+    id="bicepsPage"
+    class="page content-page hidden exercise-page"
+>
 
-    const musicPromise =
-        bgMusic.play();
+    <div class="content-card">
 
+        <div class="media-title">
+            this is best biceps exercises 💪🏻👽
+        </div>
 
-    if(
-        musicPromise !== undefined
-    ){
+        <div class="media-wrapper">
 
-        musicPromise.catch(
-            function(){
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507842/FB_IMG_1788506601517.jpg"
+                alt="Biceps exercises"
+            >
 
-                console.log(
-                    "Music playback waiting..."
-                );
+        </div>
 
-            }
-        );
+        <button
+            class="next-btn"
+            onclick="openShoulderPage()"
+        >
+            Continue 👉
+        </button>
 
-    }
+    </div>
 
+</section>
 
-    loginPage.classList.add(
-        "hidden"
-    );
 
-    questionPage.classList.remove(
-        "hidden"
-    );
+<!-- ================= SHOULDER ================= -->
 
-}
+<section
+    id="shoulderPage"
+    class="page content-page hidden exercise-page"
+>
 
+    <div class="content-card">
 
-/* =========================
-   ENTER KEY
-========================= */
+        <div class="media-title">
+            and some best shoulder exercises fou u 🫠
+        </div>
 
-passwordInput.addEventListener(
-    "keydown",
-    function(event){
+        <div class="media-wrapper">
 
-        if(
-            event.key === "Enter"
-        ){
+            <img
+                src="https://res.cloudinary.com/s4rjpsff/image/upload/v1788507841/d5a01d47146d5e517c8b1d272d86e05a.jpg"
+                alt="Shoulder exercises"
+            >
 
-            login();
+        </div>
 
-        }
+        <button
+            class="next-btn"
+            onclick="openLegPage()"
+        >
+            Continue 👉
+        </button>
 
-    }
-);
+    </div>
 
+</section>
 
-/* =========================
-   NO BUTTON
-========================= */
 
-function moveNo(event){
+<!-- ================= LEG ================= -->
 
-    if(event){
+<section
+    id="legPage"
+    class="page content-page hidden exercise-page"
+>
 
-        event.preventDefault();
+    <div class="content-card">
 
-    }
-
-
-    /* SHOW REPEATING ERROR */
-
-    const messageIndex =
-        Math.min(
-            noClickCount,
-            noMessages.length - 1
-        );
-
-    noError.textContent =
-        noMessages[messageIndex];
-
-    noClickCount++;
-
-
-    noError.style.animation =
-        "none";
-
-    void noError.offsetWidth;
-
-    noError.style.animation =
-        "errorPop .25s ease";
-
-
-    /* GET CARD */
-
-    const card =
-        document.querySelector(
-            ".question-card"
-        );
-
-    const cardRect =
-        card.getBoundingClientRect();
-
-    const btnRect =
-        noBtn.getBoundingClientRect();
-
-
-    /* RANDOM POSITION */
-
-    const maxX =
-        cardRect.width -
-        btnRect.width -
-        30;
-
-    const maxY =
-        cardRect.height -
-        btnRect.height -
-        30;
-
-
-    const randomX =
-        Math.max(
-            10,
-            Math.random() * maxX
-        );
-
-    const randomY =
-        Math.max(
-            10,
-            Math.random() * maxY
-        );
-
-
-    /* MOVE NO BUTTON */
-
-    noBtn.style.position =
-        "absolute";
-
-    noBtn.style.left =
-        randomX + "px";
-
-    noBtn.style.top =
-        randomY + "px";
-
-    noBtn.style.transform =
-        "none";
-
-}
-
-
-/* =========================
-   DESKTOP HOVER PROTECTION
-========================= */
-
-noBtn.addEventListener(
-    "mouseenter",
-    function(){
-
-        moveNo();
-
-    }
-);
-
-
-/* =========================
-   TOUCH PROTECTION
-========================= */
-
-noBtn.addEventListener(
-    "touchstart",
-    function(event){
-
-        moveNo(event);
-
-    },
-    {
-        passive:false
-    }
-);
-
-
-/* =========================
-   YES
-========================= */
-
-function sayYes(){
-
-    bgMusic.volume =
-        MUSIC_VOLUME;
-
-
-    if(
-        bgMusic.paused
-    ){
-
-        bgMusic.play().catch(
-            function(){}
-        );
-
-    }
-
-
-    questionPage.classList.add(
-        "hidden"
-    );
-
-    welcomePage.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =========================
-   INITIAL MUSIC SETUP
-========================= */
-
-bgMusic.volume =
-    MUSIC_VOLUME;
-
-</script>
-
-</body>
-</html>
+        <div class="media-ti
